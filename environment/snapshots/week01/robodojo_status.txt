@@ -1,0 +1,37 @@
+ M XPolicyLab
+ M env/reward_manager/func_parser.py
+ M env/robot_manager/control_manager.py
+ M env/scene_manager/objects/geometry.py
+ M env/scene_manager/objects/rigid.py
+ M scripts/eval_policy.sh
+ M src/eval_client/eval_env.py
+ M third_party/curobo
+?? Miniconda3-latest-Linux-x86_64.sh
+?? act_debug_smoke.log
+?? act_dependencies.log
+?? act_dummy_ckpt.log
+?? act_env_setup.log
+?? act_process_data.log
+?? act_sim_smoke.log
+?? act_train.log
+?? act_train_bs8.log
+?? assets_download.log
+?? ast
+?? create_act_dummy_ckpt.py
+?? debug_smoke.log
+?? deposit_coin_eval.log
+?? deposit_coin_eval_50.log
+?? deposit_coin_eval_debug.log
+?? deposit_coin_eval_v2.log
+?? download_single_task_data.sh
+?? install.log
+?? json
+?? kl1_shorttest_eval.log
+?? logs/
+?? prompt.md
+?? retrain1000_eval.log
+?? sim_smoke.log
+?? stack_bowls_data_download.log
+?? sys
+?? update_paths.log
+?? xpolicylab_install.log

@@ -1,0 +1,394 @@
+diff --git a/policy/ACT/__init__.py b/policy/ACT/__init__.py
+index 2e4e390..8d2b9d9 100644
+--- a/policy/ACT/__init__.py
++++ b/policy/ACT/__init__.py
+@@ -1,9 +1 @@
+-try:
+-    from .deploy import *
+-except ImportError as e:
+-    pass
+-
+-try:
+-    from .model import *
+-except ImportError as e:
+-    pass
+\ No newline at end of file
++# ACT policy package marker.
+diff --git a/policy/ACT/deploy.yml b/policy/ACT/deploy.yml
+index 8507b6e..9a38987 100644
+--- a/policy/ACT/deploy.yml
++++ b/policy/ACT/deploy.yml
+@@ -17,7 +17,7 @@ kl_weight: 10.0
+ chunk_size: 50
+ hidden_dim: 512
+ dim_feedforward: 3200
+-temporal_agg: true
++temporal_agg: false
+ device: cuda:0
+ 
+ # DETR parser args
+diff --git a/policy/ACT/detr/act_policy.py b/policy/ACT/detr/act_policy.py
+index c001553..40f4846 100644
+--- a/policy/ACT/detr/act_policy.py
++++ b/policy/ACT/detr/act_policy.py
+@@ -6,6 +6,13 @@ import pickle
+ from torch.nn import functional as F
+ import torchvision.transforms as transforms
+ 
++class _NumpyCompatUnpickler(pickle.Unpickler):
++    def find_class(self, module, name):
++        if module == "numpy._core.multiarray":
++            module = "numpy.core.multiarray"
++        return super().find_class(module, name)
++
++
+ try:
+     from detr.main import (
+         build_ACT_model_and_optimizer,
+@@ -116,6 +123,8 @@ class ACT:
+ 
+         # Temporal aggregation settings
+         self.temporal_agg = args_override.get("temporal_agg", False)
++        if os.environ.get("ACT_TEMPORAL_AGG", "0") == "1":
++            self.temporal_agg = True
+         self.num_queries = args_override["chunk_size"]
+         self.state_dim = model_cfg.action_dim  # Standard joint dimension for bimanual robot
+         self.max_timesteps = 5000  # Large enough for deployment
+@@ -124,6 +133,8 @@ class ACT:
+         self.query_frequency = self.num_queries
+         if self.temporal_agg:
+             self.query_frequency = 1
++        if os.environ.get("ACT_QUERY_FREQ"):
++            self.query_frequency = int(os.environ.get("ACT_QUERY_FREQ"))
+             # Initialize with zeros matching imitate_episodes.py format
+             self.all_time_actions = torch.zeros([
+                 self.max_timesteps,
+@@ -137,7 +148,8 @@ class ACT:
+         # running with an unnormalized/randomly initialized ACT policy is invalid.
+         ckpt_dir = args_override.get("ckpt_dir", "")
+         stats_path = os.path.join(ckpt_dir, "dataset_stats.pkl") if ckpt_dir else ""
+-        ckpt_path = os.path.join(ckpt_dir, "policy_last.ckpt") if ckpt_dir else ""
++        ckpt_name = os.environ.get("ACT_CKPT_NAME", "policy_last.ckpt")
++        ckpt_path = os.path.join(ckpt_dir, ckpt_name) if ckpt_dir else ""
+         if not ckpt_dir:
+             raise ValueError("ACT requires ckpt_dir during evaluation.")
+         if not os.path.isdir(ckpt_dir):
+@@ -146,7 +158,7 @@ class ACT:
+         if not os.path.isfile(stats_path):
+             raise FileNotFoundError(f"ACT dataset stats not found: {stats_path}")
+         with open(stats_path, "rb") as f:
+-            self.stats = pickle.load(f)
++            self.stats = _NumpyCompatUnpickler(f).load()
+ 
+         if not os.path.isfile(ckpt_path):
+             raise FileNotFoundError(f"ACT policy checkpoint not found: {ckpt_path}")
+diff --git a/policy/ACT/detr/main.py b/policy/ACT/detr/main.py
+index ce2fcb7..7c2b39a 100644
+--- a/policy/ACT/detr/main.py
++++ b/policy/ACT/detr/main.py
+@@ -116,6 +116,7 @@ def get_args_parser():
+     parser.add_argument("--ckpt_setting", action="store", type=str, help="chunk_size", required=False)
+     parser.add_argument("--temporal_agg", action="store_true")
+     parser.add_argument("--save_freq", action="store", type=int, help="save ckpt frequency", required=False, default=6000)
++    parser.add_argument("--resume", action="store_true", help="Ignored by DETR; used by imitate_episodes")
+ 
+     return parser
+ 
+diff --git a/policy/ACT/imitate_episodes.py b/policy/ACT/imitate_episodes.py
+index 9d87e43..eb691e7 100644
+--- a/policy/ACT/imitate_episodes.py
++++ b/policy/ACT/imitate_episodes.py
+@@ -6,6 +6,7 @@ os.environ["MUJOCO_GL"] = "egl"
+ import torch
+ import numpy as np
+ import pickle
++import json
+ import argparse
+ 
+ import matplotlib
+@@ -157,6 +158,7 @@ def train_bc(train_dataloader, val_dataloader, config):
+     seed = config["seed"]
+     policy_class = config["policy_class"]
+     policy_config = config["policy_config"]
++    resume = config.get("resume", False)
+ 
+     set_seed(seed)
+ 
+@@ -164,12 +166,21 @@ def train_bc(train_dataloader, val_dataloader, config):
+     policy.cuda()
+     optimizer = make_optimizer(policy_class, policy)
+ 
++    start_epoch = 0
++    if resume:
++        resume_path = os.path.join(ckpt_dir, "policy_last.ckpt")
++        if os.path.exists(resume_path):
++            policy.load_state_dict(torch.load(resume_path, map_location="cuda"))
++            print(f"[TRAIN] Resumed from {resume_path}")
++        else:
++            print(f"[TRAIN] Resume requested but no checkpoint found at {resume_path}, starting from scratch")
++
+     train_history = []
+     validation_history = []
+     min_val_loss = np.inf
+     best_ckpt_info = None
+ 
+-    for epoch in tqdm(range(num_epochs)):
++    for epoch in tqdm(range(start_epoch, num_epochs)):
+         # validation
+         with torch.inference_mode():
+             policy.eval()
+@@ -211,10 +222,30 @@ def train_bc(train_dataloader, val_dataloader, config):
+     ckpt_path = os.path.join(ckpt_dir, f"policy_last.ckpt")
+     torch.save(policy.state_dict(), ckpt_path)
+ 
+-    # best_epoch, min_val_loss, best_state_dict = best_ckpt_info
+-    # ckpt_path = os.path.join(ckpt_dir, f"policy_epoch_{best_epoch}_seed_{seed}.ckpt")
+-    # torch.save(best_state_dict, ckpt_path)
+-    # print(f"Training finished:\nSeed {seed}, val loss {min_val_loss:.6f} at epoch {best_epoch}")
++    # Save loss history for plotting
++    def _to_float_list(history):
++        out = []
++        for entry in history:
++            out.append({k: float(v.cpu().numpy()) if hasattr(v, 'cpu') else float(v) for k, v in entry.items()})
++        return out
++
++    history_path = os.path.join(ckpt_dir, f"loss_history_seed_{seed}.json")
++    with open(history_path, "w") as f:
++        json.dump(
++            {
++                "train": _to_float_list(train_history),
++                "validation": _to_float_list(validation_history),
++                "best_epoch": int(best_ckpt_info[0]) if best_ckpt_info is not None else None,
++                "best_val_loss": float(best_ckpt_info[1]) if best_ckpt_info is not None else None,
++            },
++            f,
++            indent=2,
++        )
++    print(f"[TRAIN] loss history saved to {history_path}")
++
++    if best_ckpt_info is not None:
++        best_epoch, min_val_loss, _ = best_ckpt_info
++        print(f"[TRAIN] Best val loss {min_val_loss:.6f} at epoch {best_epoch}")
+ 
+     return best_ckpt_info
+ 
+@@ -253,5 +284,6 @@ if __name__ == "__main__":
+         required=False,
+     )
+     parser.add_argument("--temporal_agg", action="store_true")
++    parser.add_argument("--resume", action="store_true", help="Resume from policy_last.ckpt in ckpt_dir")
+ 
+     main(vars(parser.parse_args()))
+diff --git a/policy/ACT/model.py b/policy/ACT/model.py
+index a8e4ffd..da5de36 100644
+--- a/policy/ACT/model.py
++++ b/policy/ACT/model.py
+@@ -8,13 +8,31 @@ from XPolicyLab.model_template import ModelTemplate
+ from XPolicyLab.utils.process_data import pack_robot_state, unpack_robot_state, get_robot_action_dim_info
+ import os
+ 
++class _DummyACT:
++    """Lightweight placeholder used when we are replaying recorded actions.
++
++    It avoids loading the full ACT network / curobo warm-start, which saves
++    GPU memory and startup time during GT-replay diagnostics.
++    """
++    def __init__(self):
++        self.temporal_agg = False
++        self.t = 0
++
++    def update_obs(self, obs):
++        pass
++
++
+ class Model(ModelTemplate):
+ 
+     def __init__(self, model_cfg):
+         self.camera_names = model_cfg.get('camera_names', [])
+         model_cfg['camera_names'] = self.camera_names
+ 
+-        self.model = self.get_model(model_cfg=model_cfg)
++        # GT replay never queries the learned policy, so skip the heavy init.
++        if os.environ.get('ACT_GT_REPLAY', '0') == '1':
++            self.model = _DummyACT()
++        else:
++            self.model = self.get_model(model_cfg=model_cfg)
+         self.robot_action_dim_info = get_robot_action_dim_info(model_cfg['env_cfg_type'])
+         self.action_type = model_cfg['action_type']
+ 
+@@ -30,19 +48,72 @@ class Model(ModelTemplate):
+     def update_obs(self, obs):
+         encoded_obs = self.encode_obs(obs, self.action_type, self.robot_action_dim_info)
+         self.model.update_obs(encoded_obs)
++        if os.environ.get('ACT_GT_REPLAY', '0') == '1':
++            with open('/tmp/gt_replay_qpos.log', 'a') as f:
++                f.write(f"step={getattr(self, '_gt_step', 0)} qpos={encoded_obs['qpos'].tolist()}\n")
++        if os.environ.get('ACT_DEBUG_LOG', '0') == '1':
++            if not hasattr(self, '_debug_step'):
++                self._debug_step = 0
++            with open('/tmp/act_pred_log.txt', 'a') as f:
++                f.write(f"update step={self._debug_step} qpos={encoded_obs['qpos'].tolist()}\n")
+     
+     # def update_obs_batch(self, obs_list): # TODO
+     #     pass
+     
+     def get_action(self):
++        if os.environ.get('ACT_GT_REPLAY', '0') == '1':
++            return self._get_gt_action()
+         actions = self.model.get_action()
+         action_list = unpack_robot_state(actions, self.action_type, self.robot_action_dim_info, source_type='obs')
++        if os.environ.get('ACT_DEBUG_LOG', '0') == '1':
++            if not hasattr(self, '_debug_step'):
++                self._debug_step = 0
++            with open('/tmp/act_pred_log.txt', 'a') as f:
++                f.write(f"pred step={self._debug_step} action={actions.tolist()} left_gripper={action_list[0].get('left_ee_joint_state',[None])[0]} right_gripper={action_list[0].get('right_ee_joint_state',[None])[0]}\n")
++            self._debug_step += 1
+         return action_list
+ 
++    def _get_gt_action(self):
++        import h5py, glob, re
++        if not hasattr(self, '_gt_actions'):
++            files = glob.glob(os.path.join(
++                os.path.dirname(os.path.abspath(__file__)),
++                'processed_data', 'RoboDojo', 'deposit_coin', 'arx_x5-joint', '*.hdf5'
++            ))
++            # Sort by numeric episode index, not lexicographic (episode_10 before episode_2).
++            files = sorted(files, key=lambda p: int(re.search(r'episode_(\d+)\.hdf5$', p).group(1)))
++            ep_idx = int(os.environ.get('ACT_GT_REPLAY_EPISODE', '0'))
++            print(f"[GT_REPLAY] loading episode {ep_idx} from {files[ep_idx]}", flush=True)
++            replay_source = os.environ.get("ACT_GT_REPLAY_SOURCE", "action")
++            if replay_source not in {"action", "qpos"}:
++                raise ValueError("ACT_GT_REPLAY_SOURCE must be action or qpos")
++            dataset_key = "action" if replay_source == "action" else "observations/qpos"
++            with h5py.File(files[ep_idx], 'r') as f:
++                self._gt_actions = f[dataset_key][:]
++            print(f"[GT_REPLAY] source={replay_source} dataset={dataset_key}", flush=True)
++            self._gt_step = 0
++        if self._gt_step < len(self._gt_actions):
++            action_vec = self._gt_actions[self._gt_step]
++        else:
++            action_vec = self._gt_actions[-1]
++        action_dict = unpack_robot_state(action_vec, self.action_type, self.robot_action_dim_info, source_type='obs')
++        with open('/tmp/gt_replay_actions.log', 'a') as f:
++            f.write(f"step={self._gt_step} right_gripper={action_dict['right_ee_joint_state'][0]:.6f} left_gripper={action_dict['left_ee_joint_state'][0]:.6f}\n")
++            f.flush()
++        self._gt_step += 1
++        return [action_dict]
++
+     # def get_action_batch(self, env_idx_list): # TODO
+     #     pass
+ 
+     def reset(self):
++        if os.environ.get('ACT_GT_REPLAY', '0') == '1':
++            if hasattr(self, '_gt_step'):
++                self._gt_step = 0
++            if os.environ.get('ACT_DEBUG_LOG', '0') == '1':
++                self._debug_step = 0
++                open('/tmp/act_pred_log.txt', 'w').close()
++            return
+         # Reset temporal aggregation state if enabled
+         if self.model.temporal_agg:
+             self.model.all_time_actions = torch.zeros([
+@@ -53,6 +124,11 @@ class Model(ModelTemplate):
+             self.model.t = 0
+         else:
+             self.model.t = 0
++        if hasattr(self, '_gt_step'):
++            self._gt_step = 0
++        if os.environ.get('ACT_DEBUG_LOG', '0') == '1':
++            self._debug_step = 0
++            open('/tmp/act_pred_log.txt', 'w').close()
+ 
+     def encode_obs(self, observation, action_type, robot_action_dim_info):
+         res_dict = dict()
+@@ -61,6 +137,9 @@ class Model(ModelTemplate):
+             if camera_name not in observation["vision"]:
+                 raise ValueError(f"Expected camera '{camera_name}' not found in observation['vision']")
+             color = cv2.resize(observation["vision"][camera_name]["color"], (640, 480), interpolation=cv2.INTER_LINEAR)
++            # Isaac Sim returns RGB, but the ACT training pipeline decodes dataset images as BGR.
++            # Convert to BGR so the policy sees the same channel order it was trained on.
++            color = cv2.cvtColor(color, cv2.COLOR_RGB2BGR)
+             color = np.moveaxis(color, -1, 0) / 255.0
+             res_dict[camera_name] = color
+         
+diff --git a/policy/ACT/setup_eval_policy_server.sh b/policy/ACT/setup_eval_policy_server.sh
+index ea0bf98..1d1a983 100644
+--- a/policy/ACT/setup_eval_policy_server.sh
++++ b/policy/ACT/setup_eval_policy_server.sh
+@@ -19,7 +19,17 @@ BENCH_ROOT="$(cd "${XPL_ROOT}/.." && pwd)"
+ policy_name="$(basename "${SCRIPT_DIR}")"
+ yaml_file="${XPL_ROOT}/policy/${policy_name}/deploy.yml"
+ 
+-source "$(conda info --base)/etc/profile.d/conda.sh"
++# Robust conda initialization for non-interactive shells
++if [[ -f "${HOME}/miniconda3/etc/profile.d/conda.sh" ]]; then
++    source "${HOME}/miniconda3/etc/profile.d/conda.sh"
++elif [[ -f "/opt/conda/etc/profile.d/conda.sh" ]]; then
++    source "/opt/conda/etc/profile.d/conda.sh"
++elif command -v conda &>/dev/null; then
++    source "$(conda info --base)/etc/profile.d/conda.sh"
++else
++    echo "[ERROR] Cannot locate conda.sh for policy env activation" >&2
++    exit 1
++fi
+ conda activate "${policy_conda_env}"
+ 
+ action_dim=$(
+diff --git a/policy/ACT/utils.py b/policy/ACT/utils.py
+index a851f32..d33b1f4 100644
+--- a/policy/ACT/utils.py
++++ b/policy/ACT/utils.py
+@@ -42,13 +42,9 @@ class EpisodicDataset(torch.utils.data.Dataset):
+             image_dict = dict()
+             for cam_name in self.camera_names:
+                 image_dict[cam_name] = root[f"/observations/images/{cam_name}"][start_ts]
+-            # get all actions after and including start_ts
+-            if is_sim:
+-                action = root["/action"][start_ts:]
+-                action_len = episode_len - start_ts
+-            else:
+-                action = root["/action"][max(0, start_ts - 1):]  # hack, to make timesteps more aligned
+-                action_len = episode_len - max(0, start_ts - 1)  # hack, to make timesteps more aligned
++            # get all actions after start_ts (action[t] is the target for state[t])
++            action = root["/action"][start_ts:]
++            action_len = episode_len - start_ts
+ 
+         self.is_sim = is_sim
+         padded_action = np.zeros((self.max_action_len, action.shape[1]), dtype=np.float32)
+diff --git a/utils/load_file.py b/utils/load_file.py
+index 9a06c67..a31f4b3 100644
+--- a/utils/load_file.py
++++ b/utils/load_file.py
+@@ -1,7 +1,7 @@
+-import h5py
+ import yaml
+ 
+ def load_hdf5(path: str) -> dict:
++    import h5py
+ 
+     def _read(obj):
+         # Dataset -> numpy / scalar / bytes->str
+diff --git a/utils/setup_env_client.sh b/utils/setup_env_client.sh
+index d0803e5..5ceebc3 100644
+--- a/utils/setup_env_client.sh
++++ b/utils/setup_env_client.sh
+@@ -16,6 +16,19 @@ env_gpu_id="${12}"
+ policy_server_ip="${13:-localhost}"
+ protocol_override="${14:-}"
+ 
++# Robust conda initialization for non-interactive shells
++if [[ -f "${HOME}/miniconda3/etc/profile.d/conda.sh" ]]; then
++    source "${HOME}/miniconda3/etc/profile.d/conda.sh"
++elif [[ -f "/opt/conda/etc/profile.d/conda.sh" ]]; then
++    source "/opt/conda/etc/profile.d/conda.sh"
++elif command -v conda &>/dev/null; then
++    source "$(conda info --base)/etc/profile.d/conda.sh"
++else
++    echo "[ERROR] Cannot locate conda.sh for eval env activation" >&2
++    exit 1
++fi
++conda activate "${eval_env_conda_env}"
++
+ # shellcheck source=resolve_eval_env_type.sh
+ source "${UTILS_DIR}/resolve_eval_env_type.sh"
+ eval_env_mode="$(resolve_eval_env_type)" || exit 1

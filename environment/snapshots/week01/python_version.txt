@@ -1,0 +1,2 @@
+Python 3.11.15
+pip 26.1.2 from /home/nvidia/miniconda3/envs/RoboDojo/lib/python3.11/site-packages/pip (python 3.11)
