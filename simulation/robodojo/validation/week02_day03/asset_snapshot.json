@@ -1,0 +1,485 @@
+{
+  "generated_at": "2026-08-22T15:25:53.379550+08:00",
+  "config": {
+    "task": "deposit_coin",
+    "env_cfg": "arx_x5",
+    "seed": 0,
+    "layout": 0
+  },
+  "objects": {
+    "coin0": {
+      "label": "coin0",
+      "instance_name": "coin_0_1",
+      "instance_type": "rigid",
+      "prim_path": "/World/envs/env_0/rigid/coin/coin_0_1",
+      "usd_path": "/home/nvidia/RoboDojo/env/../Assets/Object/RoboDojo/Rigid/coin/00000/object.usdz",
+      "local_pose": {
+        "position": [
+          -0.30055955052375793,
+          -0.13075149059295654,
+          0.7805473804473877
+        ],
+        "quaternion_wxyz": [
+          0.03478891775012016,
+          0.14891183376312256,
+          0.6945668458938599,
+          0.702987790107727
+        ]
+      },
+      "world_pose_queried": {
+        "position": [
+          -0.30055955052375793,
+          -0.13075149059295654,
+          0.7805473804473877
+        ],
+        "quaternion_wxyz": [
+          0.03478891775012016,
+          0.14891183376312256,
+          0.6945668458938599,
+          0.702987790107727
+        ]
+      },
+      "world_pose_from_local_plus_env_origin": {
+        "position": [
+          -0.30055955052375793,
+          -0.13075149059295654,
+          0.7805473804473877
+        ],
+        "quaternion_wxyz": [
+          0.03478891775012016,
+          0.14891183376312256,
+          0.6945668458938599,
+          0.702987790107727
+        ]
+      },
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bbox_local_vertices": [
+        [
+          -0.002,
+          0.02,
+          0.0019
+        ],
+        [
+          -0.02,
+          -0.002,
+          0.0019
+        ],
+        [
+          0.02,
+          0.002,
+          0.0019
+        ],
+        [
+          0.002,
+          -0.02,
+          0.0019
+        ],
+        [
+          -0.002,
+          0.02,
+          0.0
+        ],
+        [
+          -0.02,
+          -0.002,
+          0.0
+        ],
+        [
+          0.02,
+          0.002,
+          0.0
+        ],
+        [
+          0.002,
+          -0.02,
+          0.0
+        ]
+      ],
+      "bbox_local_min": [
+        -0.02,
+        -0.02,
+        0.0
+      ],
+      "bbox_local_max": [
+        0.02,
+        0.02,
+        0.0019
+      ],
+      "metadata_physics": {
+        "size": [
+          0.0209,
+          0.0209,
+          0.001
+        ],
+        "mass": 0.005,
+        "friction": 0.0
+      },
+      "runtime_object_physics_config": {
+        "size": [
+          0.0209,
+          0.0209,
+          0.001
+        ],
+        "mass": 0.005,
+        "friction": 0.0,
+        "type": "rigid"
+      },
+      "runtime_mass_attribute": 0.005,
+      "runtime_physics_material": {
+        "prim_path": "/World/envs/env_0/rigid/coin/coin_0_1/physics_material",
+        "static_friction": 0.6000000238418579,
+        "dynamic_friction": 1.5,
+        "restitution": 0.0
+      },
+      "track_contact_forces_config": false,
+      "usd_physics": {
+        "root_valid": true,
+        "rigid_body_prims": [
+          {
+            "path": "/World/envs/env_0/rigid/coin/coin_0_1",
+            "enabled": true
+          }
+        ],
+        "collision_prims": [
+          {
+            "path": "/World/envs/env_0/rigid/coin/coin_0_1/collision/model",
+            "type": "Mesh",
+            "enabled": true,
+            "approximation": "convexDecomposition"
+          },
+          {
+            "path": "/World/envs/env_0/rigid/coin/coin_0_1/collision/Cylinder",
+            "type": "Mesh",
+            "enabled": true,
+            "approximation": "convexHull"
+          }
+        ],
+        "mass_prims": []
+      }
+    },
+    "piggy_bank": {
+      "label": "piggy_bank",
+      "instance_name": "piggy_bank_0_3",
+      "instance_type": "geometry",
+      "prim_path": "/World/envs/env_0/geometry/piggy_bank/piggy_bank_0_3",
+      "usd_path": "/home/nvidia/RoboDojo/env/../Assets/Object/RoboDojo/Geometry/piggy_bank/00000/object.usdz",
+      "local_pose": {
+        "position": [
+          0.30018219351768494,
+          -0.15280431509017944,
+          0.7654184699058533
+        ],
+        "quaternion_wxyz": [
+          0.748953104019165,
+          0.0029865095857530832,
+          -0.002258691005408764,
+          0.6626124382019043
+        ]
+      },
+      "world_pose_queried": {
+        "position": [
+          0.30018219351768494,
+          -0.15280431509017944,
+          0.7654184699058533
+        ],
+        "quaternion_wxyz": [
+          0.748953104019165,
+          0.0029865095857530832,
+          -0.002258691005408764,
+          0.6626124382019043
+        ]
+      },
+      "world_pose_from_local_plus_env_origin": {
+        "position": [
+          0.30018219351768494,
+          -0.15280431509017944,
+          0.7654184699058533
+        ],
+        "quaternion_wxyz": [
+          0.748953104019165,
+          0.0029865095857530832,
+          -0.002258691005408764,
+          0.6626124382019043
+        ]
+      },
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bbox_local_vertices": [
+        [
+          0.0745,
+          -0.1112,
+          0.1176
+        ],
+        [
+          0.0731,
+          0.0968,
+          0.1059
+        ],
+        [
+          -0.0739,
+          -0.1121,
+          0.1176
+        ],
+        [
+          -0.0753,
+          0.0959,
+          0.106
+        ],
+        [
+          0.0745,
+          -0.1176,
+          0.0036
+        ],
+        [
+          0.0731,
+          0.0904,
+          -0.0081
+        ],
+        [
+          -0.0739,
+          -0.1185,
+          0.0036
+        ],
+        [
+          -0.0753,
+          0.0895,
+          -0.008
+        ]
+      ],
+      "bbox_local_min": [
+        -0.0753,
+        -0.1185,
+        -0.0081
+      ],
+      "bbox_local_max": [
+        0.0745,
+        0.0968,
+        0.1176
+      ],
+      "metadata_physics": {
+        "size": [
+          0.159,
+          0.2041,
+          0.146
+        ],
+        "mass": 0.0,
+        "friction": 0.0
+      },
+      "runtime_object_physics_config": {
+        "size": [
+          0.159,
+          0.2041,
+          0.146
+        ],
+        "mass": 0.0,
+        "friction": 0.0,
+        "type": "geometry"
+      },
+      "runtime_mass_attribute": null,
+      "runtime_physics_material": {
+        "prim_path": "/World/envs/env_0/geometry/piggy_bank/piggy_bank_0_3/physcis_material",
+        "static_friction": 0.0,
+        "dynamic_friction": 0.0,
+        "restitution": 0.5
+      },
+      "track_contact_forces_config": false,
+      "usd_physics": {
+        "root_valid": true,
+        "rigid_body_prims": [
+          {
+            "path": "/World/envs/env_0/geometry/piggy_bank/piggy_bank_0_3",
+            "enabled": false
+          }
+        ],
+        "collision_prims": [
+          {
+            "path": "/World/envs/env_0/geometry/piggy_bank/piggy_bank_0_3",
+            "type": "Xform",
+            "enabled": true,
+            "approximation": "none"
+          },
+          {
+            "path": "/World/envs/env_0/geometry/piggy_bank/piggy_bank_0_3/collision",
+            "type": "Mesh",
+            "enabled": true,
+            "approximation": "convexDecomposition"
+          }
+        ],
+        "mass_prims": []
+      }
+    },
+    "vertical_coin_stand": {
+      "label": "vertical_coin_stand",
+      "instance_name": "vertical_coin_stand_0_2",
+      "instance_type": "geometry",
+      "prim_path": "/World/envs/env_0/geometry/vertical_coin_stand/vertical_coin_stand_0_2",
+      "usd_path": "/home/nvidia/RoboDojo/env/../Assets/Object/RoboDojo/Geometry/vertical_coin_stand/00000/object.usdz",
+      "local_pose": {
+        "position": [
+          -0.3003823459148407,
+          -0.12972088158130646,
+          0.7735999822616577
+        ],
+        "quaternion_wxyz": [
+          0.9916999936103821,
+          0.0,
+          0.0,
+          -0.12857341766357422
+        ]
+      },
+      "world_pose_queried": {
+        "position": [
+          -0.3003823459148407,
+          -0.12972088158130646,
+          0.7735999822616577
+        ],
+        "quaternion_wxyz": [
+          0.9916999936103821,
+          0.0,
+          0.0,
+          -0.12857341766357422
+        ]
+      },
+      "world_pose_from_local_plus_env_origin": {
+        "position": [
+          -0.3003823459148407,
+          -0.12972088158130646,
+          0.7735999822616577
+        ],
+        "quaternion_wxyz": [
+          0.9916999936103821,
+          0.0,
+          0.0,
+          -0.12857341766357422
+        ]
+      },
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bbox_local_vertices": [
+        [
+          0.016,
+          0.0056,
+          -0.0086
+        ],
+        [
+          -0.0161,
+          0.0056,
+          -0.0086
+        ],
+        [
+          0.016,
+          0.0056,
+          0.0085
+        ],
+        [
+          -0.0161,
+          0.0056,
+          0.0085
+        ],
+        [
+          0.016,
+          -0.0055,
+          -0.0086
+        ],
+        [
+          -0.0161,
+          -0.0055,
+          -0.0086
+        ],
+        [
+          0.016,
+          -0.0055,
+          0.0085
+        ],
+        [
+          -0.0161,
+          -0.0055,
+          0.0085
+        ]
+      ],
+      "bbox_local_min": [
+        -0.0161,
+        -0.0055,
+        -0.0086
+      ],
+      "bbox_local_max": [
+        0.016,
+        0.0056,
+        0.0085
+      ],
+      "metadata_physics": {
+        "mass": 0.85,
+        "friction": 0.45,
+        "size": [
+          0.0324,
+          0.0251,
+          0.023
+        ]
+      },
+      "runtime_object_physics_config": {
+        "mass": 0.85,
+        "friction": 0.45,
+        "size": [
+          0.0324,
+          0.0251,
+          0.023
+        ],
+        "type": "geometry"
+      },
+      "runtime_mass_attribute": null,
+      "runtime_physics_material": {
+        "prim_path": "/World/envs/env_0/geometry/vertical_coin_stand/vertical_coin_stand_0_2/physcis_material",
+        "static_friction": 0.0,
+        "dynamic_friction": 0.0,
+        "restitution": 0.5
+      },
+      "track_contact_forces_config": false,
+      "usd_physics": {
+        "root_valid": true,
+        "rigid_body_prims": [
+          {
+            "path": "/World/envs/env_0/geometry/vertical_coin_stand/vertical_coin_stand_0_2",
+            "enabled": false
+          }
+        ],
+        "collision_prims": [
+          {
+            "path": "/World/envs/env_0/geometry/vertical_coin_stand/vertical_coin_stand_0_2",
+            "type": "Xform",
+            "enabled": true,
+            "approximation": "none"
+          },
+          {
+            "path": "/World/envs/env_0/geometry/vertical_coin_stand/vertical_coin_stand_0_2/collision/model",
+            "type": "Mesh",
+            "enabled": true,
+            "approximation": "meshSimplification"
+          },
+          {
+            "path": "/World/envs/env_0/geometry/vertical_coin_stand/vertical_coin_stand_0_2/collision/cube_0",
+            "type": "Mesh",
+            "enabled": true,
+            "approximation": "convexHull"
+          },
+          {
+            "path": "/World/envs/env_0/geometry/vertical_coin_stand/vertical_coin_stand_0_2/collision/cube_1",
+            "type": "Mesh",
+            "enabled": true,
+            "approximation": "convexHull"
+          }
+        ],
+        "mass_prims": []
+      }
+    }
+  }
+}

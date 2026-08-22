@@ -1,0 +1,15 @@
+action_dimension,side,semantic,command_key,command_element,articulation_joint,articulation_index,mimic
+0,left,left_arm joint1,left_arm_joint_state,0,joint1,0,
+1,left,left_arm joint2,left_arm_joint_state,1,joint2,1,
+2,left,left_arm joint3,left_arm_joint_state,2,joint3,2,
+3,left,left_arm joint4,left_arm_joint_state,3,joint4,3,
+4,left,left_arm joint5,left_arm_joint_state,4,joint5,4,
+5,left,left_arm joint6,left_arm_joint_state,5,joint6,5,
+6,left,left_ee normalized opening,left_ee_joint_state,0,joint7,6,joint8=1.0*joint7+0.0
+7,right,right_arm joint1,right_arm_joint_state,0,joint1,0,
+8,right,right_arm joint2,right_arm_joint_state,1,joint2,1,
+9,right,right_arm joint3,right_arm_joint_state,2,joint3,2,
+10,right,right_arm joint4,right_arm_joint_state,3,joint4,3,
+11,right,right_arm joint5,right_arm_joint_state,4,joint5,4,
+12,right,right_arm joint6,right_arm_joint_state,5,joint6,5,
+13,right,right_ee normalized opening,right_ee_joint_state,0,joint7,6,joint8=1.0*joint7+0.0

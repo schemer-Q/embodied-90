@@ -1,0 +1,7 @@
+Each probe starts from the restored reset target; one policy action equals 10 internal steps.
+left_joint1: command_offset=+0.0500, actual_delta=+0.044130, max_other_delta=0.000101, pass=True
+left_joint6: command_offset=+0.0500, actual_delta=+0.043625, max_other_delta=0.000069, pass=True
+left_gripper: command_offset=-0.1000, actual_delta=-0.002172, max_other_delta=0.000078, pass=True
+right_joint1: command_offset=+0.0500, actual_delta=+0.044130, max_other_delta=0.000189, pass=True
+right_joint6: command_offset=+0.0500, actual_delta=+0.043625, max_other_delta=0.000069, pass=True
+right_gripper: command_offset=-0.1000, actual_delta=-0.002172, max_other_delta=0.000078, pass=True
