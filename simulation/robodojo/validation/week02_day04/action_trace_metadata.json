@@ -1,0 +1,217 @@
+{
+  "generated_at": "2026-08-22T18:17:57.450968+08:00",
+  "robodojo_commit": "9226f48ea694b3f53db12d4922e8b1199f8d0891",
+  "robodojo_status_short": [
+    "M XPolicyLab",
+    " M env/reward_manager/func_parser.py",
+    " M env/robot_manager/control_manager.py",
+    " M env/scene_manager/objects/geometry.py",
+    " M env/scene_manager/objects/rigid.py",
+    " M scripts/eval_policy.sh",
+    " M src/eval_client/eval_env.py",
+    " M third_party/curobo",
+    "?? Miniconda3-latest-Linux-x86_64.sh",
+    "?? act_debug_smoke.log",
+    "?? act_dependencies.log",
+    "?? act_dummy_ckpt.log",
+    "?? act_env_setup.log",
+    "?? act_process_data.log",
+    "?? act_sim_smoke.log",
+    "?? act_train.log",
+    "?? act_train_bs8.log",
+    "?? assets_download.log",
+    "?? ast",
+    "?? create_act_dummy_ckpt.py",
+    "?? debug_smoke.log",
+    "?? deposit_coin_eval.log",
+    "?? deposit_coin_eval_50.log",
+    "?? deposit_coin_eval_debug.log",
+    "?? deposit_coin_eval_v2.log",
+    "?? download_single_task_data.sh",
+    "?? install.log",
+    "?? json",
+    "?? kl1_shorttest_eval.log",
+    "?? logs/",
+    "?? prompt.md",
+    "?? retrain1000_eval.log",
+    "?? sim_smoke.log",
+    "?? stack_bowls_data_download.log",
+    "?? sys",
+    "?? update_paths.log",
+    "?? xpolicylab_install.log"
+  ],
+  "task": "deposit_coin",
+  "config_name": "arx_x5",
+  "policy": "ACT",
+  "seed": 0,
+  "trace_policy_steps_inclusive": [
+    20,
+    60
+  ],
+  "collect_interval": 10,
+  "action_order": [
+    "left_arm_joint_state",
+    "left_ee_joint_state",
+    "right_arm_joint_state",
+    "right_ee_joint_state"
+  ],
+  "raw_action_definition": "The 14-D vector returned by the ACT server after post_process denormalization, losslessly repacked from the four action keys.",
+  "act_temporal_agg": false,
+  "act_query_frequency": 50,
+  "act_chunk_consumption": "one indexed action per observation; chunk refresh at policy steps 1 and 51",
+  "gripper_eps": 0.2,
+  "robots": [
+    {
+      "side": "left",
+      "arm_name": "left_arm",
+      "gripper_name": "left_ee",
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4",
+        "joint5",
+        "joint6",
+        "joint7",
+        "joint8"
+      ],
+      "arm_joint_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "gripper_joint_indices": [
+        6,
+        7
+      ],
+      "configured_gripper_scale_m": [
+        -0.01,
+        0.044
+      ],
+      "gripper_sign": 1.0,
+      "gripper_mimic": [
+        "joint8",
+        1.0,
+        0.0
+      ],
+      "runtime_soft_joint_limits": [
+        [
+          -9.999999046325684,
+          9.999999046325684
+        ],
+        [
+          -9.999999046325684,
+          9.999999046325684
+        ],
+        [
+          -9.999999046325684,
+          9.999999046325684
+        ],
+        [
+          -9.999999046325684,
+          9.999999046325684
+        ],
+        [
+          -9.999999046325684,
+          9.999999046325684
+        ],
+        [
+          -3.1399998664855957,
+          3.1399998664855957
+        ],
+        [
+          0.0,
+          0.04399999976158142
+        ],
+        [
+          0.0,
+          0.04399999976158142
+        ]
+      ]
+    },
+    {
+      "side": "right",
+      "arm_name": "right_arm",
+      "gripper_name": "right_ee",
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4",
+        "joint5",
+        "joint6",
+        "joint7",
+        "joint8"
+      ],
+      "arm_joint_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "gripper_joint_indices": [
+        6,
+        7
+      ],
+      "configured_gripper_scale_m": [
+        -0.01,
+        0.044
+      ],
+      "gripper_sign": 1.0,
+      "gripper_mimic": [
+        "joint8",
+        1.0,
+        0.0
+      ],
+      "runtime_soft_joint_limits": [
+        [
+          -9.999999046325684,
+          9.999999046325684
+        ],
+        [
+          -9.999999046325684,
+          9.999999046325684
+        ],
+        [
+          -9.999999046325684,
+          9.999999046325684
+        ],
+        [
+          -9.999999046325684,
+          9.999999046325684
+        ],
+        [
+          -9.999999046325684,
+          9.999999046325684
+        ],
+        [
+          -3.1399998664855957,
+          3.1399998664855957
+        ],
+        [
+          0.0,
+          0.04399999976158142
+        ],
+        [
+          0.0,
+          0.04399999976158142
+        ]
+      ]
+    }
+  ],
+  "source_functions": {
+    "policy_denormalization": "XPolicyLab/policy/ACT/detr/act_policy.py::ACT.get_action",
+    "action_unpack": "XPolicyLab/utils/process_data.py::unpack_robot_state",
+    "validation": "src/eval_client/eval_env.py::EvalEnv.validate_action_dict",
+    "gripper_conversion": "src/eval_client/eval_env.py::EvalEnv.take_action_batch",
+    "interpolation": "src/eval_client/eval_env.py::EvalEnv.process_control_info",
+    "queue_and_slew_limit": "env/robot_manager/control_manager.py::ControlManager/MetaControl.get_action",
+    "joint_target_write": "env/robot_manager/robot_manager.py::RobotManager.control_robot",
+    "physx_step": "src/eval_client/eval_env.py::EvalEnv.step"
+  }
+}

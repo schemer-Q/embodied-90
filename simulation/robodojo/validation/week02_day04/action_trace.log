@@ -1,0 +1,9 @@
+Week 2 Day 4 action trace analysis
+rows=410 policy_steps=20..60
+ten_internal_steps_each=True
+validation_pass=True
+all_values_finite=True
+joint_target_buffer_vs_controller_max_abs_error=1.8576781e-09
+left_gripper={"actual_below_soft_limit": 0, "actual_min_max_m": [0.0038162728305906057, 0.04115867614746094], "conversion_max_abs_error_m": 0.0, "converted_min_max_m": [0.0025100862383842463, 0.03401402640342712], "negative_targets_written": 0, "normalized_min_max": [0.23166826367378235, 0.8150745630264282], "written_min_max_m": [0.002510086167603731, 0.04043516144156456]}
+right_gripper={"actual_below_soft_limit": 0, "actual_min_max_m": [0.041981205344200134, 0.04399999976158142], "conversion_max_abs_error_m": 0.0, "converted_min_max_m": [0.0413521511554718, 0.044], "negative_targets_written": 0, "normalized_min_max": [0.9509657621383667, 1.0355596542358398], "written_min_max_m": [0.041352152824401855, 0.04399999976158142]}
+chunk_boundary_50_to_51={"delta_14d": [-0.0871584340929985, 0.5017924308776855, 0.685931921005249, -0.4901440143585205, -0.01534581184387207, 0.4448047876358032, 0.3365316689014435, 0.0010994672775268555, 0.036348700523376465, 0.0061904191970825195, 0.017938584089279175, 0.002117156982421875, 0.04533126950263977, 0.04947006702423096], "l2": 1.134753538628708, "max_abs": 0.685931921005249}
