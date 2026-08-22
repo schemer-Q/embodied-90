@@ -1,0 +1,25 @@
+{
+  "coin_metadata_physics": {
+    "size": [
+      0.0209,
+      0.0209,
+      0.001
+    ],
+    "mass": 0.005,
+    "friction": 0.0
+  },
+  "runtime_physics_material": {
+    "prim_path": "/World/envs/env_0/rigid/coin/coin_0_1/physics_material",
+    "static_friction": 0.6000000238418579,
+    "dynamic_friction": 1.5,
+    "restitution": 0.0
+  },
+  "environment_overrides": {
+    "ACT_COIN_STATIC_FRICTION": null,
+    "ACT_COIN_DYNAMIC_FRICTION": null
+  },
+  "finding": "Named arguments are not swapped. Metadata lacks static_friction/dynamic_friction keys, so code defaults produce static=0.6 and dynamic=1.5.",
+  "classification": "unusual dynamic>static configuration; not classified as an error by this validation",
+  "constructor_source": "env/scene_manager/objects/rigid.py:75-76 (RigidObject.__init__; named static_friction and dynamic_friction arguments)",
+  "layout_metadata_source": "Assets/Eval_Layout/RoboDojo/arx_x5/0/deposit_coin_0.json:46-55 (physics has friction only)"
+}

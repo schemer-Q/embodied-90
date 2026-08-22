@@ -1,0 +1,6 @@
+successful_contact_repeats=0/3
+successful_collision_limit_repeats=3/3
+successful_interaction_repeats=3/3
+repeat=1 contact=False collision_limited=True events=0 max_impulse_ns=0.00000000 min_surface_distance_m=0.00051079 coin_max_displacement_m=0.00011139
+repeat=2 contact=False collision_limited=True events=0 max_impulse_ns=0.00000000 min_surface_distance_m=0.00043327 coin_max_displacement_m=0.00002472
+repeat=3 contact=False collision_limited=True events=0 max_impulse_ns=0.00000000 min_surface_distance_m=0.00033225 coin_max_displacement_m=0.00006642

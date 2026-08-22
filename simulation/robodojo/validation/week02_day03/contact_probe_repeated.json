@@ -1,0 +1,1880 @@
+{
+  "method": "Replay policy steps 1-65 recorded left-arm qpos with gripper held fully open, then align the runtime fingertip-surface midpoint to coin center with <=0.015 m Cartesian increments and decrement normalized gripper command by 0.025; 10 internal steps per command",
+  "approach_source": "simulation/robodojo/logs/coin_x5_day04_act_exec.log",
+  "approach_policy_steps": [
+    1,
+    65
+  ],
+  "surface_distance_method": "bidirectional vertex-to-triangle distance on runtime USD collision meshes",
+  "contact_sensor": "PhysxContactReportAPI on coin, threshold 0; events filtered to robot0 link7/link8",
+  "repeat_count": 3,
+  "successful_contact_repeats": 0,
+  "all_repeats_contact": false,
+  "successful_collision_limit_repeats": 3,
+  "all_repeats_collision_limited": true,
+  "repeats": [
+    {
+      "repeat": 1,
+      "approach_ok": true,
+      "alignment_ok": true,
+      "final_fingertip_alignment": {
+        "link7_tip_center_m": [
+          -0.30141329496647157,
+          -0.12326338579640048,
+          0.7820824235617055
+        ],
+        "link8_tip_center_m": [
+          -0.30009853489925675,
+          -0.13539852696247912,
+          0.7838091701715846
+        ],
+        "fingertip_midpoint_m": [
+          -0.30075591493286413,
+          -0.1293309563794398,
+          0.7829457968666451
+        ],
+        "coin_center_m": [
+          -0.30019623041152954,
+          -0.1301027238368988,
+          0.7813112139701843
+        ],
+        "coin_minus_fingertip_midpoint_m": [
+          0.0005596845213345913,
+          -0.0007717674574589939,
+          -0.00163458289646079
+        ],
+        "alignment_error_m": 0.0018922824887464336
+      },
+      "approach_final_target_qpos_rad": [
+        0.073014468,
+        2.0174468,
+        1.840431,
+        -1.5326366,
+        -0.00074926228,
+        1.5252378
+      ],
+      "contact_detected": false,
+      "contact_close_step": null,
+      "collision_limited": true,
+      "collision_limited_step": 32,
+      "contact_event_count": 0,
+      "max_contact_impulse_ns": 0.0,
+      "minimum_surface_distance_m": 0.0005107893881920603,
+      "coin_max_displacement_m": 0.00011139154919629645,
+      "frames": {
+        "before_contact": {
+          "cam_head": "repeat_01_before_contact_cam_head.jpg",
+          "cam_left_wrist": "repeat_01_before_contact_cam_left_wrist.jpg"
+        },
+        "first_contact": {
+          "cam_head": "repeat_01_first_collision_limit_cam_head.jpg",
+          "cam_left_wrist": "repeat_01_first_collision_limit_cam_left_wrist.jpg"
+        },
+        "after_close": {
+          "cam_head": "repeat_01_after_close_cam_head.jpg",
+          "cam_left_wrist": "repeat_01_after_close_cam_left_wrist.jpg"
+        }
+      },
+      "events": [],
+      "samples": [
+        {
+          "phase": "approach",
+          "step": 65,
+          "command_normalized": 1.0,
+          "actual_gripper_qpos_m": [
+            0.04399142786860466,
+            0.04399523884057999
+          ],
+          "actual_arm_qpos_rad": [
+            0.07204491645097733,
+            2.0189132690429688,
+            1.8404799699783325,
+            -1.532098650932312,
+            -0.0004079107893630862,
+            1.5262846946716309
+          ],
+          "coin_position_m": [
+            -0.30020806193351746,
+            -0.13010373711585999,
+            0.781309962272644
+          ],
+          "coin_displacement_m": 0.00010136877074364182,
+          "surface": {
+            "coin_collision_mesh_paths": [
+              "/World/envs/env_0/rigid/coin/coin_0_8/collision/model",
+              "/World/envs/env_0/rigid/coin/coin_0_8/collision/Cylinder"
+            ],
+            "fingers": {
+              "link7": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link7/collisions/link7/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.09587422990771653
+              },
+              "link8": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link8/collisions/link8/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.07669694068578713
+              }
+            },
+            "minimum_surface_distance_m": 0.07669694068578713
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment",
+          "step": 1,
+          "ik_status": "Success",
+          "alignment_before_action": {
+            "link7_tip_center_m": [
+              -0.330413893422107,
+              -0.05544445095568071,
+              0.8584325886959491
+            ],
+            "link8_tip_center_m": [
+              -0.3198691475209601,
+              -0.14591876717301983,
+              0.8712303071659981
+            ],
+            "fingertip_midpoint_m": [
+              -0.32514152047153355,
+              -0.10068160906435027,
+              0.8648314479309736
+            ],
+            "coin_center_m": [
+              -0.30020806193351746,
+              -0.13010373711585999,
+              0.781309962272644
+            ],
+            "coin_minus_fingertip_midpoint_m": [
+              0.024933458538016096,
+              -0.02942212805150972,
+              -0.08352148565832951
+            ],
+            "alignment_error_m": 0.09199553000184815
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment",
+          "step": 2,
+          "ik_status": "Success",
+          "alignment_before_action": {
+            "link7_tip_center_m": [
+              -0.3268105698946795,
+              -0.059758385312402504,
+              0.8463459161778114
+            ],
+            "link8_tip_center_m": [
+              -0.3162772521125563,
+              -0.15020834402898195,
+              0.8592206363718404
+            ],
+            "fingertip_midpoint_m": [
+              -0.3215439110036179,
+              -0.10498336467069222,
+              0.852783276274826
+            ],
+            "coin_center_m": [
+              -0.30020809173583984,
+              -0.13010373711585999,
+              0.781309962272644
+            ],
+            "coin_minus_fingertip_midpoint_m": [
+              0.021335819267778056,
+              -0.025120372445167766,
+              -0.07147331400218193
+            ],
+            "alignment_error_m": 0.07870632064876193
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment",
+          "step": 3,
+          "ik_status": "Success",
+          "alignment_before_action": {
+            "link7_tip_center_m": [
+              -0.3232980902988283,
+              -0.0639873674960905,
+              0.8345005899426877
+            ],
+            "link8_tip_center_m": [
+              -0.31275494927061315,
+              -0.15443000519559377,
+              0.8473839184649838
+            ],
+            "fingertip_midpoint_m": [
+              -0.31802651978472074,
+              -0.10920868634584213,
+              0.8409422542038358
+            ],
+            "coin_center_m": [
+              -0.30020806193351746,
+              -0.13010373711585999,
+              0.781309962272644
+            ],
+            "coin_minus_fingertip_midpoint_m": [
+              0.017818457851203284,
+              -0.020895050770017853,
+              -0.059632291931191794
+            ],
+            "alignment_error_m": 0.06565143431672772
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment",
+          "step": 4,
+          "ik_status": "Success",
+          "alignment_before_action": {
+            "link7_tip_center_m": [
+              -0.31977629886539144,
+              -0.0682121707573928,
+              0.8226031365370154
+            ],
+            "link8_tip_center_m": [
+              -0.3092237238520229,
+              -0.15865262701006677,
+              0.8355059168503883
+            ],
+            "fingertip_midpoint_m": [
+              -0.3145000113587072,
+              -0.11343239888372979,
+              0.8290545266937019
+            ],
+            "coin_center_m": [
+              -0.30020809173583984,
+              -0.13010373711585999,
+              0.781309962272644
+            ],
+            "coin_minus_fingertip_midpoint_m": [
+              0.014291919622867355,
+              -0.016671338232130198,
+              -0.0477445644210579
+            ],
+            "alignment_error_m": 0.05255222085424301
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment",
+          "step": 5,
+          "ik_status": "Success",
+          "alignment_before_action": {
+            "link7_tip_center_m": [
+              -0.3162436901737347,
+              -0.07241818648993666,
+              0.810693797750977
+            ],
+            "link8_tip_center_m": [
+              -0.30568268013761135,
+              -0.1628549950937259,
+              0.8236150307392477
+            ],
+            "fingertip_midpoint_m": [
+              -0.310963185155673,
+              -0.11763659079183128,
+              0.8171544142451124
+            ],
+            "coin_center_m": [
+              -0.30020806193351746,
+              -0.13010373711585999,
+              0.781309962272644
+            ],
+            "coin_minus_fingertip_midpoint_m": [
+              0.01075512322215555,
+              -0.012467146324028705,
+              -0.03584445197246833
+            ],
+            "alignment_error_m": 0.03944524242789085
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment",
+          "step": 6,
+          "ik_status": "Success",
+          "alignment_before_action": {
+            "link7_tip_center_m": [
+              -0.3126984213704076,
+              -0.07660489448709795,
+              0.7987682926377677
+            ],
+            "link8_tip_center_m": [
+              -0.3021297842063793,
+              -0.1670377911609039,
+              0.8117086823611904
+            ],
+            "fingertip_midpoint_m": [
+              -0.30741410278839343,
+              -0.12182134282400092,
+              0.8052384874994791
+            ],
+            "coin_center_m": [
+              -0.30020806193351746,
+              -0.13010373711585999,
+              0.781309962272644
+            ],
+            "coin_minus_fingertip_midpoint_m": [
+              0.0072060408548759725,
+              -0.008282394291859063,
+              -0.023928525226835085
+            ],
+            "alignment_error_m": 0.026326781032614762
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment",
+          "step": 7,
+          "ik_status": "Success",
+          "alignment_before_action": {
+            "link7_tip_center_m": [
+              -0.30913589751212206,
+              -0.08076700612248451,
+              0.7868284275438476
+            ],
+            "link8_tip_center_m": [
+              -0.2985604145540083,
+              -0.17119596751113805,
+              0.7997881642587474
+            ],
+            "fingertip_midpoint_m": [
+              -0.30384815603306514,
+              -0.1259814868168113,
+              0.7933082959012976
+            ],
+            "coin_center_m": [
+              -0.30020809173583984,
+              -0.13010373711585999,
+              0.781309962272644
+            ],
+            "coin_minus_fingertip_midpoint_m": [
+              0.0036400642972252983,
+              -0.0041222502990486964,
+              -0.011998333628653546
+            ],
+            "alignment_error_m": 0.013198599375707254
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment_final",
+          "step": 8,
+          "command_normalized": 1.0,
+          "actual_gripper_qpos_m": [
+            0.043997086584568024,
+            0.04397564381361008
+          ],
+          "actual_arm_qpos_rad": [
+            0.007720209192484617,
+            1.947480320930481,
+            1.4071846008300781,
+            -1.171882152557373,
+            0.008767309598624706,
+            1.462119698524475
+          ],
+          "coin_position_m": [
+            -0.30020806193351746,
+            -0.13010373711585999,
+            0.781309962272644
+          ],
+          "coin_displacement_m": 0.00010136877074364182,
+          "surface": {
+            "coin_collision_mesh_paths": [
+              "/World/envs/env_0/rigid/coin/coin_0_8/collision/model",
+              "/World/envs/env_0/rigid/coin/coin_0_8/collision/Cylinder"
+            ],
+            "fingers": {
+              "link7": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link7/collisions/link7/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.0383160494293453
+              },
+              "link8": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link8/collisions/link8/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.03935691202729905
+              }
+            },
+            "minimum_surface_distance_m": 0.0383160494293453
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "close",
+          "step": 1,
+          "command_normalized": 0.975,
+          "actual_gripper_qpos_m": [
+            0.0434311181306839,
+            0.04347151890397072
+          ],
+          "actual_arm_qpos_rad": [
+            0.007802537642419338,
+            1.9471197128295898,
+            1.4074137210845947,
+            -1.1718569993972778,
+            0.008762666024267673,
+            1.4621188640594482
+          ],
+          "coin_position_m": [
+            -0.30020806193351746,
+            -0.13010373711585999,
+            0.781309962272644
+          ],
+          "coin_displacement_m": 0.00010136877074364182,
+          "surface": {
+            "coin_collision_mesh_paths": [
+              "/World/envs/env_0/rigid/coin/coin_0_8/collision/model",
+              "/World/envs/env_0/rigid/coin/coin_0_8/collision/Cylinder"
+            ],
+            "fingers": {
+              "link7": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link7/collisions/link7/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.037856679296779376
+              },
+              "link8": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link8/collisions/link8/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.0387759143645427
+              }
+            },
+            "minimum_surface_distance_m": 0.037856679296779376
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "close",
+          "step": 28,
+          "command_normalized": 0.29999999999999993,
+          "actual_gripper_qpos_m": [
+            0.008175747469067574,
+            0.008175946772098541
+          ],
+          "actual_arm_qpos_rad": [
+            0.007800211198627949,
+            1.9471429586410522,
+            1.4073987007141113,
+            -1.171858549118042,
+            0.008762704208493233,
+            1.4621069431304932
+          ],
+          "coin_position_m": [
+            -0.30020806193351746,
+            -0.13010373711585999,
+            0.781309962272644
+          ],
+          "coin_displacement_m": 0.00010136877074364182,
+          "surface": {
+            "coin_collision_mesh_paths": [
+              "/World/envs/env_0/rigid/coin/coin_0_8/collision/model",
+              "/World/envs/env_0/rigid/coin/coin_0_8/collision/Cylinder"
+            ],
+            "fingers": {
+              "link7": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link7/collisions/link7/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.004055591524841912
+              },
+              "link8": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link8/collisions/link8/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.0042664046482172
+              }
+            },
+            "minimum_surface_distance_m": 0.004055591524841912
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "close",
+          "step": 32,
+          "command_normalized": 0.19999999999999996,
+          "actual_gripper_qpos_m": [
+            0.004318429157137871,
+            0.004022456705570221
+          ],
+          "actual_arm_qpos_rad": [
+            0.007815553806722164,
+            1.947158932685852,
+            1.4074275493621826,
+            -1.1717579364776611,
+            0.008741120807826519,
+            1.4621368646621704
+          ],
+          "coin_position_m": [
+            -0.3001961410045624,
+            -0.13010291755199432,
+            0.7813110947608948
+          ],
+          "coin_displacement_m": 0.00011139154919629645,
+          "surface": {
+            "coin_collision_mesh_paths": [
+              "/World/envs/env_0/rigid/coin/coin_0_8/collision/model",
+              "/World/envs/env_0/rigid/coin/coin_0_8/collision/Cylinder"
+            ],
+            "fingers": {
+              "link7": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link7/collisions/link7/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.0005132008123208223
+              },
+              "link8": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link8/collisions/link8/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.0005474944747580205
+              }
+            },
+            "minimum_surface_distance_m": 0.0005132008123208223
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "close",
+          "step": 36,
+          "command_normalized": 0.09999999999999998,
+          "actual_gripper_qpos_m": [
+            0.004256905987858772,
+            0.004079758655279875
+          ],
+          "actual_arm_qpos_rad": [
+            0.007828447967767715,
+            1.947214126586914,
+            1.4074991941452026,
+            -1.1715962886810303,
+            0.008715091273188591,
+            1.4623199701309204
+          ],
+          "coin_position_m": [
+            -0.30019623041152954,
+            -0.1301027089357376,
+            0.7813112735748291
+          ],
+          "coin_displacement_m": 0.000111370592916519,
+          "surface": {
+            "coin_collision_mesh_paths": [
+              "/World/envs/env_0/rigid/coin/coin_0_8/collision/model",
+              "/World/envs/env_0/rigid/coin/coin_0_8/collision/Cylinder"
+            ],
+            "fingers": {
+              "link7": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link7/collisions/link7/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.0005115270787027282
+              },
+              "link8": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link8/collisions/link8/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.0005482132262903201
+              }
+            },
+            "minimum_surface_distance_m": 0.0005115270787027282
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "close",
+          "step": 40,
+          "command_normalized": 0.0,
+          "actual_gripper_qpos_m": [
+            0.004201635718345642,
+            0.0041308715008199215
+          ],
+          "actual_arm_qpos_rad": [
+            0.00782942958176136,
+            1.947268009185791,
+            1.407564401626587,
+            -1.1714555025100708,
+            0.00867396593093872,
+            1.4626014232635498
+          ],
+          "coin_position_m": [
+            -0.30019623041152954,
+            -0.1301027238368988,
+            0.7813112139701843
+          ],
+          "coin_displacement_m": 0.00011134182443943461,
+          "surface": {
+            "coin_collision_mesh_paths": [
+              "/World/envs/env_0/rigid/coin/coin_0_8/collision/model",
+              "/World/envs/env_0/rigid/coin/coin_0_8/collision/Cylinder"
+            ],
+            "fingers": {
+              "link7": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link7/collisions/link7/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.0005107893881920603
+              },
+              "link8": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link8/collisions/link8/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.0005494598386980965
+              }
+            },
+            "minimum_surface_distance_m": 0.0005107893881920603
+          },
+          "coin_finger_contact_event_count": 0
+        }
+      ],
+      "interaction_evidence": "collision_limit"
+    },
+    {
+      "repeat": 2,
+      "approach_ok": true,
+      "alignment_ok": true,
+      "final_fingertip_alignment": {
+        "link7_tip_center_m": [
+          -0.30144552900544763,
+          -0.12322127702137785,
+          0.7818077451034386
+        ],
+        "link8_tip_center_m": [
+          -0.30011919523323743,
+          -0.13545317930795722,
+          0.7835505812681536
+        ],
+        "fingertip_midpoint_m": [
+          -0.3007823621193425,
+          -0.12933722816466753,
+          0.7826791631857961
+        ],
+        "coin_center_m": [
+          -0.3002464473247528,
+          -0.12999790906906128,
+          0.7809974551200867
+        ],
+        "coin_minus_fingertip_midpoint_m": [
+          0.000535914794589698,
+          -0.0006606809043937512,
+          -0.0016817080657094419
+        ],
+        "alignment_error_m": 0.0018846341668246535
+      },
+      "approach_final_target_qpos_rad": [
+        0.073014468,
+        2.0174468,
+        1.840431,
+        -1.5326366,
+        -0.00074926228,
+        1.5252378
+      ],
+      "contact_detected": false,
+      "contact_close_step": null,
+      "collision_limited": true,
+      "collision_limited_step": 32,
+      "contact_event_count": 0,
+      "max_contact_impulse_ns": 0.0,
+      "minimum_surface_distance_m": 0.0004332730814741671,
+      "coin_max_displacement_m": 0.000024715421008364872,
+      "frames": {
+        "before_contact": {
+          "cam_head": "repeat_02_before_contact_cam_head.jpg",
+          "cam_left_wrist": "repeat_02_before_contact_cam_left_wrist.jpg"
+        },
+        "first_contact": {
+          "cam_head": "repeat_02_first_collision_limit_cam_head.jpg",
+          "cam_left_wrist": "repeat_02_first_collision_limit_cam_left_wrist.jpg"
+        },
+        "after_close": {
+          "cam_head": "repeat_02_after_close_cam_head.jpg",
+          "cam_left_wrist": "repeat_02_after_close_cam_left_wrist.jpg"
+        }
+      },
+      "events": [],
+      "samples": [
+        {
+          "phase": "approach",
+          "step": 65,
+          "command_normalized": 1.0,
+          "actual_gripper_qpos_m": [
+            0.04399142786860466,
+            0.043995242565870285
+          ],
+          "actual_arm_qpos_rad": [
+            0.07204491645097733,
+            2.0189132690429688,
+            1.840480089187622,
+            -1.532098650932312,
+            -0.0004079106729477644,
+            1.5262846946716309
+          ],
+          "coin_position_m": [
+            -0.3002490699291229,
+            -0.1300022453069687,
+            0.7809969782829285
+          ],
+          "coin_displacement_m": 0.000023100856455528753,
+          "surface": {
+            "coin_collision_mesh_paths": [
+              "/World/envs/env_0/rigid/coin/coin_0_15/collision/model",
+              "/World/envs/env_0/rigid/coin/coin_0_15/collision/Cylinder"
+            ],
+            "fingers": {
+              "link7": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link7/collisions/link7/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.09596306277751575
+              },
+              "link8": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link8/collisions/link8/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.07704674627676422
+              }
+            },
+            "minimum_surface_distance_m": 0.07704674627676422
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment",
+          "step": 1,
+          "ik_status": "Success",
+          "alignment_before_action": {
+            "link7_tip_center_m": [
+              -0.3304138806168443,
+              -0.055444372822079556,
+              0.8584326976467108
+            ],
+            "link8_tip_center_m": [
+              -0.3198691365239858,
+              -0.14591866861480216,
+              0.871230370760048
+            ],
+            "fingertip_midpoint_m": [
+              -0.325141508570415,
+              -0.10068152071844086,
+              0.8648315342033794
+            ],
+            "coin_center_m": [
+              -0.3002490699291229,
+              -0.1300022453069687,
+              0.7809969782829285
+            ],
+            "coin_minus_fingertip_midpoint_m": [
+              0.02489243864129209,
+              -0.02932072458852783,
+              -0.08383455592045097
+            ],
+            "alignment_error_m": 0.09223649580445917
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment",
+          "step": 2,
+          "ik_status": "Success",
+          "alignment_before_action": {
+            "link7_tip_center_m": [
+              -0.32682628159333904,
+              -0.059732425254885285,
+              0.8463327590356351
+            ],
+            "link8_tip_center_m": [
+              -0.3162928043549179,
+              -0.15018264918612279,
+              0.8592074217047594
+            ],
+            "fingertip_midpoint_m": [
+              -0.3215595429741285,
+              -0.10495753722050404,
+              0.8527700903701972
+            ],
+            "coin_center_m": [
+              -0.3002490699291229,
+              -0.1300022453069687,
+              0.7809969782829285
+            ],
+            "coin_minus_fingertip_midpoint_m": [
+              0.02131047304500555,
+              -0.025044708086464654,
+              -0.07177311208726878
+            ],
+            "alignment_error_m": 0.07894778833653153
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment",
+          "step": 3,
+          "ik_status": "Success",
+          "alignment_before_action": {
+            "link7_tip_center_m": [
+              -0.3233291241797761,
+              -0.06393557773208924,
+              0.8344744441463527
+            ],
+            "link8_tip_center_m": [
+              -0.31278577658814455,
+              -0.15437845639822412,
+              0.8473575529090793
+            ],
+            "fingertip_midpoint_m": [
+              -0.3180574503839603,
+              -0.10915701706515668,
+              0.840915998527716
+            ],
+            "coin_center_m": [
+              -0.3002490699291229,
+              -0.1300022453069687,
+              0.7809969782829285
+            ],
+            "coin_minus_fingertip_midpoint_m": [
+              0.017808380454837403,
+              -0.02084522824181201,
+              -0.05991902024478757
+            ],
+            "alignment_error_m": 0.06589348178668915
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment",
+          "step": 4,
+          "ik_status": "Success",
+          "alignment_before_action": {
+            "link7_tip_center_m": [
+              -0.31982277525559555,
+              -0.06813445850248413,
+              0.8225640990506112
+            ],
+            "link8_tip_center_m": [
+              -0.3092698516421179,
+              -0.15857517822352032,
+              0.8354664092430614
+            ],
+            "fingertip_midpoint_m": [
+              -0.31454631344885675,
+              -0.11335481836300224,
+              0.8290152541468363
+            ],
+            "coin_center_m": [
+              -0.3002490699291229,
+              -0.1300022453069687,
+              0.7809969782829285
+            ],
+            "coin_minus_fingertip_midpoint_m": [
+              0.014297243519733827,
+              -0.016647426943966454,
+              -0.04801827586390783
+            ],
+            "alignment_error_m": 0.052794912757382455
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment",
+          "step": 5,
+          "ik_status": "Success",
+          "alignment_before_action": {
+            "link7_tip_center_m": [
+              -0.31630569469054715,
+              -0.07231490758794586,
+              0.8106416064732358
+            ],
+            "link8_tip_center_m": [
+              -0.30574424028556796,
+              -0.16275191831237618,
+              0.8235623070292964
+            ],
+            "fingertip_midpoint_m": [
+              -0.3110249674880575,
+              -0.11753341295016101,
+              0.8171019567512661
+            ],
+            "coin_center_m": [
+              -0.3002490699291229,
+              -0.1300022453069687,
+              0.7809969782829285
+            ],
+            "coin_minus_fingertip_midpoint_m": [
+              0.0107758975589346,
+              -0.01246883235680768,
+              -0.0361049784683376
+            ],
+            "alignment_error_m": 0.03968830077922143
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment",
+          "step": 6,
+          "ik_status": "Success",
+          "alignment_before_action": {
+            "link7_tip_center_m": [
+              -0.3127760673221503,
+              -0.07647607262773454,
+              0.798703394135354
+            ],
+            "link8_tip_center_m": [
+              -0.30220687007254954,
+              -0.16690918343864053,
+              0.8116429332848367
+            ],
+            "fingertip_midpoint_m": [
+              -0.3074914686973499,
+              -0.12169262803318753,
+              0.8051731637100954
+            ],
+            "coin_center_m": [
+              -0.3002490699291229,
+              -0.1300022453069687,
+              0.7809969782829285
+            ],
+            "coin_minus_fingertip_midpoint_m": [
+              0.007242398768226965,
+              -0.008309617273781156,
+              -0.02417618542716693
+            ],
+            "alignment_error_m": 0.0265704727275127
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment",
+          "step": 7,
+          "ik_status": "Success",
+          "alignment_before_action": {
+            "link7_tip_center_m": [
+              -0.30922901361425725,
+              -0.08061295549265794,
+              0.786751272818953
+            ],
+            "link8_tip_center_m": [
+              -0.2986528513501151,
+              -0.17104217098735316,
+              0.7997098765069913
+            ],
+            "fingertip_midpoint_m": [
+              -0.3039409324821862,
+              -0.12582756324000555,
+              0.7932305746629722
+            ],
+            "coin_center_m": [
+              -0.3002490699291229,
+              -0.1300022453069687,
+              0.7809969782829285
+            ],
+            "coin_minus_fingertip_midpoint_m": [
+              0.003691862553063252,
+              -0.004174682066963142,
+              -0.012233596380043732
+            ],
+            "alignment_error_m": 0.013443165544645854
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment_final",
+          "step": 8,
+          "command_normalized": 1.0,
+          "actual_gripper_qpos_m": [
+            0.0439971499145031,
+            0.043975092470645905
+          ],
+          "actual_arm_qpos_rad": [
+            0.007850867696106434,
+            1.9482064247131348,
+            1.407006025314331,
+            -1.1709792613983154,
+            0.008748919703066349,
+            1.4622451066970825
+          ],
+          "coin_position_m": [
+            -0.3002490699291229,
+            -0.1300022453069687,
+            0.7809969782829285
+          ],
+          "coin_displacement_m": 0.000023100856455528753,
+          "surface": {
+            "coin_collision_mesh_paths": [
+              "/World/envs/env_0/rigid/coin/coin_0_15/collision/model",
+              "/World/envs/env_0/rigid/coin/coin_0_15/collision/Cylinder"
+            ],
+            "fingers": {
+              "link7": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link7/collisions/link7/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.03839873540118021
+              },
+              "link8": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link8/collisions/link8/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.03947018738865576
+              }
+            },
+            "minimum_surface_distance_m": 0.03839873540118021
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "close",
+          "step": 1,
+          "command_normalized": 0.975,
+          "actual_gripper_qpos_m": [
+            0.043430790305137634,
+            0.043471723794937134
+          ],
+          "actual_arm_qpos_rad": [
+            0.007934518158435822,
+            1.9478381872177124,
+            1.4072399139404297,
+            -1.170953631401062,
+            0.008744215592741966,
+            1.4622442722320557
+          ],
+          "coin_position_m": [
+            -0.3002490699291229,
+            -0.1300022453069687,
+            0.7809969782829285
+          ],
+          "coin_displacement_m": 0.000023100856455528753,
+          "surface": {
+            "coin_collision_mesh_paths": [
+              "/World/envs/env_0/rigid/coin/coin_0_15/collision/model",
+              "/World/envs/env_0/rigid/coin/coin_0_15/collision/Cylinder"
+            ],
+            "fingers": {
+              "link7": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link7/collisions/link7/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.037941227225846905
+              },
+              "link8": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link8/collisions/link8/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.038888265471572384
+              }
+            },
+            "minimum_surface_distance_m": 0.037941227225846905
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "close",
+          "step": 28,
+          "command_normalized": 0.29999999999999993,
+          "actual_gripper_qpos_m": [
+            0.008175743743777275,
+            0.008175946772098541
+          ],
+          "actual_arm_qpos_rad": [
+            0.007932204753160477,
+            1.947861671447754,
+            1.407224416732788,
+            -1.1709551811218262,
+            0.008744253776967525,
+            1.4622323513031006
+          ],
+          "coin_position_m": [
+            -0.3002490699291229,
+            -0.1300022453069687,
+            0.7809969782829285
+          ],
+          "coin_displacement_m": 0.000023100856455528753,
+          "surface": {
+            "coin_collision_mesh_paths": [
+              "/World/envs/env_0/rigid/coin/coin_0_15/collision/model",
+              "/World/envs/env_0/rigid/coin/coin_0_15/collision/Cylinder"
+            ],
+            "fingers": {
+              "link7": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link7/collisions/link7/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.004047605143031467
+              },
+              "link8": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link8/collisions/link8/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.004405438076407229
+              }
+            },
+            "minimum_surface_distance_m": 0.004047605143031467
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "close",
+          "step": 32,
+          "command_normalized": 0.19999999999999996,
+          "actual_gripper_qpos_m": [
+            0.004267639014869928,
+            0.004169157240539789
+          ],
+          "actual_arm_qpos_rad": [
+            0.00793684832751751,
+            1.9478572607040405,
+            1.4072318077087402,
+            -1.1709047555923462,
+            0.008731613866984844,
+            1.4622576236724854
+          ],
+          "coin_position_m": [
+            -0.3002464473247528,
+            -0.12999789416790009,
+            0.7809974551200867
+          ],
+          "coin_displacement_m": 0.000024714733718900758,
+          "surface": {
+            "coin_collision_mesh_paths": [
+              "/World/envs/env_0/rigid/coin/coin_0_15/collision/model",
+              "/World/envs/env_0/rigid/coin/coin_0_15/collision/Cylinder"
+            ],
+            "fingers": {
+              "link7": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link7/collisions/link7/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.000433398256113673
+              },
+              "link8": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link8/collisions/link8/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.0008341728041819128
+              }
+            },
+            "minimum_surface_distance_m": 0.000433398256113673
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "close",
+          "step": 36,
+          "command_normalized": 0.09999999999999998,
+          "actual_gripper_qpos_m": [
+            0.004238670226186514,
+            0.004195639863610268
+          ],
+          "actual_arm_qpos_rad": [
+            0.00793531071394682,
+            1.9478801488876343,
+            1.4072606563568115,
+            -1.1708245277404785,
+            0.008709651418030262,
+            1.4624234437942505
+          ],
+          "coin_position_m": [
+            -0.3002464473247528,
+            -0.12999790906906128,
+            0.7809974551200867
+          ],
+          "coin_displacement_m": 0.000024715421008364872,
+          "surface": {
+            "coin_collision_mesh_paths": [
+              "/World/envs/env_0/rigid/coin/coin_0_15/collision/model",
+              "/World/envs/env_0/rigid/coin/coin_0_15/collision/Cylinder"
+            ],
+            "fingers": {
+              "link7": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link7/collisions/link7/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.0004332948514587145
+              },
+              "link8": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link8/collisions/link8/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.0008345454162691675
+              }
+            },
+            "minimum_surface_distance_m": 0.0004332948514587145
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "close",
+          "step": 40,
+          "command_normalized": 0.0,
+          "actual_gripper_qpos_m": [
+            0.0042045689187943935,
+            0.004226673860102892
+          ],
+          "actual_arm_qpos_rad": [
+            0.007921380922198296,
+            1.947909951210022,
+            1.4072961807250977,
+            -1.1707340478897095,
+            0.008663534186780453,
+            1.4626846313476562
+          ],
+          "coin_position_m": [
+            -0.3002464473247528,
+            -0.12999790906906128,
+            0.7809974551200867
+          ],
+          "coin_displacement_m": 0.000024715421008364872,
+          "surface": {
+            "coin_collision_mesh_paths": [
+              "/World/envs/env_0/rigid/coin/coin_0_15/collision/model",
+              "/World/envs/env_0/rigid/coin/coin_0_15/collision/Cylinder"
+            ],
+            "fingers": {
+              "link7": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link7/collisions/link7/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.0004332730814741671
+              },
+              "link8": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link8/collisions/link8/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.0008357834426143151
+              }
+            },
+            "minimum_surface_distance_m": 0.0004332730814741671
+          },
+          "coin_finger_contact_event_count": 0
+        }
+      ],
+      "interaction_evidence": "collision_limit"
+    },
+    {
+      "repeat": 3,
+      "approach_ok": true,
+      "alignment_ok": true,
+      "final_fingertip_alignment": {
+        "link7_tip_center_m": [
+          -0.3011679139639483,
+          -0.12333778521001287,
+          0.7821184526082455
+        ],
+        "link8_tip_center_m": [
+          -0.2998565904594427,
+          -0.13545356484237714,
+          0.7838449792316335
+        ],
+        "fingertip_midpoint_m": [
+          -0.30051225221169553,
+          -0.129395675026195,
+          0.7829817159199395
+        ],
+        "coin_center_m": [
+          -0.29998135566711426,
+          -0.13005225360393524,
+          0.7813324928283691
+        ],
+        "coin_minus_fingertip_midpoint_m": [
+          0.0005308965445812719,
+          -0.0006565785777402355,
+          -0.0016492230915703399
+        ],
+        "alignment_error_m": 0.0018528041924511492
+      },
+      "approach_final_target_qpos_rad": [
+        0.073014468,
+        2.0174468,
+        1.840431,
+        -1.5326366,
+        -0.00074926228,
+        1.5252378
+      ],
+      "contact_detected": false,
+      "contact_close_step": null,
+      "collision_limited": true,
+      "collision_limited_step": 32,
+      "contact_event_count": 0,
+      "max_contact_impulse_ns": 0.0,
+      "minimum_surface_distance_m": 0.00033224661963298985,
+      "coin_max_displacement_m": 0.00006642118680955028,
+      "frames": {
+        "before_contact": {
+          "cam_head": "repeat_03_before_contact_cam_head.jpg",
+          "cam_left_wrist": "repeat_03_before_contact_cam_left_wrist.jpg"
+        },
+        "first_contact": {
+          "cam_head": "repeat_03_first_collision_limit_cam_head.jpg",
+          "cam_left_wrist": "repeat_03_first_collision_limit_cam_left_wrist.jpg"
+        },
+        "after_close": {
+          "cam_head": "repeat_03_after_close_cam_head.jpg",
+          "cam_left_wrist": "repeat_03_after_close_cam_left_wrist.jpg"
+        }
+      },
+      "events": [],
+      "samples": [
+        {
+          "phase": "approach",
+          "step": 65,
+          "command_normalized": 1.0,
+          "actual_gripper_qpos_m": [
+            0.04399142786860466,
+            0.043995242565870285
+          ],
+          "actual_arm_qpos_rad": [
+            0.07204491645097733,
+            2.0189132690429688,
+            1.840480089187622,
+            -1.532098650932312,
+            -0.00040791070205159485,
+            1.5262846946716309
+          ],
+          "coin_position_m": [
+            -0.29998189210891724,
+            -0.13005311787128448,
+            0.7813319563865662
+          ],
+          "coin_displacement_m": 0.00006639992206181067,
+          "surface": {
+            "coin_collision_mesh_paths": [
+              "/World/envs/env_0/rigid/coin/coin_0_22/collision/model",
+              "/World/envs/env_0/rigid/coin/coin_0_22/collision/Cylinder"
+            ],
+            "fingers": {
+              "link7": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link7/collisions/link7/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.09576734467640256
+              },
+              "link8": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link8/collisions/link8/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.0768123263374498
+              }
+            },
+            "minimum_surface_distance_m": 0.0768123263374498
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment",
+          "step": 1,
+          "ik_status": "Success",
+          "alignment_before_action": {
+            "link7_tip_center_m": [
+              -0.3304138806168443,
+              -0.055444372822079556,
+              0.8584326976467108
+            ],
+            "link8_tip_center_m": [
+              -0.3198691365239858,
+              -0.14591866861480216,
+              0.871230370760048
+            ],
+            "fingertip_midpoint_m": [
+              -0.325141508570415,
+              -0.10068152071844086,
+              0.8648315342033794
+            ],
+            "coin_center_m": [
+              -0.29998189210891724,
+              -0.13005311787128448,
+              0.7813319563865662
+            ],
+            "coin_minus_fingertip_midpoint_m": [
+              0.02515961646149778,
+              -0.029371597152843626,
+              -0.08349957781681328
+            ],
+            "alignment_error_m": 0.09202106560665692
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment",
+          "step": 2,
+          "ik_status": "Success",
+          "alignment_before_action": {
+            "link7_tip_center_m": [
+              -0.3267785029797974,
+              -0.05974963782595546,
+              0.8463526693072376
+            ],
+            "link8_tip_center_m": [
+              -0.31624538045269607,
+              -0.15019969491868496,
+              0.8592272691792907
+            ],
+            "fingertip_midpoint_m": [
+              -0.32151194171624675,
+              -0.10497466637232021,
+              0.8527899692432641
+            ],
+            "coin_center_m": [
+              -0.29998189210891724,
+              -0.13005311787128448,
+              0.7813319563865662
+            ],
+            "coin_minus_fingertip_midpoint_m": [
+              0.021530049607329516,
+              -0.025078451498964274,
+              -0.07145801285669795
+            ],
+            "alignment_error_m": 0.07873194629315335
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment",
+          "step": 3,
+          "ik_status": "Success",
+          "alignment_before_action": {
+            "link7_tip_center_m": [
+              -0.32323427248743125,
+              -0.0639702989611099,
+              0.8345139573037362
+            ],
+            "link8_tip_center_m": [
+              -0.31269147210536946,
+              -0.15441309052549101,
+              0.8473971679390954
+            ],
+            "fingertip_midpoint_m": [
+              -0.31796287229640036,
+              -0.10919169474330045,
+              0.8409555626214158
+            ],
+            "coin_center_m": [
+              -0.29998189210891724,
+              -0.13005311787128448,
+              0.7813319563865662
+            ],
+            "coin_minus_fingertip_midpoint_m": [
+              0.01798098018748312,
+              -0.02086142312798403,
+              -0.059623606234849635
+            ],
+            "alignment_error_m": 0.06567715770247558
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment",
+          "step": 4,
+          "ik_status": "Success",
+          "alignment_before_action": {
+            "link7_tip_center_m": [
+              -0.31968086100307136,
+              -0.06818660007690641,
+              0.8226231500375432
+            ],
+            "link8_tip_center_m": [
+              -0.30912870907331436,
+              -0.15862719610893383,
+              0.8355257345729399
+            ],
+            "fingertip_midpoint_m": [
+              -0.31440478503819286,
+              -0.11340689809292012,
+              0.8290744423052415
+            ],
+            "coin_center_m": [
+              -0.29998189210891724,
+              -0.13005311787128448,
+              0.7813319563865662
+            ],
+            "coin_minus_fingertip_midpoint_m": [
+              0.014422892929275621,
+              -0.016646219778364363,
+              -0.04774248591867536
+            ],
+            "alignment_error_m": 0.052578145983420456
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment",
+          "step": 5,
+          "ik_status": "Success",
+          "alignment_before_action": {
+            "link7_tip_center_m": [
+              -0.31611677564322543,
+              -0.07238401755107798,
+              0.8107202272273428
+            ],
+            "link8_tip_center_m": [
+              -0.3055562770721045,
+              -0.1628209766665185,
+              0.8236412346635574
+            ],
+            "fingertip_midpoint_m": [
+              -0.31083652635766496,
+              -0.11760249710879825,
+              0.8171807309454502
+            ],
+            "coin_center_m": [
+              -0.29998189210891724,
+              -0.13005311787128448,
+              0.7813320159912109
+            ],
+            "coin_minus_fingertip_midpoint_m": [
+              0.010854634248747719,
+              -0.012450620762486236,
+              -0.03584871495423925
+            ],
+            "alignment_error_m": 0.039471146498621455
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment",
+          "step": 6,
+          "ik_status": "Success",
+          "alignment_before_action": {
+            "link7_tip_center_m": [
+              -0.3125401614704635,
+              -0.07656227090376252,
+              0.7988012686665287
+            ],
+            "link8_tip_center_m": [
+              -0.3019722207141476,
+              -0.16699532834455635,
+              0.8117412679237344
+            ],
+            "fingertip_midpoint_m": [
+              -0.3072561910923055,
+              -0.12177879962415944,
+              0.8052712682951315
+            ],
+            "coin_center_m": [
+              -0.29998189210891724,
+              -0.13005311787128448,
+              0.7813319563865662
+            ],
+            "coin_minus_fingertip_midpoint_m": [
+              0.007274298983388272,
+              -0.008274318247125045,
+              -0.023939311908565353
+            ],
+            "alignment_error_m": 0.026352806734957268
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment",
+          "step": 7,
+          "ik_status": "Success",
+          "alignment_before_action": {
+            "link7_tip_center_m": [
+              -0.30894653284291207,
+              -0.08071614551741767,
+              0.7868681830936637
+            ],
+            "link8_tip_center_m": [
+              -0.29837189948838344,
+              -0.17114528039810387,
+              0.7998275502384968
+            ],
+            "fingertip_midpoint_m": [
+              -0.3036592161656477,
+              -0.12593071295776076,
+              0.7933478666660803
+            ],
+            "coin_center_m": [
+              -0.29998189210891724,
+              -0.13005311787128448,
+              0.7813319563865662
+            ],
+            "coin_minus_fingertip_midpoint_m": [
+              0.003677324056730491,
+              -0.004122404913523725,
+              -0.012015910279514097
+            ],
+            "alignment_error_m": 0.013224939861284282
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "alignment_final",
+          "step": 8,
+          "command_normalized": 1.0,
+          "actual_gripper_qpos_m": [
+            0.04399709403514862,
+            0.0439755916595459
+          ],
+          "actual_arm_qpos_rad": [
+            0.007077436428517103,
+            1.9476256370544434,
+            1.4074903726577759,
+            -1.1720339059829712,
+            0.00885684136301279,
+            1.4614944458007812
+          ],
+          "coin_position_m": [
+            -0.29998189210891724,
+            -0.13005311787128448,
+            0.7813320159912109
+          ],
+          "coin_displacement_m": 0.00006642118680955028,
+          "surface": {
+            "coin_collision_mesh_paths": [
+              "/World/envs/env_0/rigid/coin/coin_0_22/collision/model",
+              "/World/envs/env_0/rigid/coin/coin_0_22/collision/Cylinder"
+            ],
+            "fingers": {
+              "link7": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link7/collisions/link7/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.03842181223019548
+              },
+              "link8": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link8/collisions/link8/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.0395450291970782
+              }
+            },
+            "minimum_surface_distance_m": 0.03842181223019548
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "close",
+          "step": 1,
+          "command_normalized": 0.975,
+          "actual_gripper_qpos_m": [
+            0.04343109577894211,
+            0.04347152262926102
+          ],
+          "actual_arm_qpos_rad": [
+            0.0071607367135584354,
+            1.9472646713256836,
+            1.4077197313308716,
+            -1.172008752822876,
+            0.008852127008140087,
+            1.4614934921264648
+          ],
+          "coin_position_m": [
+            -0.29998189210891724,
+            -0.13005311787128448,
+            0.7813319563865662
+          ],
+          "coin_displacement_m": 0.00006639992206181067,
+          "surface": {
+            "coin_collision_mesh_paths": [
+              "/World/envs/env_0/rigid/coin/coin_0_22/collision/model",
+              "/World/envs/env_0/rigid/coin/coin_0_22/collision/Cylinder"
+            ],
+            "fingers": {
+              "link7": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link7/collisions/link7/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.03796212937607892
+              },
+              "link8": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link8/collisions/link8/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.03896467257269873
+              }
+            },
+            "minimum_surface_distance_m": 0.03796212937607892
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "close",
+          "step": 28,
+          "command_normalized": 0.29999999999999993,
+          "actual_gripper_qpos_m": [
+            0.008175746537744999,
+            0.008175946772098541
+          ],
+          "actual_arm_qpos_rad": [
+            0.007158409804105759,
+            1.947287678718567,
+            1.4077047109603882,
+            -1.1720103025436401,
+            0.00885216798633337,
+            1.4614815711975098
+          ],
+          "coin_position_m": [
+            -0.29998189210891724,
+            -0.13005311787128448,
+            0.7813319563865662
+          ],
+          "coin_displacement_m": 0.00006639992206181067,
+          "surface": {
+            "coin_collision_mesh_paths": [
+              "/World/envs/env_0/rigid/coin/coin_0_22/collision/model",
+              "/World/envs/env_0/rigid/coin/coin_0_22/collision/Cylinder"
+            ],
+            "fingers": {
+              "link7": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link7/collisions/link7/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.004017241518549122
+              },
+              "link8": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link8/collisions/link8/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.004548738169069891
+              }
+            },
+            "minimum_surface_distance_m": 0.004017241518549122
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "close",
+          "step": 32,
+          "command_normalized": 0.19999999999999996,
+          "actual_gripper_qpos_m": [
+            0.004214682150632143,
+            0.004105014726519585
+          ],
+          "actual_arm_qpos_rad": [
+            0.007154667750000954,
+            1.9472944736480713,
+            1.4077054262161255,
+            -1.17196786403656,
+            0.008843671530485153,
+            1.4615082740783691
+          ],
+          "coin_position_m": [
+            -0.29998132586479187,
+            -0.13005222380161285,
+            0.7813324928283691
+          ],
+          "coin_displacement_m": 0.0000663824838995527,
+          "surface": {
+            "coin_collision_mesh_paths": [
+              "/World/envs/env_0/rigid/coin/coin_0_22/collision/model",
+              "/World/envs/env_0/rigid/coin/coin_0_22/collision/Cylinder"
+            ],
+            "fingers": {
+              "link7": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link7/collisions/link7/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.00033224661963298985
+              },
+              "link8": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link8/collisions/link8/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.0008024688085942854
+              }
+            },
+            "minimum_surface_distance_m": 0.00033224661963298985
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "close",
+          "step": 36,
+          "command_normalized": 0.09999999999999998,
+          "actual_gripper_qpos_m": [
+            0.004179354757070541,
+            0.004137985873967409
+          ],
+          "actual_arm_qpos_rad": [
+            0.007145910989493132,
+            1.9473309516906738,
+            1.4077507257461548,
+            -1.1718813180923462,
+            0.00880239624530077,
+            1.4616947174072266
+          ],
+          "coin_position_m": [
+            -0.29998135566711426,
+            -0.13005225360393524,
+            0.7813324928283691
+          ],
+          "coin_displacement_m": 0.00006638194870897356,
+          "surface": {
+            "coin_collision_mesh_paths": [
+              "/World/envs/env_0/rigid/coin/coin_0_22/collision/model",
+              "/World/envs/env_0/rigid/coin/coin_0_22/collision/Cylinder"
+            ],
+            "fingers": {
+              "link7": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link7/collisions/link7/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.00033243347701242623
+              },
+              "link8": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link8/collisions/link8/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.0008035712191556549
+              }
+            },
+            "minimum_surface_distance_m": 0.00033243347701242623
+          },
+          "coin_finger_contact_event_count": 0
+        },
+        {
+          "phase": "close",
+          "step": 40,
+          "command_normalized": 0.0,
+          "actual_gripper_qpos_m": [
+            0.004141770303249359,
+            0.004171291366219521
+          ],
+          "actual_arm_qpos_rad": [
+            0.007124883122742176,
+            1.9473735094070435,
+            1.4078025817871094,
+            -1.171796441078186,
+            0.008737733587622643,
+            1.4619990587234497
+          ],
+          "coin_position_m": [
+            -0.29998135566711426,
+            -0.13005225360393524,
+            0.7813324928283691
+          ],
+          "coin_displacement_m": 0.00006638194870897356,
+          "surface": {
+            "coin_collision_mesh_paths": [
+              "/World/envs/env_0/rigid/coin/coin_0_22/collision/model",
+              "/World/envs/env_0/rigid/coin/coin_0_22/collision/Cylinder"
+            ],
+            "fingers": {
+              "link7": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link7/collisions/link7/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.0003332706837832256
+              },
+              "link8": {
+                "collision_mesh_paths": [
+                  "/World/envs/env_0/robot0/link8/collisions/link8/node_STL_BINARY_/mesh"
+                ],
+                "surface_distance_m": 0.0008044592234615675
+              }
+            },
+            "minimum_surface_distance_m": 0.0003332706837832256
+          },
+          "coin_finger_contact_event_count": 0
+        }
+      ],
+      "interaction_evidence": "collision_limit"
+    }
+  ],
+  "collision_limit_criterion": "close step 32 and final step 40 remain at a positive <1 mm surface gap; final command is 0; gap changes <0.1 mm and each actual finger qpos changes <0.2 mm",
+  "successful_interaction_repeats": 3,
+  "all_repeats_have_interaction_evidence": true
+}

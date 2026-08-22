@@ -36,7 +36,9 @@ Initial environment-relative positions are coin `[-0.300560, -0.130751, 0.780547
 
 Coin collision meshes report `convexDecomposition` and `convexHull`. Geometry roots report approximation `none`, while descendant piggy-bank and stand collision meshes still expose `convexDecomposition` or `meshSimplification`/`convexHull`. This proves collision is enabled but does not prove exact triangle-mesh collision at every descendant. It is retained as a configuration detail, not classified as a fault.
 
-`track_contact_forces=false`, so no physical first-contact claim can be made from this run.
+The source configuration has `track_contact_forces=false`. The repeated probe therefore applies `PhysxContactReportAPI` to the coin at runtime; it records no coin-finger report event in three trials. The collision-limit evidence below is based on commanded-versus-actual finger motion and collision-surface distance, not a force-sensor claim.
+
+The coin material values were also audited at their source. `RigidObject.__init__` passes static and dynamic friction as named arguments, so their order is not swapped. The coin metadata contains neither `static_friction` nor `dynamic_friction`; the runtime `0.6 / 1.5` values come from the code defaults. Dynamic friction greater than static friction is unusual, but this check alone does not classify it as an error. The exact sources are `env/scene_manager/objects/rigid.py:75-76` and `Assets/Eval_Layout/RoboDojo/arx_x5/0/deposit_coin_0.json:46-55`. Evidence: [`material_audit.json`](week02_day03/material_audit.json).
 
 ## Reward Coordinate Consistency
 
@@ -56,14 +58,32 @@ Over 100 internal steps without an object command, all coin poses remained finit
 
 **Pass.** No fall-through, drift, or invalid pose was observed numerically. Evidence: [`passive_settle.log`](week02_day03/passive_settle.log).
 
-## Controlled Approach
+## Conservative Pre-contact Probe
 
-Six IK-derived joint waypoints moved the left end effector toward a conservative pre-contact pose. All six solutions executed. Coin displacement stayed below `5.92e-7 m`; minimum recorded finger-link-origin distance to the coin origin was about `0.182 m`.
+The original six-waypoint IK probe executed successfully but stopped at a conservative pose: minimum finger-link-origin distance was about `0.182 m`, and coin displacement stayed below `5.92e-7 m`. This result is retained only as evidence that scripted arm motion executes; link origins are not used as contact distance. Evidence: [`collision_probe.json`](week02_day03/collision_probe.json).
 
-**Incomplete for contact validation.** The trajectory did not reach physical contact. Contact forces were disabled, and the image-viewing tool failed during this session, so visual/collision alignment still requires manual review of [`annotated_scene.png`](week02_day03/annotated_scene.png), [`collision_probe_start.jpg`](week02_day03/collision_probe_start.jpg), and [`collision_probe_final.jpg`](week02_day03/collision_probe_final.jpg). These images are evidence artifacts, not an automated Pass result.
+## Repeated Collision-limit Probe
+
+The no-policy probe replays the recorded Day 4 left-arm `qpos` for policy steps 1-65 while holding the gripper fully open, then aligns the midpoint of the two runtime fingertip collision surfaces to the coin center in Cartesian increments no larger than `0.015 m`. It finally closes at `0.025` normalized increments. Every command executes 10 internal PhysX/control steps.
+
+Surface distance is the bidirectional vertex-to-triangle distance between the runtime USD collision meshes for the coin and `link7`/`link8`, rather than a link-origin distance.
+
+| Repeat | First sub-mm step | Minimum surface gap | Actual finger qpos at command 0 | Maximum coin displacement |
+|---:|---:|---:|---:|---:|
+| 1 | close 32 | `0.511 mm` | `0.004202 / 0.004131 m` | `0.111 mm` |
+| 2 | close 32 | `0.433 mm` | `0.004205 / 0.004227 m` | `0.025 mm` |
+| 3 | close 32 | `0.332 mm` | `0.004142 / 0.004171 m` | `0.066 mm` |
+
+In all three repeats, the normalized close command continues from `0.2` at step 32 to `0.0` at step 40, while actual finger positions plateau near `0.0041-0.0042 m` and the positive surface gap remains stable. This is repeatable evidence that collision response prevents the fingertips from passing through the coin. It is not evidence of measurable contact force: coin-finger contact-report events remain `0/3`, and no meaningful controlled coin displacement occurs.
+
+Manual review of the wrist frames shows the open fingers on opposite sides before close, near contact at the first collision-limit frame, and the closed fingers remaining on opposite sides without visible penetration. Each repeat includes head and wrist frames for `before_contact`, `first_collision_limit`, and `after_close` under [`contact_probe_frames/`](week02_day03/contact_probe_frames/). Numeric evidence is in [`contact_probe_repeated.json`](week02_day03/contact_probe_repeated.json) and the compact [`contact_probe_repeated.log`](week02_day03/contact_probe_repeated.log).
+
+**Pass for the requested low-risk collision check.** The probe reached the coin and produced one of the required evidence types, collision blocking, in 3/3 repeats. Contact-force instrumentation and grasp under load remain separate unverified questions.
 
 ## Conclusion
 
 Instance mapping, pose/bbox/scale capture, stage units, reward-coordinate consistency, collision-enabled state, and passive stability pass. These weaken basic asset loading and score-coordinate mismatch as primary causes.
 
-Day 3 remains **partially accepted** pending manual image review and a contact-capable probe. No conclusion is made about fine collision-geometry alignment, contact response, or grasp friction under load.
+Day 3 is **accepted for the requested asset, coordinate, passive-stability, and low-risk collision scope**. Runtime geometry, images, and the 3/3 command-response plateau show no obvious collision/visual misalignment or fingertip penetration. Basic asset loading, scoring-coordinate mismatch, passive instability, and gross collision failure are weakened as primary Coin-X5 causes.
+
+The remaining boundary is explicit: the runtime contact report did not trigger, and this experiment did not test a lifted grasp or friction under load. Those results must not be inferred from the collision-limit pass.

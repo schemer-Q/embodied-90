@@ -39,6 +39,7 @@ import src.eval_client.eval_env as eval_env_module
 from task.RoboDojo import task_registry
 from utils.load_file import load_yaml
 from utils.pipeline_utils import process_config, process_randomization
+from contact_probe import run_repeated_contact_probe
 
 
 TASK_NAME = "deposit_coin"
@@ -621,9 +622,23 @@ def main():
         passive = passive_settle(env, day3_dir)
         probes = run_joint_probes(env, day2_dir)
         approach = controlled_approach(env, day3_dir)
+        repeated_contact = run_repeated_contact_probe(env, day3_dir, args.layout)
+        material_audit = {
+            "coin_metadata_physics": asset_snapshot["objects"]["coin0"]["metadata_physics"],
+            "runtime_physics_material": asset_snapshot["objects"]["coin0"]["runtime_physics_material"],
+            "environment_overrides": {
+                "ACT_COIN_STATIC_FRICTION": os.environ.get("ACT_COIN_STATIC_FRICTION"),
+                "ACT_COIN_DYNAMIC_FRICTION": os.environ.get("ACT_COIN_DYNAMIC_FRICTION"),
+            },
+            "constructor_source": "env/scene_manager/objects/rigid.py:75-76 (RigidObject.__init__; named static_friction and dynamic_friction arguments)",
+            "layout_metadata_source": "Assets/Eval_Layout/RoboDojo/arx_x5/0/deposit_coin_0.json:46-55 (physics has friction only)",
+            "finding": "Named arguments are not swapped. Metadata lacks static_friction/dynamic_friction keys, so code defaults produce static=0.6 and dynamic=1.5.",
+            "classification": "unusual dynamic>static configuration; not classified as an error by this validation",
+        }
         write_json(day2_dir / "joint_probe_results.json", {"probes": probes})
         write_json(day3_dir / "passive_settle.json", passive)
         write_json(day3_dir / "collision_probe.json", approach)
+        write_json(day3_dir / "material_audit.json", material_audit)
         annotate_scene(day3_dir / "collision_probe_final.jpg", day3_dir / "annotated_scene.png", asset_snapshot, coordinate_snapshot)
     except Exception as exc:
         error = {"type": type(exc).__name__, "message": str(exc), "traceback": traceback.format_exc()}

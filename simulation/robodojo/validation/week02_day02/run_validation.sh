@@ -31,10 +31,21 @@ required=(
   "${DAY3_DIR}/coordinate_snapshot.json"
   "${DAY3_DIR}/passive_settle.log"
   "${DAY3_DIR}/collision_probe.log"
+  "$DAY3_DIR/contact_probe_repeated.json"
+  "$DAY3_DIR/contact_probe_repeated.log"
+  "$DAY3_DIR/material_audit.json"
   "${DAY3_DIR}/annotated_scene.png"
 )
 for artifact in "${required[@]}"; do
   test -s "${artifact}"
+done
+jq -e '.all_repeats_have_interaction_evidence == true and .successful_interaction_repeats == 3' "$DAY3_DIR/contact_probe_repeated.json" >/dev/null
+for repeat in 01 02 03; do
+  for stage in before_contact first_collision_limit after_close; do
+    for camera in cam_head cam_left_wrist; do
+      test -s "$DAY3_DIR/contact_probe_frames/repeat_${repeat}_${stage}_${camera}.jpg"
+    done
+  done
 done
 test ! -e "${DAY2_DIR}/probe_error.json"
 test ! -e "${DAY3_DIR}/probe_error.json"
