@@ -1,0 +1,42 @@
+{
+  "policy_steps": 300,
+  "internal_records": 3000,
+  "missing_policy_steps": [],
+  "incorrect_internal_step_counts": {},
+  "incorrect_internal_step_sequences": {},
+  "invalid_values": 0,
+  "validation_failures": 0,
+  "final_success": false,
+  "final_score": 0.0,
+  "exit_code": 0,
+  "result_consistent": true,
+  "video_count": 3,
+  "video_frame_counts": {
+    "cam_head": 301,
+    "cam_left_wrist": 301,
+    "cam_right_wrist": 301
+  },
+  "videos_complete": true,
+  "initial_coin_z": 0.7805473804473877,
+  "max_coin_lift": 1.7881393432617188e-07,
+  "max_tracking_error": 0.7957679033279419,
+  "max_tracking_error_policy_step": 151,
+  "events": {
+    "left_gripper_closing_start": 19,
+    "left_gripper_noticeably_closed": 34,
+    "left_end_effector_lift_start": 4,
+    "closest_end_effector_origin_to_coin": 25,
+    "closest_end_effector_origin_distance_m": 0.17781862301199322,
+    "act_chunk_refresh_steps": [
+      1,
+      51,
+      101,
+      151,
+      201,
+      251
+    ],
+    "episode_end": 300
+  },
+  "earliest_failure_stage": "coin did not exceed the 0.08 m lift threshold",
+  "result_directory": "/home/nvidia/RoboDojo/eval_result/RoboDojo/deposit_coin/ACT/arx_x5/0_ckpt_name=RoboDojo-deposit_coin-arx_x5-joint-0,action_type=joint/week02_day05_seed0_layout0_full"
+}
