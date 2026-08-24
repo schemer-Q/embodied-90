@@ -1,0 +1,14 @@
+[current]
++3e6b42cda67ad6c02aaef2fec16815490c328751 XPolicyLab (v1.0.0~34)
+ afca7b09d60d8beb9c1cb28b43066499940b969b third_party/IsaacLab (heads/main)
++895c6517243f8cb091c73c018c8167192d39599a third_party/curobo (heads/main)
+
+[HEAD pins]
+160000 commit fe71eb54675cef495fea817a637386a4f4529153	XPolicyLab
+160000 commit afca7b09d60d8beb9c1cb28b43066499940b969b	third_party/IsaacLab
+160000 commit d17b54ce32cba095c0b000c4c58777075d11de0e	third_party/curobo
+
+[official origin/main pins]
+160000 commit 432f82b1758c5b1202e42a3dfe014546dbc50871	XPolicyLab
+160000 commit afca7b09d60d8beb9c1cb28b43066499940b969b	third_party/IsaacLab
+160000 commit d17b54ce32cba095c0b000c4c58777075d11de0e	third_party/curobo

@@ -1,0 +1,64 @@
+Captured: 2026-08-24 Asia/Shanghai
+
+[remote]
+origin	https://github.com/RoboDojo-Benchmark/RoboDojo.git (fetch)
+origin	https://github.com/RoboDojo-Benchmark/RoboDojo.git (push)
+
+[HEAD]
+9226f48ea694b3f53db12d4922e8b1199f8d0891
+
+[official origin/main after fetch]
+2184bf8844ea9d205382c4aefa3a694311418251
+
+[status --short]
+ M XPolicyLab
+ M env/reward_manager/func_parser.py
+ M env/robot_manager/control_manager.py
+ M env/scene_manager/objects/geometry.py
+ M env/scene_manager/objects/rigid.py
+ M scripts/eval_policy.sh
+ M src/eval_client/eval_env.py
+ M third_party/curobo
+?? Miniconda3-latest-Linux-x86_64.sh
+?? act_debug_smoke.log
+?? act_dependencies.log
+?? act_dummy_ckpt.log
+?? act_env_setup.log
+?? act_process_data.log
+?? act_sim_smoke.log
+?? act_train.log
+?? act_train_bs8.log
+?? assets_download.log
+?? ast
+?? create_act_dummy_ckpt.py
+?? debug_smoke.log
+?? deposit_coin_eval.log
+?? deposit_coin_eval_50.log
+?? deposit_coin_eval_debug.log
+?? deposit_coin_eval_v2.log
+?? download_single_task_data.sh
+?? install.log
+?? json
+?? kl1_shorttest_eval.log
+?? logs/
+?? prompt.md
+?? retrain1000_eval.log
+?? sim_smoke.log
+?? stack_bowls_data_download.log
+?? sys
+?? update_paths.log
+?? xpolicylab_install.log
+
+[diff --stat]
+ XPolicyLab                            |   2 +-
+ env/reward_manager/func_parser.py     |  20 ++++--
+ env/robot_manager/control_manager.py  |   3 +-
+ env/scene_manager/objects/geometry.py | 113 ++++++++++++++++++++++++++++++-
+ env/scene_manager/objects/rigid.py    |   5 +-
+ scripts/eval_policy.sh                |   5 +-
+ src/eval_client/eval_env.py           | 124 +++++++++++++++++++++++++++++++++-
+ third_party/curobo                    |   2 +-
+ 8 files changed, 259 insertions(+), 15 deletions(-)
+
+[upstream commits]
+20
