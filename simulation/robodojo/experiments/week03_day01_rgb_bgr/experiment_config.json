@@ -1,0 +1,128 @@
+{
+  "generated_at": "2026-08-26T10:33:55.404682+08:00",
+  "experiment": "Week 3 Day 1 RGB/BGR single-variable A/B",
+  "conditions": {
+    "A": {
+      "name": "bgr",
+      "ACT_INPUT_COLOR_ORDER": "bgr"
+    },
+    "B": {
+      "name": "rgb",
+      "ACT_INPUT_COLOR_ORDER": "rgb"
+    }
+  },
+  "fixed": {
+    "task": "deposit_coin",
+    "env_cfg": "arx_x5",
+    "action_type": "joint",
+    "checkpoint": "RoboDojo-deposit_coin-arx_x5-joint-0",
+    "seed": 0,
+    "layout": 0,
+    "num_envs": 1,
+    "policy_steps": 300,
+    "internal_controls_per_policy_step": 10,
+    "temporal_agg": false,
+    "camera_order": [
+      "cam_head",
+      "cam_right_wrist",
+      "cam_left_wrist"
+    ],
+    "stand_piggy_collision": "triangle mesh",
+    "ACT_GEOMETRY_MESH_CATEGORIES": "vertical_coin_stand,piggy_bank"
+  },
+  "checkpoint_files": {
+    "policy_last.ckpt": {
+      "path": "/home/nvidia/RoboDojo/XPolicyLab/policy/ACT/checkpoints/RoboDojo-deposit_coin-arx_x5-joint-0/policy_last.ckpt",
+      "size_bytes": 335907847,
+      "sha256": "dfbc1ddc3e207084fb4d13765281d82792bda52f01d6045b0cdcd239a56012e0"
+    },
+    "dataset_stats.pkl": {
+      "path": "/home/nvidia/RoboDojo/XPolicyLab/policy/ACT/checkpoints/RoboDojo-deposit_coin-arx_x5-joint-0/dataset_stats.pkl",
+      "size_bytes": 12403,
+      "sha256": "4a777e14eebb94f5f8db50ad1e137b2a445b59dfa79d8a87d6a9621a4d04ef5b"
+    }
+  },
+  "repositories": {
+    "experiment": {
+      "commit": "655233289c2e879d6f8fc463c16e13daf8d1bae0",
+      "status_short": [
+        "?? simulation/robodojo/experiments/",
+        "?? simulation/robodojo/logs/coin_x5_day04_act_eval.log",
+        "?? simulation/robodojo/troubleshooting/day04_frames/head_sheet.jpg",
+        "?? simulation/robodojo/troubleshooting/day04_frames/left_wrist_sheet.jpg",
+        "?? simulation/robodojo/troubleshooting/day04_frames/right_wrist_sheet.jpg",
+        "?? simulation/robodojo/validation/week02_day02/__pycache__/",
+        "?? simulation/robodojo/validation/week02_day05/__pycache__/"
+      ]
+    },
+    "robodojo": {
+      "commit": "9226f48ea694b3f53db12d4922e8b1199f8d0891",
+      "status_short": [
+        "M XPolicyLab",
+        " M env/reward_manager/func_parser.py",
+        " M env/robot_manager/control_manager.py",
+        " M env/scene_manager/objects/geometry.py",
+        " M env/scene_manager/objects/rigid.py",
+        " M scripts/eval_policy.sh",
+        " M src/eval_client/eval_env.py",
+        " M third_party/curobo",
+        "?? Miniconda3-latest-Linux-x86_64.sh",
+        "?? act_debug_smoke.log",
+        "?? act_dependencies.log",
+        "?? act_dummy_ckpt.log",
+        "?? act_env_setup.log",
+        "?? act_process_data.log",
+        "?? act_sim_smoke.log",
+        "?? act_train.log",
+        "?? act_train_bs8.log",
+        "?? assets_download.log",
+        "?? ast",
+        "?? create_act_dummy_ckpt.py",
+        "?? debug_smoke.log",
+        "?? deposit_coin_eval.log",
+        "?? deposit_coin_eval_50.log",
+        "?? deposit_coin_eval_debug.log",
+        "?? deposit_coin_eval_v2.log",
+        "?? download_single_task_data.sh",
+        "?? install.log",
+        "?? json",
+        "?? kl1_shorttest_eval.log",
+        "?? logs/",
+        "?? prompt.md",
+        "?? retrain1000_eval.log",
+        "?? sim_smoke.log",
+        "?? stack_bowls_data_download.log",
+        "?? sys",
+        "?? update_paths.log",
+        "?? xpolicylab_install.log"
+      ],
+      "submodules": [
+        "+3e6b42cda67ad6c02aaef2fec16815490c328751 XPolicyLab (v1.0.0~34)",
+        " afca7b09d60d8beb9c1cb28b43066499940b969b third_party/IsaacLab (heads/main)",
+        "+895c6517243f8cb091c73c018c8167192d39599a third_party/curobo (heads/main)"
+      ]
+    },
+    "xpolicylab": {
+      "commit": "3e6b42cda67ad6c02aaef2fec16815490c328751",
+      "status_short": [
+        "M policy/ACT/__init__.py",
+        " M policy/ACT/deploy.yml",
+        " M policy/ACT/detr/act_policy.py",
+        " M policy/ACT/detr/main.py",
+        " M policy/ACT/imitate_episodes.py",
+        " M policy/ACT/model.py",
+        " M policy/ACT/setup_eval_policy_server.sh",
+        " M policy/ACT/utils.py",
+        " M utils/load_file.py",
+        " M utils/setup_env_client.sh",
+        "?? policy/ACT/__init__.py.bak_day04"
+      ]
+    }
+  },
+  "run_order": [
+    "bgr",
+    "rgb"
+  ],
+  "single_variable": "ACT_INPUT_COLOR_ORDER",
+  "result_interpretation": "Action differences prove policy sensitivity only; H1 requires improved grasp geometry or repeatable coin motion."
+}

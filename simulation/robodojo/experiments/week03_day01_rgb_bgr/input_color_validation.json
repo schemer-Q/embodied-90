@@ -1,0 +1,374 @@
+{
+  "source_frame_policy": "Week 2 Day 1 reset frames decoded explicitly as RGB with Pillow",
+  "model_path": "/home/nvidia/RoboDojo/XPolicyLab/policy/ACT/model.py",
+  "model_function": "prepare_act_input_color",
+  "model_function_line": 11,
+  "model_function_source": "def prepare_act_input_color(color, color_order=None):\n    \"\"\"Apply the explicit runtime color contract before ACT tensor packing.\"\"\"\n    order = (color_order or os.environ.get(\"ACT_INPUT_COLOR_ORDER\", \"bgr\")).lower()\n    if order == \"bgr\":\n        return cv2.cvtColor(color, cv2.COLOR_RGB2BGR)\n    if order == \"rgb\":\n        return color\n    raise ValueError(\"ACT_INPUT_COLOR_ORDER must be 'bgr' or 'rgb'\")\n",
+  "camera_order_expected": [
+    "cam_head",
+    "cam_right_wrist",
+    "cam_left_wrist"
+  ],
+  "camera_order_deploy": [
+    "cam_head",
+    "cam_right_wrist",
+    "cam_left_wrist"
+  ],
+  "camera_order_matches": true,
+  "resize": {
+    "width": 640,
+    "height": 480,
+    "interpolation": "cv2.INTER_LINEAR"
+  },
+  "post_color_processing": "np.moveaxis(HWC, -1, 0) / 255.0",
+  "default_is_bgr": true,
+  "invalid_value_rejected": true,
+  "cameras": {
+    "cam_head": {
+      "source": "/home/nvidia/embodied-90/simulation/robodojo/validation/week02_day01/cam_head_reset.jpg",
+      "source_sha256": "9e824082b4c7f823faa28e0c5387c958e5d705bc36bc409addaaf1f8bf4784bd",
+      "source_rgb": {
+        "shape": [
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "min": 0.0,
+        "max": 255.0,
+        "mean_per_channel": [
+          124.21503255208333,
+          93.97661458333333,
+          81.908798828125
+        ],
+        "std_per_channel": [
+          55.50137243105368,
+          49.62385061113712,
+          50.730347879923
+        ]
+      },
+      "act_bgr": {
+        "shape": [
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "min": 0.0,
+        "max": 255.0,
+        "mean_per_channel": [
+          81.908798828125,
+          93.97661458333333,
+          124.21503255208333
+        ],
+        "std_per_channel": [
+          50.730347879923,
+          49.62385061113712,
+          55.50137243105368
+        ]
+      },
+      "act_rgb": {
+        "shape": [
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "min": 0.0,
+        "max": 255.0,
+        "mean_per_channel": [
+          124.21503255208333,
+          93.97661458333333,
+          81.908798828125
+        ],
+        "std_per_channel": [
+          55.50137243105368,
+          49.62385061113712,
+          50.730347879923
+        ]
+      },
+      "bgr_tensor": {
+        "shape": [
+          480,
+          640,
+          3
+        ],
+        "dtype": "float64",
+        "min": 0.0,
+        "max": 1.0,
+        "mean_per_channel": [
+          0.3212109757966727,
+          0.36853574346416895,
+          0.48711777471402634
+        ],
+        "std_per_channel": [
+          0.19894254070559836,
+          0.1946033357299191,
+          0.21765244090612754
+        ]
+      },
+      "rgb_tensor": {
+        "shape": [
+          480,
+          640,
+          3
+        ],
+        "dtype": "float64",
+        "min": 0.0,
+        "max": 1.0,
+        "mean_per_channel": [
+          0.48711777471402634,
+          0.36853574346416895,
+          0.3212109757966727
+        ],
+        "std_per_channel": [
+          0.21765244090612754,
+          0.1946033357299191,
+          0.19894254070559836
+        ]
+      },
+      "shape_equal": true,
+      "dtype_equal": true,
+      "range_equal": true,
+      "green_channel_equal": true,
+      "red_blue_exact_swap": true,
+      "rgb_is_identity": true,
+      "saved_images": [
+        "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day01_rgb_bgr/input_validation/cam_head_source_rgb.png",
+        "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day01_rgb_bgr/input_validation/cam_head_act_bgr_as_rgb.png",
+        "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day01_rgb_bgr/input_validation/cam_head_act_rgb.png"
+      ]
+    },
+    "cam_right_wrist": {
+      "source": "/home/nvidia/embodied-90/simulation/robodojo/validation/week02_day01/cam_right_wrist_reset.jpg",
+      "source_sha256": "e372b58c7384e674753f1f4869b500e26f31b8d9f763d5ce8e9f1869d68dde7f",
+      "source_rgb": {
+        "shape": [
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "min": 0.0,
+        "max": 255.0,
+        "mean_per_channel": [
+          158.99754231770834,
+          122.14457682291666,
+          110.02337890625
+        ],
+        "std_per_channel": [
+          62.446020156741454,
+          58.90897746683156,
+          60.05817920668947
+        ]
+      },
+      "act_bgr": {
+        "shape": [
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "min": 0.0,
+        "max": 255.0,
+        "mean_per_channel": [
+          110.02337890625,
+          122.14457682291666,
+          158.99754231770834
+        ],
+        "std_per_channel": [
+          60.05817920668947,
+          58.90897746683156,
+          62.446020156741454
+        ]
+      },
+      "act_rgb": {
+        "shape": [
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "min": 0.0,
+        "max": 255.0,
+        "mean_per_channel": [
+          158.99754231770834,
+          122.14457682291666,
+          110.02337890625
+        ],
+        "std_per_channel": [
+          62.446020156741454,
+          58.90897746683156,
+          60.05817920668947
+        ]
+      },
+      "bgr_tensor": {
+        "shape": [
+          480,
+          640,
+          3
+        ],
+        "dtype": "float64",
+        "min": 0.0,
+        "max": 1.0,
+        "mean_per_channel": [
+          0.43146423100489395,
+          0.4789983404821403,
+          0.6235197737964602
+        ],
+        "std_per_channel": [
+          0.23552227139877985,
+          0.23101559790915008,
+          0.24488635355580743
+        ]
+      },
+      "rgb_tensor": {
+        "shape": [
+          480,
+          640,
+          3
+        ],
+        "dtype": "float64",
+        "min": 0.0,
+        "max": 1.0,
+        "mean_per_channel": [
+          0.6235197737964602,
+          0.4789983404821403,
+          0.43146423100489395
+        ],
+        "std_per_channel": [
+          0.24488635355580743,
+          0.23101559790915008,
+          0.23552227139877985
+        ]
+      },
+      "shape_equal": true,
+      "dtype_equal": true,
+      "range_equal": true,
+      "green_channel_equal": true,
+      "red_blue_exact_swap": true,
+      "rgb_is_identity": true,
+      "saved_images": [
+        "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day01_rgb_bgr/input_validation/cam_right_wrist_source_rgb.png",
+        "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day01_rgb_bgr/input_validation/cam_right_wrist_act_bgr_as_rgb.png",
+        "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day01_rgb_bgr/input_validation/cam_right_wrist_act_rgb.png"
+      ]
+    },
+    "cam_left_wrist": {
+      "source": "/home/nvidia/embodied-90/simulation/robodojo/validation/week02_day01/cam_left_wrist_reset.jpg",
+      "source_sha256": "e9fef3864f6a72529ca5f434b0981139054c55cab3d12c5b5e3b16e4a4bd1e1e",
+      "source_rgb": {
+        "shape": [
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "min": 0.0,
+        "max": 255.0,
+        "mean_per_channel": [
+          119.41569986979167,
+          86.708837890625,
+          71.33178385416667
+        ],
+        "std_per_channel": [
+          44.188346249537084,
+          37.135485419763086,
+          37.948570051491934
+        ]
+      },
+      "act_bgr": {
+        "shape": [
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "min": 0.0,
+        "max": 255.0,
+        "mean_per_channel": [
+          71.33178385416667,
+          86.708837890625,
+          119.41569986979167
+        ],
+        "std_per_channel": [
+          37.948570051491934,
+          37.135485419763086,
+          44.188346249537084
+        ]
+      },
+      "act_rgb": {
+        "shape": [
+          480,
+          640,
+          3
+        ],
+        "dtype": "uint8",
+        "min": 0.0,
+        "max": 255.0,
+        "mean_per_channel": [
+          119.41569986979167,
+          86.708837890625,
+          71.33178385416667
+        ],
+        "std_per_channel": [
+          44.188346249537084,
+          37.135485419763086,
+          37.948570051491934
+        ]
+      },
+      "bgr_tensor": {
+        "shape": [
+          480,
+          640,
+          3
+        ],
+        "dtype": "float64",
+        "min": 0.0,
+        "max": 1.0,
+        "mean_per_channel": [
+          0.27973248570250464,
+          0.3400346583946364,
+          0.46829686223466427
+        ],
+        "std_per_channel": [
+          0.1488179217705623,
+          0.1456293545872174,
+          0.17328763235110337
+        ]
+      },
+      "rgb_tensor": {
+        "shape": [
+          480,
+          640,
+          3
+        ],
+        "dtype": "float64",
+        "min": 0.0,
+        "max": 1.0,
+        "mean_per_channel": [
+          0.46829686223466427,
+          0.3400346583946364,
+          0.27973248570250464
+        ],
+        "std_per_channel": [
+          0.17328763235110337,
+          0.1456293545872174,
+          0.1488179217705623
+        ]
+      },
+      "shape_equal": true,
+      "dtype_equal": true,
+      "range_equal": true,
+      "green_channel_equal": true,
+      "red_blue_exact_swap": true,
+      "rgb_is_identity": true,
+      "saved_images": [
+        "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day01_rgb_bgr/input_validation/cam_left_wrist_source_rgb.png",
+        "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day01_rgb_bgr/input_validation/cam_left_wrist_act_bgr_as_rgb.png",
+        "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day01_rgb_bgr/input_validation/cam_left_wrist_act_rgb.png"
+      ]
+    }
+  },
+  "all_checks_pass": true
+}

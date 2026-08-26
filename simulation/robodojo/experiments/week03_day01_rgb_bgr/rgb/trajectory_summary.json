@@ -1,0 +1,47 @@
+{
+  "condition": "rgb",
+  "input_color_order": "rgb",
+  "policy_steps": 300,
+  "internal_records": 3000,
+  "missing_policy_steps": [],
+  "invalid_values": 0,
+  "videos_complete": true,
+  "final_success": false,
+  "final_score": 0.0,
+  "initial_coin_position_m": [
+    -0.30055955052375793,
+    -0.13075149059295654,
+    0.7805473804473877
+  ],
+  "max_coin_displacement_m": 0.0178736996871493,
+  "max_coin_displacement_step": 51,
+  "max_coin_lift_m": 0.004164636135101318,
+  "max_coin_lift_step": 44,
+  "left_gripper_closing_start": 19,
+  "left_gripper_noticeably_closed": 35,
+  "minimum_fingertip_surface_distance_m": 1.597511955312554e-05,
+  "minimum_fingertip_surface_distance_step": 36,
+  "minimum_fingertip_midpoint_alignment_error_m": 0.005658051830302515,
+  "minimum_fingertip_midpoint_alignment_step": 33,
+  "closure_geometry": {
+    "policy_step": 35,
+    "minimum_surface_distance_m": 3.0960440654831446e-05,
+    "fingertip_midpoint_alignment_error_m": 0.007748845878343493,
+    "coin_minus_fingertip_midpoint_m": [
+      -0.00010416210608688026,
+      0.004783646816896692,
+      -0.006095119837474128
+    ],
+    "left_gripper_m": 0.006870069541037083
+  },
+  "max_tracking_error": 0.8496008962392807,
+  "max_tracking_error_step": 251,
+  "chunk_boundary_tracking_error": {
+    "51": 0.030063867568969727,
+    "101": 0.22159481048583984,
+    "151": 0.5312539339065552,
+    "201": 0.7828495502471924,
+    "251": 0.8496008962392807
+  },
+  "all_actions_finite": true
+}

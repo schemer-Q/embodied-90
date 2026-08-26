@@ -1,0 +1,139 @@
+diff --git a/policy/ACT/model.py b/policy/ACT/model.py
+index a8e4ffd..b0e1a96 100644
+--- a/policy/ACT/model.py
++++ b/policy/ACT/model.py
+@@ -8,13 +8,41 @@ from XPolicyLab.model_template import ModelTemplate
+ from XPolicyLab.utils.process_data import pack_robot_state, unpack_robot_state, get_robot_action_dim_info
+ import os
+ 
++def prepare_act_input_color(color, color_order=None):
++    """Apply the explicit runtime color contract before ACT tensor packing."""
++    order = (color_order or os.environ.get("ACT_INPUT_COLOR_ORDER", "bgr")).lower()
++    if order == "bgr":
++        return cv2.cvtColor(color, cv2.COLOR_RGB2BGR)
++    if order == "rgb":
++        return color
++    raise ValueError("ACT_INPUT_COLOR_ORDER must be 'bgr' or 'rgb'")
++
++
++class _DummyACT:
++    """Lightweight placeholder used when we are replaying recorded actions.
++
++    It avoids loading the full ACT network / curobo warm-start, which saves
++    GPU memory and startup time during GT-replay diagnostics.
++    """
++    def __init__(self):
++        self.temporal_agg = False
++        self.t = 0
++
++    def update_obs(self, obs):
++        pass
++
++
+ class Model(ModelTemplate):
+ 
+     def __init__(self, model_cfg):
+         self.camera_names = model_cfg.get('camera_names', [])
+         model_cfg['camera_names'] = self.camera_names
+ 
+-        self.model = self.get_model(model_cfg=model_cfg)
++        # GT replay never queries the learned policy, so skip the heavy init.
++        if os.environ.get('ACT_GT_REPLAY', '0') == '1':
++            self.model = _DummyACT()
++        else:
++            self.model = self.get_model(model_cfg=model_cfg)
+         self.robot_action_dim_info = get_robot_action_dim_info(model_cfg['env_cfg_type'])
+         self.action_type = model_cfg['action_type']
+ 
+@@ -30,19 +58,72 @@ class Model(ModelTemplate):
+     def update_obs(self, obs):
+         encoded_obs = self.encode_obs(obs, self.action_type, self.robot_action_dim_info)
+         self.model.update_obs(encoded_obs)
++        if os.environ.get('ACT_GT_REPLAY', '0') == '1':
++            with open('/tmp/gt_replay_qpos.log', 'a') as f:
++                f.write(f"step={getattr(self, '_gt_step', 0)} qpos={encoded_obs['qpos'].tolist()}\n")
++        if os.environ.get('ACT_DEBUG_LOG', '0') == '1':
++            if not hasattr(self, '_debug_step'):
++                self._debug_step = 0
++            with open('/tmp/act_pred_log.txt', 'a') as f:
++                f.write(f"update step={self._debug_step} qpos={encoded_obs['qpos'].tolist()}\n")
+     
+     # def update_obs_batch(self, obs_list): # TODO
+     #     pass
+     
+     def get_action(self):
++        if os.environ.get('ACT_GT_REPLAY', '0') == '1':
++            return self._get_gt_action()
+         actions = self.model.get_action()
+         action_list = unpack_robot_state(actions, self.action_type, self.robot_action_dim_info, source_type='obs')
++        if os.environ.get('ACT_DEBUG_LOG', '0') == '1':
++            if not hasattr(self, '_debug_step'):
++                self._debug_step = 0
++            with open('/tmp/act_pred_log.txt', 'a') as f:
++                f.write(f"pred step={self._debug_step} action={actions.tolist()} left_gripper={action_list[0].get('left_ee_joint_state',[None])[0]} right_gripper={action_list[0].get('right_ee_joint_state',[None])[0]}\n")
++            self._debug_step += 1
+         return action_list
+ 
++    def _get_gt_action(self):
++        import h5py, glob, re
++        if not hasattr(self, '_gt_actions'):
++            files = glob.glob(os.path.join(
++                os.path.dirname(os.path.abspath(__file__)),
++                'processed_data', 'RoboDojo', 'deposit_coin', 'arx_x5-joint', '*.hdf5'
++            ))
++            # Sort by numeric episode index, not lexicographic (episode_10 before episode_2).
++            files = sorted(files, key=lambda p: int(re.search(r'episode_(\d+)\.hdf5$', p).group(1)))
++            ep_idx = int(os.environ.get('ACT_GT_REPLAY_EPISODE', '0'))
++            print(f"[GT_REPLAY] loading episode {ep_idx} from {files[ep_idx]}", flush=True)
++            replay_source = os.environ.get("ACT_GT_REPLAY_SOURCE", "action")
++            if replay_source not in {"action", "qpos"}:
++                raise ValueError("ACT_GT_REPLAY_SOURCE must be action or qpos")
++            dataset_key = "action" if replay_source == "action" else "observations/qpos"
++            with h5py.File(files[ep_idx], 'r') as f:
++                self._gt_actions = f[dataset_key][:]
++            print(f"[GT_REPLAY] source={replay_source} dataset={dataset_key}", flush=True)
++            self._gt_step = 0
++        if self._gt_step < len(self._gt_actions):
++            action_vec = self._gt_actions[self._gt_step]
++        else:
++            action_vec = self._gt_actions[-1]
++        action_dict = unpack_robot_state(action_vec, self.action_type, self.robot_action_dim_info, source_type='obs')
++        with open('/tmp/gt_replay_actions.log', 'a') as f:
++            f.write(f"step={self._gt_step} right_gripper={action_dict['right_ee_joint_state'][0]:.6f} left_gripper={action_dict['left_ee_joint_state'][0]:.6f}\n")
++            f.flush()
++        self._gt_step += 1
++        return [action_dict]
++
+     # def get_action_batch(self, env_idx_list): # TODO
+     #     pass
+ 
+     def reset(self):
++        if os.environ.get('ACT_GT_REPLAY', '0') == '1':
++            if hasattr(self, '_gt_step'):
++                self._gt_step = 0
++            if os.environ.get('ACT_DEBUG_LOG', '0') == '1':
++                self._debug_step = 0
++                open('/tmp/act_pred_log.txt', 'w').close()
++            return
+         # Reset temporal aggregation state if enabled
+         if self.model.temporal_agg:
+             self.model.all_time_actions = torch.zeros([
+@@ -53,6 +134,11 @@ class Model(ModelTemplate):
+             self.model.t = 0
+         else:
+             self.model.t = 0
++        if hasattr(self, '_gt_step'):
++            self._gt_step = 0
++        if os.environ.get('ACT_DEBUG_LOG', '0') == '1':
++            self._debug_step = 0
++            open('/tmp/act_pred_log.txt', 'w').close()
+ 
+     def encode_obs(self, observation, action_type, robot_action_dim_info):
+         res_dict = dict()
+@@ -61,6 +147,7 @@ class Model(ModelTemplate):
+             if camera_name not in observation["vision"]:
+                 raise ValueError(f"Expected camera '{camera_name}' not found in observation['vision']")
+             color = cv2.resize(observation["vision"][camera_name]["color"], (640, 480), interpolation=cv2.INTER_LINEAR)
++            color = prepare_act_input_color(color)
+             color = np.moveaxis(color, -1, 0) / 255.0
+             res_dict[camera_name] = color

@@ -1,0 +1,132 @@
+{
+  "conditions_complete": true,
+  "single_variable": "ACT_INPUT_COLOR_ORDER",
+  "initial_state_delta": {
+    "coin_position_max_abs_m": 0.0,
+    "robot_qpos_max_abs": 0.0
+  },
+  "initial_state_match": true,
+  "action_difference": {
+    "mean_l2": 1.4086112192990918,
+    "median_l2": 1.0167712236442519,
+    "max_l2": 3.7942213563240177,
+    "max_l2_step": 109,
+    "first_60_mean_l2": 0.6639622941566897,
+    "steps_above_1e-6": 300
+  },
+  "bgr": {
+    "condition": "bgr",
+    "input_color_order": "bgr",
+    "policy_steps": 300,
+    "internal_records": 3000,
+    "missing_policy_steps": [],
+    "invalid_values": 0,
+    "videos_complete": true,
+    "final_success": false,
+    "final_score": 0.0,
+    "initial_coin_position_m": [
+      -0.30055955052375793,
+      -0.13075149059295654,
+      0.7805473804473877
+    ],
+    "max_coin_displacement_m": 9.772480983775613e-07,
+    "max_coin_displacement_step": 78,
+    "max_coin_lift_m": 1.7881393432617188e-07,
+    "max_coin_lift_step": 53,
+    "left_gripper_closing_start": 19,
+    "left_gripper_noticeably_closed": 34,
+    "minimum_fingertip_surface_distance_m": 0.004266911008053609,
+    "minimum_fingertip_surface_distance_step": 25,
+    "minimum_fingertip_midpoint_alignment_error_m": 0.02990166772699895,
+    "minimum_fingertip_midpoint_alignment_step": 25,
+    "closure_geometry": {
+      "policy_step": 34,
+      "minimum_surface_distance_m": 0.02151032552360595,
+      "fingertip_midpoint_alignment_error_m": 0.040549394994052475,
+      "coin_minus_fingertip_midpoint_m": [
+        -0.0027750665795066576,
+        0.020183156918359896,
+        -0.03505984336348145
+      ],
+      "left_gripper_m": 0.009667688980698586
+    },
+    "max_tracking_error": 0.5511229038238525,
+    "max_tracking_error_step": 51,
+    "chunk_boundary_tracking_error": {
+      "51": 0.5511229038238525,
+      "101": 0.49568378925323486,
+      "151": 0.48740386962890625,
+      "201": 0.46595728397369385,
+      "251": 0.4117865264415741
+    },
+    "all_actions_finite": true
+  },
+  "rgb": {
+    "condition": "rgb",
+    "input_color_order": "rgb",
+    "policy_steps": 300,
+    "internal_records": 3000,
+    "missing_policy_steps": [],
+    "invalid_values": 0,
+    "videos_complete": true,
+    "final_success": false,
+    "final_score": 0.0,
+    "initial_coin_position_m": [
+      -0.30055955052375793,
+      -0.13075149059295654,
+      0.7805473804473877
+    ],
+    "max_coin_displacement_m": 0.0178736996871493,
+    "max_coin_displacement_step": 51,
+    "max_coin_lift_m": 0.004164636135101318,
+    "max_coin_lift_step": 44,
+    "left_gripper_closing_start": 19,
+    "left_gripper_noticeably_closed": 35,
+    "minimum_fingertip_surface_distance_m": 1.597511955312554e-05,
+    "minimum_fingertip_surface_distance_step": 36,
+    "minimum_fingertip_midpoint_alignment_error_m": 0.005658051830302515,
+    "minimum_fingertip_midpoint_alignment_step": 33,
+    "closure_geometry": {
+      "policy_step": 35,
+      "minimum_surface_distance_m": 3.0960440654831446e-05,
+      "fingertip_midpoint_alignment_error_m": 0.007748845878343493,
+      "coin_minus_fingertip_midpoint_m": [
+        -0.00010416210608688026,
+        0.004783646816896692,
+        -0.006095119837474128
+      ],
+      "left_gripper_m": 0.006870069541037083
+    },
+    "max_tracking_error": 0.8496008962392807,
+    "max_tracking_error_step": 251,
+    "chunk_boundary_tracking_error": {
+      "51": 0.030063867568969727,
+      "101": 0.22159481048583984,
+      "151": 0.5312539339065552,
+      "201": 0.7828495502471924,
+      "251": 0.8496008962392807
+    },
+    "all_actions_finite": true
+  },
+  "rgb_minus_bgr": {
+    "minimum_surface_distance_m": -0.004250935888500483,
+    "minimum_alignment_error_m": -0.024243615896696435,
+    "closure_alignment_error_m": -0.03280054911570898,
+    "max_coin_displacement_m": 0.01787272243905092,
+    "max_coin_lift_m": 0.004164457321166992,
+    "max_tracking_error": 0.29847799241542816
+  },
+  "day5_bgr_reproduction": {
+    "day5_final_success": false,
+    "day5_final_score": 0.0,
+    "day5_max_coin_lift_m": 1.7881393432617188e-07,
+    "initial_coin_position_max_abs_m": 0.0,
+    "action_l2_mean": 0.3679059090691376,
+    "action_l2_max": 0.8333305004242746,
+    "action_l2_first_60_mean": 0.01936077107976678,
+    "same_final_result": true,
+    "coin_lift_difference_m": 0.0,
+    "behavioral_baseline_reproduced": true
+  },
+  "interpretation_rule": "Action change alone proves color sensitivity, not H1. H1 requires improved grasp geometry or repeatable coin motion; one pair cannot establish repeatability."
+}

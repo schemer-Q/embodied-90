@@ -1,0 +1,57 @@
+{
+  "physical_initial_state_match": {
+    "coin_position_max_abs_m": 0.0,
+    "robot_qpos_max_abs": 0.0
+  },
+  "note": "Reset video frames are not byte-identical across separate Isaac Sim launches. Differences are recorded as renderer/JPEG nondeterminism, not hidden configuration changes.",
+  "cameras": {
+    "cam_head": {
+      "shape_equal": true,
+      "mae_8bit": 1.9517534722222223,
+      "max_abs_8bit": 54.0,
+      "pixels_gt_5_fraction": 0.09771484375,
+      "mean_bgr_a": [
+        80.85514322916667,
+        92.635830078125,
+        123.23703125
+      ],
+      "mean_bgr_b": [
+        80.84036783854167,
+        92.74482747395834,
+        123.68512044270834
+      ]
+    },
+    "cam_right_wrist": {
+      "shape_equal": true,
+      "mae_8bit": 1.4769032118055556,
+      "max_abs_8bit": 37.0,
+      "pixels_gt_5_fraction": 0.05568684895833333,
+      "mean_bgr_a": [
+        108.75251953125,
+        120.6216796875,
+        158.03113932291666
+      ],
+      "mean_bgr_b": [
+        108.79811197916666,
+        120.584189453125,
+        158.02091471354166
+      ]
+    },
+    "cam_left_wrist": {
+      "shape_equal": true,
+      "mae_8bit": 1.638132595486111,
+      "max_abs_8bit": 36.0,
+      "pixels_gt_5_fraction": 0.06212239583333334,
+      "mean_bgr_a": [
+        70.02382486979167,
+        85.26908854166666,
+        118.6790625
+      ],
+      "mean_bgr_b": [
+        69.99978190104167,
+        85.28346028645834,
+        118.64582682291666
+      ]
+    }
+  }
+}
