@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T10:33:55.404682+08:00",
+  "generated_at": "2026-08-26T11:11:08.771173+08:00",
   "experiment": "Week 3 Day 1 RGB/BGR single-variable A/B",
   "conditions": {
     "A": {
@@ -44,9 +44,15 @@
   },
   "repositories": {
     "experiment": {
-      "commit": "655233289c2e879d6f8fc463c16e13daf8d1bae0",
+      "commit": "4802dab204757278ad749023c38bb1d70676a354",
       "status_short": [
-        "?? simulation/robodojo/experiments/",
+        "M simulation/robodojo/experiments/week03_day01_rgb_bgr/experiment_config.json",
+        "?? simulation/robodojo/experiments/week03_day01_rgb_bgr/__pycache__/",
+        "?? simulation/robodojo/experiments/week03_day01_rgb_bgr/attempts/",
+        "?? simulation/robodojo/experiments/week03_day01_rgb_bgr/run_multiseed_ab.sh",
+        "?? simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/",
+        "?? simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1_driver.log",
+        "?? simulation/robodojo/experiments/week03_day01_rgb_driver.log",
         "?? simulation/robodojo/logs/coin_x5_day04_act_eval.log",
         "?? simulation/robodojo/troubleshooting/day04_frames/head_sheet.jpg",
         "?? simulation/robodojo/troubleshooting/day04_frames/left_wrist_sheet.jpg",

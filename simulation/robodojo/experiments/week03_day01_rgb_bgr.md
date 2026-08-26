@@ -71,18 +71,19 @@ Action L2 的逐 policy step 结果见 [paired_comparison.csv](week03_day01_rgb_
 
 ## H1 判定
 
-本次单配对结果对 H1 **初步支持，但尚未最终确认**：RGB 不仅改变了 14-D action，还显著改善了闭合时的指尖几何，并产生了 BGR 基线没有的可观硬币位移和约 `4.2 mm` 抬升。仅 action 变化不作为 H1 证据，真正支持来自抓取几何和硬币状态差异。
+三组匹配配对均显示 RGB 改善了闭合几何，但只有 seed 0 产生明显硬币运动：
 
-仍不能称为“成功抓取”或“已排除其他根因”，原因是：
+| Seed | RGB 闭合表面距离改善 | RGB midpoint 对准改善 | RGB 最大硬币位移 | RGB 最大抬升 | 最终结果 |
+|---:|---:|---:|---:|---:|---|
+| 0 | 21.479 mm | 32.801 mm | 17.874 mm | 4.165 mm | success=false, score=0.0 |
+| 1 | 60.321 mm | 86.299 mm | 0.000 mm | 0.000 mm | success=false, score=0.0 |
+| 2 | 141.919 mm | 145.373 mm | 0.000 mm | 0.000 mm | success=false, score=0.0 |
 
-- 当前只有 seed 0/layout 0 一组配对，尚未满足重复性证据；
-- RGB 的最大抬升仍低于 `0.08 m` lift 阈值，最终任务仍失败；
-- RGB 的 chunk-boundary tracking error 在后续边界更大，H2 仍可能与 H1 同时存在；
-- 当前日志没有把视觉疑似接触等同于可靠 contact force。
+判定：H1 **支持为视觉输入导致抓取姿态偏差**，因为 RGB 在 `3/3` 个 seed 中改善了闭合几何；但 H1 **不能单独升为最终失败的主要根因**，因为只有 `1/3` 个 seed 产生明显 coin 位移，且三个 seed 都未达到 `0.08 m` lift 阈值。动作差异只能证明策略对颜色输入敏感，不能替代抓取结果证据。
 
-因此 Week 3 Day 1 的工作结论为：
+chunk-boundary 最大 tracking error 分别为 seed 0：BGR `0.551 rad`、RGB `0.850 rad`；seed 1：BGR `0.594 rad`、RGB `0.247 rad`；seed 2：BGR `0.785 rad`、RGB `0.063 rad`。颜色修正并未稳定降低时序误差。
 
-> H1 从“未决”更新为“有强单次配对证据支持，等待重复确认”。优先执行相同协议的 seed 1/2 A/B；若 RGB 在至少 2/3 配对中重复改善闭合几何并产生受控 coin 位移，则将 H1 提升为主要根因候选。若多次改善不稳定或始终无法形成有效抬升，则 H1 只能解释姿态偏差，不能单独解释最终失败。
+这也不支持将 seed 0 结果简单视为完全偶然：几何改善在三组中重复出现；更准确的结论是，RGB 修正改善了接近/闭合姿态，但后续接触、时序或物理交互仍然限制了硬币抬升。Day 2 仍应独立验证 temporal aggregation。
 
 ## 产物
 
@@ -96,7 +97,10 @@ Action L2 的逐 policy step 结果见 [paired_comparison.csv](week03_day01_rgb_
 - [配对摘要](week03_day01_rgb_bgr/paired_summary.json)
 - [对比图](week03_day01_rgb_bgr/comparison_plot.png)
 - [运行脚本](week03_day01_rgb_bgr/run_ab_test.sh)
+- [多 seed 运行脚本](week03_day01_rgb_bgr/run_multiseed_ab.sh)
+- [多 seed 汇总](week03_day01_rgb_bgr/multiseed_summary.json)
+- [多 seed 对照表](week03_day01_rgb_bgr/multiseed_comparison.csv)
 
 ## 下一步
 
-补跑 seed 1/2 的匹配 A/B，保持本次所有固定变量不变。Day 2 仍单独验证 temporal aggregation，不在本实验中修改 `temporal_agg` 或 collision 配置。
+seed 1/2 已按反转运行顺序完成。Day 2 仍单独验证 temporal aggregation，不在本实验中修改 `temporal_agg` 或 collision 配置。

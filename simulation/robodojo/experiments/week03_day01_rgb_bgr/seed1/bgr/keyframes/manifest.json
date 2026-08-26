@@ -1,0 +1,530 @@
+[
+  {
+    "camera": "cam_head",
+    "policy_step": 0,
+    "video_frame": 0,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_head_step_000.jpg",
+    "sha256": "fb807fd01c67a0ef120bca059bd72408c6a8f334eeea2c0a3c7559ea29264370",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      78.95547200520834,
+      91.08171223958334,
+      122.45607421875
+    ],
+    "std_bgr": [
+      50.59791378986523,
+      49.11869820357248,
+      54.68940464734018
+    ]
+  },
+  {
+    "camera": "cam_head",
+    "policy_step": 1,
+    "video_frame": 1,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_head_step_001.jpg",
+    "sha256": "57c6c41a7394a6d07c9e0a5aa6a8a1fc785acbd56ac1b6ecbd56e53357d508d2",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      79.003837890625,
+      91.08597981770833,
+      122.49646809895833
+    ],
+    "std_bgr": [
+      50.614943718114134,
+      49.12453939879919,
+      54.689345271486815
+    ]
+  },
+  {
+    "camera": "cam_head",
+    "policy_step": 11,
+    "video_frame": 11,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_head_step_011.jpg",
+    "sha256": "d641bf917fc0f5626777d334077bdf4a9a34789f7f53ac51c3fe2193361c2374",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      77.69706705729166,
+      89.63095377604166,
+      120.71896484375
+    ],
+    "std_bgr": [
+      49.62189109692611,
+      48.69148022951515,
+      55.31074600300057
+    ]
+  },
+  {
+    "camera": "cam_head",
+    "policy_step": 26,
+    "video_frame": 26,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_head_step_026.jpg",
+    "sha256": "9b58360e6a01d5df7395523d592a26aaeaf134b8da674f054228408397b64e33",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      80.300126953125,
+      92.189375,
+      123.23087890625
+    ],
+    "std_bgr": [
+      49.48283772329158,
+      48.62474115316458,
+      54.95127300223953
+    ]
+  },
+  {
+    "camera": "cam_head",
+    "policy_step": 50,
+    "video_frame": 50,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_head_step_050.jpg",
+    "sha256": "e3f63ea9779a6304cf927b7a95412d487bcc345d6bf0f8f8259442ea383cb7d8",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      80.752470703125,
+      92.80113932291667,
+      124.412744140625
+    ],
+    "std_bgr": [
+      49.569683715939654,
+      48.63456570974579,
+      54.74760289854184
+    ]
+  },
+  {
+    "camera": "cam_head",
+    "policy_step": 51,
+    "video_frame": 51,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_head_step_051.jpg",
+    "sha256": "bc3fc0af4192bef5d3540fe78596e4b56db85b29ac384361ace78668c7100ed6",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      80.41384440104167,
+      92.55701822916667,
+      123.949853515625
+    ],
+    "std_bgr": [
+      49.457639496415595,
+      48.55272488721033,
+      54.84577348160285
+    ]
+  },
+  {
+    "camera": "cam_head",
+    "policy_step": 162,
+    "video_frame": 162,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_head_step_162.jpg",
+    "sha256": "cce6a732d9fbc0c3ebc7ed06fd5c638f95266ff551de75d141a7d3f2f087b746",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      84.081552734375,
+      96.11460286458333,
+      127.37360026041667
+    ],
+    "std_bgr": [
+      52.4427223468276,
+      51.03834908305072,
+      55.919511827757326
+    ]
+  },
+  {
+    "camera": "cam_head",
+    "policy_step": 300,
+    "video_frame": 300,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_head_step_300.jpg",
+    "sha256": "1d54c8c7cd33604b0503505283b2b5d15922dbc829fb3ee251ec2d5b09566c31",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      77.98313151041667,
+      90.366572265625,
+      122.203486328125
+    ],
+    "std_bgr": [
+      48.6330381299147,
+      48.28836102333772,
+      55.90251276828377
+    ]
+  },
+  {
+    "camera": "cam_left_wrist",
+    "policy_step": 0,
+    "video_frame": 0,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_left_wrist_step_000.jpg",
+    "sha256": "0e3c27f6786944c0b37b846ef67dc5732daba15e16250257f0f15be23f48ddfd",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      94.26363932291666,
+      107.48055989583334,
+      146.298896484375
+    ],
+    "std_bgr": [
+      58.49923905118967,
+      56.739599815176206,
+      60.1003975031324
+    ]
+  },
+  {
+    "camera": "cam_left_wrist",
+    "policy_step": 1,
+    "video_frame": 1,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_left_wrist_step_001.jpg",
+    "sha256": "4e43e375763c57557de9224ca1f1e17058de0a10206e2dbd97a1099146e67ee5",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      94.29213216145833,
+      107.48618489583333,
+      146.328740234375
+    ],
+    "std_bgr": [
+      58.48514129161587,
+      56.73680260712029,
+      60.09259808471577
+    ]
+  },
+  {
+    "camera": "cam_left_wrist",
+    "policy_step": 11,
+    "video_frame": 11,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_left_wrist_step_011.jpg",
+    "sha256": "a85770d7bf1f843022dcb073c858f467c1c5d5981da81f823d0a7a9736cb0334",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      94.98959635416666,
+      107.90787760416667,
+      145.40179361979168
+    ],
+    "std_bgr": [
+      58.125166855435005,
+      56.386490910652704,
+      59.96225541335834
+    ]
+  },
+  {
+    "camera": "cam_left_wrist",
+    "policy_step": 26,
+    "video_frame": 26,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_left_wrist_step_026.jpg",
+    "sha256": "7ae65559fe368be8b5f6ce082a4bba85c13afae9e34c20a1565e9f38a55dd94c",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      90.147197265625,
+      103.2335546875,
+      139.69508463541666
+    ],
+    "std_bgr": [
+      55.953177181841106,
+      54.54902882689948,
+      58.54669261984369
+    ]
+  },
+  {
+    "camera": "cam_left_wrist",
+    "policy_step": 50,
+    "video_frame": 50,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_left_wrist_step_050.jpg",
+    "sha256": "459e97ee24336a219185141bd1e1e2c6b4f8842ad96a4a6357710c5980016968",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      90.77583333333334,
+      104.27269205729166,
+      145.89544596354168
+    ],
+    "std_bgr": [
+      57.93494906810001,
+      56.43913311226163,
+      58.692436749584495
+    ]
+  },
+  {
+    "camera": "cam_left_wrist",
+    "policy_step": 51,
+    "video_frame": 51,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_left_wrist_step_051.jpg",
+    "sha256": "9f64fce9350e791e59d734af87dae9dce09da5b4873eddcffc6000df0a5d6e25",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      91.900166015625,
+      105.29697265625,
+      147.62397786458334
+    ],
+    "std_bgr": [
+      58.4686946928675,
+      56.94220872132733,
+      59.06731820566767
+    ]
+  },
+  {
+    "camera": "cam_left_wrist",
+    "policy_step": 162,
+    "video_frame": 162,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_left_wrist_step_162.jpg",
+    "sha256": "e02d63d3c61f43bb25b63161e439bb744d6ffe338396b910be815c90ea81a5d1",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      88.32664713541666,
+      101.194404296875,
+      132.789208984375
+    ],
+    "std_bgr": [
+      52.73174651678433,
+      51.26655591901221,
+      55.24522359951038
+    ]
+  },
+  {
+    "camera": "cam_left_wrist",
+    "policy_step": 300,
+    "video_frame": 300,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_left_wrist_step_300.jpg",
+    "sha256": "e8f1d0041640db34dabf15d19c8d5d8282bd47ee9dbdfed03055e9908637f03d",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      96.03275390625,
+      109.221357421875,
+      151.74758138020835
+    ],
+    "std_bgr": [
+      59.87209034199725,
+      58.16216778939001,
+      59.59945228419401
+    ]
+  },
+  {
+    "camera": "cam_right_wrist",
+    "policy_step": 0,
+    "video_frame": 0,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_right_wrist_step_000.jpg",
+    "sha256": "50955778b8af8ec502d1791de0d6b60e6063f2bb14a163b07e9e3ecac2f450ab",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      76.27810546875,
+      91.53689453125,
+      124.61085611979166
+    ],
+    "std_bgr": [
+      42.36601322543876,
+      41.0963360180121,
+      47.5404097845518
+    ]
+  },
+  {
+    "camera": "cam_right_wrist",
+    "policy_step": 1,
+    "video_frame": 1,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_right_wrist_step_001.jpg",
+    "sha256": "54bd4b33ecc8d53781ae612d0f8e206153197311d8f99207ccfcca7dfdc1cf42",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      76.29204752604167,
+      91.540078125,
+      124.620634765625
+    ],
+    "std_bgr": [
+      42.36368170855563,
+      41.10472154543001,
+      47.540329829247696
+    ]
+  },
+  {
+    "camera": "cam_right_wrist",
+    "policy_step": 11,
+    "video_frame": 11,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_right_wrist_step_011.jpg",
+    "sha256": "157657d1b873a56b3852f76088755c702355e1c73d83170fb3c30c3640ed84be",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      74.32796549479167,
+      91.29329427083333,
+      132.90486328125
+    ],
+    "std_bgr": [
+      43.31364251696437,
+      41.83619665868509,
+      46.72279670093762
+    ]
+  },
+  {
+    "camera": "cam_right_wrist",
+    "policy_step": 26,
+    "video_frame": 26,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_right_wrist_step_026.jpg",
+    "sha256": "4dc6442b10df244d143a436e3ed1d5250e3c9bccceaecdac7dd381bc529f0dc5",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      51.426350911458336,
+      70.780146484375,
+      119.95402018229167
+    ],
+    "std_bgr": [
+      27.25327195627968,
+      30.850974558812645,
+      46.66151627786282
+    ]
+  },
+  {
+    "camera": "cam_right_wrist",
+    "policy_step": 50,
+    "video_frame": 50,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_right_wrist_step_050.jpg",
+    "sha256": "1bce30136f61f54b887e6c7841cff900278e134d47dbf426c62edb520a3a1f0f",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      58.669384765625,
+      77.13298177083334,
+      124.314912109375
+    ],
+    "std_bgr": [
+      43.55406213353678,
+      43.6756333515873,
+      50.0868172736741
+    ]
+  },
+  {
+    "camera": "cam_right_wrist",
+    "policy_step": 51,
+    "video_frame": 51,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_right_wrist_step_051.jpg",
+    "sha256": "bcf99503573651b48c435ff6d1c04d7e517a8ef9092962ba6b7f77ed1df1d4d0",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      58.65120768229167,
+      77.14298502604167,
+      124.277890625
+    ],
+    "std_bgr": [
+      43.70872764006815,
+      43.57796616823488,
+      49.91686822941493
+    ]
+  },
+  {
+    "camera": "cam_right_wrist",
+    "policy_step": 162,
+    "video_frame": 162,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_right_wrist_step_162.jpg",
+    "sha256": "9a97bfdbeaaa3ddeb765c361187fd450308db1bf383b69cb0b8b753dbe253ee6",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      57.14248697916667,
+      74.30101236979166,
+      119.16910807291667
+    ],
+    "std_bgr": [
+      36.85427476635874,
+      40.262013285717686,
+      53.18930730490213
+    ]
+  },
+  {
+    "camera": "cam_right_wrist",
+    "policy_step": 300,
+    "video_frame": 300,
+    "path": "simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1/bgr/keyframes/cam_right_wrist_step_300.jpg",
+    "sha256": "b83c9ad282b32b45594b57be33735c1de04d8ae012a2f7a1bf9f3daae1652b0c",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      63.266360677083334,
+      79.53952799479167,
+      120.26750651041667
+    ],
+    "std_bgr": [
+      38.38360231908305,
+      38.85511691804302,
+      47.314180564107104
+    ]
+  }
+]
