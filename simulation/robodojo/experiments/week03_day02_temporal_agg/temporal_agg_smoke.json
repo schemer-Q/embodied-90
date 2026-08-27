@@ -1,0 +1,99 @@
+{
+  "formula": "exp(-0.01 * arange(candidate_count)) normalized",
+  "query_frequency": 1,
+  "num_queries": 4,
+  "action_dim": 14,
+  "records": [
+    {
+      "step": 0,
+      "candidate_count": 1,
+      "weights": [
+        1.0
+      ],
+      "action_finite": true,
+      "action_dim": 14
+    },
+    {
+      "step": 1,
+      "candidate_count": 2,
+      "weights": [
+        0.5024999791668749,
+        0.497500020833125
+      ],
+      "action_finite": true,
+      "action_dim": 14
+    },
+    {
+      "step": 2,
+      "candidate_count": 3,
+      "weights": [
+        0.3366721665289847,
+        0.33332222249999355,
+        0.33000561097102177
+      ],
+      "action_finite": true,
+      "action_dim": 14
+    },
+    {
+      "step": 3,
+      "candidate_count": 4,
+      "weights": [
+        0.2537624057326252,
+        0.25123742760737455,
+        0.24873757343424976,
+        0.24626259322575048
+      ],
+      "action_finite": true,
+      "action_dim": 14
+    },
+    {
+      "step": 4,
+      "candidate_count": 4,
+      "weights": [
+        0.2537624057326252,
+        0.25123742760737455,
+        0.24873757343424976,
+        0.24626259322575048
+      ],
+      "action_finite": true,
+      "action_dim": 14
+    },
+    {
+      "step": 5,
+      "candidate_count": 4,
+      "weights": [
+        0.2537624057326252,
+        0.25123742760737455,
+        0.24873757343424976,
+        0.24626259322575048
+      ],
+      "action_finite": true,
+      "action_dim": 14
+    },
+    {
+      "step": 6,
+      "candidate_count": 4,
+      "weights": [
+        0.2537624057326252,
+        0.25123742760737455,
+        0.24873757343424976,
+        0.24626259322575048
+      ],
+      "action_finite": true,
+      "action_dim": 14
+    },
+    {
+      "step": 7,
+      "candidate_count": 4,
+      "weights": [
+        0.2537624057326252,
+        0.25123742760737455,
+        0.24873757343424976,
+        0.24626259322575048
+      ],
+      "action_finite": true,
+      "action_dim": 14
+    }
+  ],
+  "passed": true
+}

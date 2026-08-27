@@ -1,0 +1,342 @@
+{
+  "generated_at": "2026-08-27T08:47:02.139101+08:00",
+  "run_id": "week03_day02_seed0_layout0_temporal_true",
+  "launch_command": "ACT_INPUT_COLOR_ORDER=rgb ACT_TEMPORAL_AGG=true ACT_MAX_TIMESTEPS=300 bash scripts/robodojo.sh eval --policy-dir XPolicyLab/policy/ACT --task deposit_coin --ckpt RoboDojo-deposit_coin-arx_x5-joint-0 --env-cfg arx_x5 --action-type joint --seed 0 --policy-gpu 0 --env-gpu 0 --policy-env RoboDojo --eval-env RoboDojo",
+  "config": {
+    "task": "deposit_coin",
+    "env_cfg": "arx_x5",
+    "action_type": "joint",
+    "policy": "ACT",
+    "checkpoint": "RoboDojo-deposit_coin-arx_x5-joint-0",
+    "seed": 0,
+    "layout": 0,
+    "num_envs": 1,
+    "episode_limit": 300,
+    "internal_controls_per_policy_step": 10
+  },
+  "versions": {
+    "python": "3.11.15",
+    "pytorch": "2.7.0+cu128",
+    "isaacsim": "5.1.0.0"
+  },
+  "randomness_environment": {
+    "PYTHONHASHSEED": "0",
+    "CUDA_VISIBLE_DEVICES": "0",
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+    "ACT_QUERY_FREQ": null,
+    "ACT_TEMPORAL_AGG": "1",
+    "ACT_NO_INTERP": null,
+    "GRIPPER_EPS": null,
+    "ACT_GRIPPER_MIN_POSITION": null,
+    "ACT_GT_REPLAY_LAYOUT_ID": "0",
+    "ROBODOJO_RUN_ID": "week03_day02_seed0_layout0_temporal_true",
+    "ACT_INPUT_COLOR_ORDER": "rgb",
+    "ACT_GEOMETRY_MESH_CATEGORIES": "vertical_coin_stand,piggy_bank",
+    "ACT_MAX_TIMESTEPS": "300"
+  },
+  "robodojo": {
+    "commit": "9226f48ea694b3f53db12d4922e8b1199f8d0891",
+    "status_short": [
+      "M XPolicyLab",
+      " M env/reward_manager/func_parser.py",
+      " M env/robot_manager/control_manager.py",
+      " M env/scene_manager/objects/geometry.py",
+      " M env/scene_manager/objects/rigid.py",
+      " M scripts/eval_policy.sh",
+      " M src/eval_client/eval_env.py",
+      " M third_party/curobo",
+      "?? Miniconda3-latest-Linux-x86_64.sh",
+      "?? act_debug_smoke.log",
+      "?? act_dependencies.log",
+      "?? act_dummy_ckpt.log",
+      "?? act_env_setup.log",
+      "?? act_process_data.log",
+      "?? act_sim_smoke.log",
+      "?? act_train.log",
+      "?? act_train_bs8.log",
+      "?? assets_download.log",
+      "?? ast",
+      "?? create_act_dummy_ckpt.py",
+      "?? debug_smoke.log",
+      "?? deposit_coin_eval.log",
+      "?? deposit_coin_eval_50.log",
+      "?? deposit_coin_eval_debug.log",
+      "?? deposit_coin_eval_v2.log",
+      "?? download_single_task_data.sh",
+      "?? install.log",
+      "?? json",
+      "?? kl1_shorttest_eval.log",
+      "?? logs/",
+      "?? prompt.md",
+      "?? retrain1000_eval.log",
+      "?? sim_smoke.log",
+      "?? stack_bowls_data_download.log",
+      "?? sys",
+      "?? update_paths.log",
+      "?? xpolicylab_install.log"
+    ],
+    "submodules_recursive": [
+      "+3e6b42cda67ad6c02aaef2fec16815490c328751 XPolicyLab (v1.0.0~34)",
+      " afca7b09d60d8beb9c1cb28b43066499940b969b third_party/IsaacLab (heads/main)",
+      "+895c6517243f8cb091c73c018c8167192d39599a third_party/curobo (heads/main)"
+    ],
+    "submodule_worktree_status": {
+      "XPolicyLab": [
+        "M policy/ACT/__init__.py",
+        " M policy/ACT/deploy.yml",
+        " M policy/ACT/detr/act_policy.py",
+        " M policy/ACT/detr/main.py",
+        " M policy/ACT/imitate_episodes.py",
+        " M policy/ACT/model.py",
+        " M policy/ACT/setup_eval_policy_server.sh",
+        " M policy/ACT/utils.py",
+        " M utils/load_file.py",
+        " M utils/setup_env_client.sh",
+        "?? policy/ACT/__init__.py.bak_day04"
+      ],
+      "third_party/curobo": []
+    }
+  },
+  "experiment_repository": {
+    "commit": "5aee6fce9d706c8b9fbef09821972ff06e8627b0",
+    "status_short": [
+      "?? simulation/robodojo/experiments/week03_day01_rgb_bgr/__pycache__/",
+      "?? simulation/robodojo/experiments/week03_day01_rgb_bgr/attempts/",
+      "?? simulation/robodojo/experiments/week03_day01_rgb_bgr/seed1_driver.log",
+      "?? simulation/robodojo/experiments/week03_day01_rgb_driver.log",
+      "?? simulation/robodojo/experiments/week03_day02_temporal_agg/",
+      "?? simulation/robodojo/logs/coin_x5_day04_act_eval.log",
+      "?? simulation/robodojo/troubleshooting/day04_frames/head_sheet.jpg",
+      "?? simulation/robodojo/troubleshooting/day04_frames/left_wrist_sheet.jpg",
+      "?? simulation/robodojo/troubleshooting/day04_frames/right_wrist_sheet.jpg",
+      "?? simulation/robodojo/validation/week02_day02/__pycache__/",
+      "?? simulation/robodojo/validation/week02_day05/__pycache__/"
+    ]
+  },
+  "checkpoint_files": {
+    "policy_last.ckpt": {
+      "path": "/home/nvidia/RoboDojo/XPolicyLab/policy/ACT/checkpoints/RoboDojo-deposit_coin-arx_x5-joint-0/policy_last.ckpt",
+      "size_bytes": 335907847,
+      "sha256": "dfbc1ddc3e207084fb4d13765281d82792bda52f01d6045b0cdcd239a56012e0"
+    },
+    "dataset_stats.pkl": {
+      "path": "/home/nvidia/RoboDojo/XPolicyLab/policy/ACT/checkpoints/RoboDojo-deposit_coin-arx_x5-joint-0/dataset_stats.pkl",
+      "size_bytes": 12403,
+      "sha256": "4a777e14eebb94f5f8db50ad1e137b2a445b59dfa79d8a87d6a9621a4d04ef5b"
+    }
+  },
+  "action_order": [
+    "left_arm_joint_state",
+    "left_ee_joint_state",
+    "right_arm_joint_state",
+    "right_ee_joint_state"
+  ],
+  "act": {
+    "temporal_agg": false,
+    "query_frequency": 50,
+    "chunk_size": 50
+  },
+  "initial_state": {
+    "coin_pose": {
+      "instance_name": "coin_0_1",
+      "position": [
+        -0.30055955052375793,
+        -0.13075149059295654,
+        0.7805473804473877
+      ],
+      "orientation_wxyz": [
+        0.03478891775012016,
+        0.14891183376312256,
+        0.6945668458938599,
+        0.702987790107727
+      ],
+      "frame": "env-relative"
+    },
+    "actual_joint_positions_14d": [
+      5.115576473709027e-13,
+      -1.1561168578941706e-15,
+      1.7672687317415835e-17,
+      7.853411024860463e-16,
+      -9.987140238074121e-13,
+      2.5006567996865847e-12,
+      0.043999698013067245,
+      5.115578100012286e-13,
+      -1.1561144226744473e-15,
+      1.7668519981489792e-17,
+      7.853378731729349e-16,
+      -9.987125059243707e-13,
+      2.5006539807609363e-12,
+      0.043999698013067245
+    ],
+    "actual_joint_positions_physical_16d": [
+      5.115576473709027e-13,
+      -1.1561168578941706e-15,
+      1.7672687317415835e-17,
+      7.853411024860463e-16,
+      -9.987140238074121e-13,
+      2.5006567996865847e-12,
+      0.043999698013067245,
+      0.043999701738357544,
+      5.115578100012286e-13,
+      -1.1561144226744473e-15,
+      1.7668519981489792e-17,
+      7.853378731729349e-16,
+      -9.987125059243707e-13,
+      2.5006539807609363e-12,
+      0.043999698013067245,
+      0.043999701738357544
+    ],
+    "end_effector_pose": {
+      "left": [
+        -0.2995290756225586,
+        -0.35229986906051636,
+        0.921500027179718,
+        0.7069999575614929,
+        -2.8373033700290762e-08,
+        -4.5104908252824316e-08,
+        0.7072135210037231
+      ],
+      "right": [
+        0.3004709482192993,
+        -0.35229986906051636,
+        0.921500027179718,
+        0.7069999575614929,
+        -2.8373033700290762e-08,
+        -4.5104908252824316e-08,
+        0.7072135210037231
+      ]
+    }
+  },
+  "robots": [
+    {
+      "side": "left",
+      "arm_name": "left_arm",
+      "gripper_name": "left_ee",
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4",
+        "joint5",
+        "joint6",
+        "joint7",
+        "joint8"
+      ],
+      "arm_joint_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "gripper_joint_indices": [
+        6,
+        7
+      ],
+      "configured_gripper_scale_m": [
+        -0.01,
+        0.044
+      ],
+      "runtime_soft_joint_limits": [
+        [
+          -9.999999046325684,
+          9.999999046325684
+        ],
+        [
+          -9.999999046325684,
+          9.999999046325684
+        ],
+        [
+          -9.999999046325684,
+          9.999999046325684
+        ],
+        [
+          -9.999999046325684,
+          9.999999046325684
+        ],
+        [
+          -9.999999046325684,
+          9.999999046325684
+        ],
+        [
+          -3.1399998664855957,
+          3.1399998664855957
+        ],
+        [
+          0.0,
+          0.04399999976158142
+        ],
+        [
+          0.0,
+          0.04399999976158142
+        ]
+      ]
+    },
+    {
+      "side": "right",
+      "arm_name": "right_arm",
+      "gripper_name": "right_ee",
+      "joint_names": [
+        "joint1",
+        "joint2",
+        "joint3",
+        "joint4",
+        "joint5",
+        "joint6",
+        "joint7",
+        "joint8"
+      ],
+      "arm_joint_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "gripper_joint_indices": [
+        6,
+        7
+      ],
+      "configured_gripper_scale_m": [
+        -0.01,
+        0.044
+      ],
+      "runtime_soft_joint_limits": [
+        [
+          -9.999999046325684,
+          9.999999046325684
+        ],
+        [
+          -9.999999046325684,
+          9.999999046325684
+        ],
+        [
+          -9.999999046325684,
+          9.999999046325684
+        ],
+        [
+          -9.999999046325684,
+          9.999999046325684
+        ],
+        [
+          -9.999999046325684,
+          9.999999046325684
+        ],
+        [
+          -3.1399998664855957,
+          3.1399998664855957
+        ],
+        [
+          0.0,
+          0.04399999976158142
+        ],
+        [
+          0.0,
+          0.04399999976158142
+        ]
+      ]
+    }
+  ]
+}

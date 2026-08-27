@@ -1,0 +1,43 @@
+{
+  "experiment": "Week 3 Day 2 temporal aggregation single-variable A/B",
+  "conditions": {
+    "A": {"name": "false", "ACT_INPUT_COLOR_ORDER": "rgb", "ACT_TEMPORAL_AGG": null},
+    "B": {"name": "true", "ACT_INPUT_COLOR_ORDER": "rgb", "ACT_TEMPORAL_AGG": "1"}
+  },
+  "fixed": {
+    "task": "deposit_coin",
+    "env_cfg": "arx_x5",
+    "action_type": "joint",
+    "checkpoint": "RoboDojo-deposit_coin-arx_x5-joint-0",
+    "seed": 0,
+    "layout": 0,
+    "num_envs": 1,
+    "policy_steps": 300,
+    "internal_controls_per_policy_step": 10,
+    "camera_order": ["cam_head", "cam_right_wrist", "cam_left_wrist"],
+    "ACT_INPUT_COLOR_ORDER": "rgb",
+    "ACT_MAX_TIMESTEPS": "300",
+    "ACT_GEOMETRY_MESH_CATEGORIES": "vertical_coin_stand,piggy_bank",
+    "action_interpolation": "8 interpolate + 2 hold",
+    "gripper_scale_m": [-0.01, 0.044]
+  },
+  "checkpoint_files": {
+    "policy_last.ckpt_sha256": "dfbc1ddc3e207084fb4d13765281d82792bda52f01d6045b0cdcd239a56012e0",
+    "dataset_stats.pkl_sha256": "4a777e14eebb94f5f8db50ad1e137b2a445b59dfa79d8a87d6a9621a4d04ef5b"
+  },
+  "versions": {
+    "experiment_repository_commit": "5aee6fc",
+    "robodojo_commit": "9226f48ea694b3f53db12d4922e8b1199f8d0891",
+    "xpolicylab_commit": "3e6b42cda67ad6c02aaef2fec16815490c328751",
+    "python": "3.11.15",
+    "pytorch": "2.7.0+cu128",
+    "isaacsim": "5.1.0.0"
+  },
+  "compatibility_patch": {
+    "path": "temporal_agg_compatibility.patch",
+    "sha256": "38033a3db65b9c7bf72720c2970cf77ac9aafc83b5c8df656831abbd3a211ca7",
+    "scope": "true-only buffer initialization, capacity, and reset storage management; aggregation formula and false action path unchanged"
+  },
+  "single_variable": "temporal_agg and its intrinsic query/ensemble behavior",
+  "run_order": ["false", "true"]
+}

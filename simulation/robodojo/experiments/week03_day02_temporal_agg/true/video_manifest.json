@@ -1,0 +1,35 @@
+[
+  {
+    "camera": "cam_head",
+    "path": "/home/nvidia/RoboDojo/eval_result/RoboDojo/deposit_coin/ACT/arx_x5/0_ckpt_name=RoboDojo-deposit_coin-arx_x5-joint-0,action_type=joint/week03_day02_seed0_layout0_temporal_true/episode_0000000_cam_head_fail.mp4",
+    "size_bytes": 647872,
+    "sha256": "9eb1c920b0b04b2cc064c163b05badf5679bc391c322060b2df279e412628491",
+    "width": 640,
+    "height": 480,
+    "r_frame_rate": "25/1",
+    "duration": "12.040000",
+    "nb_read_frames": "301"
+  },
+  {
+    "camera": "cam_left_wrist",
+    "path": "/home/nvidia/RoboDojo/eval_result/RoboDojo/deposit_coin/ACT/arx_x5/0_ckpt_name=RoboDojo-deposit_coin-arx_x5-joint-0,action_type=joint/week03_day02_seed0_layout0_temporal_true/episode_0000000_cam_left_wrist_fail.mp4",
+    "size_bytes": 1420969,
+    "sha256": "37ad98b72e65eee0fea089a59a988fbd9884b95125613f3135c83d1e91356537",
+    "width": 640,
+    "height": 480,
+    "r_frame_rate": "25/1",
+    "duration": "12.040000",
+    "nb_read_frames": "301"
+  },
+  {
+    "camera": "cam_right_wrist",
+    "path": "/home/nvidia/RoboDojo/eval_result/RoboDojo/deposit_coin/ACT/arx_x5/0_ckpt_name=RoboDojo-deposit_coin-arx_x5-joint-0,action_type=joint/week03_day02_seed0_layout0_temporal_true/episode_0000000_cam_right_wrist_fail.mp4",
+    "size_bytes": 859105,
+    "sha256": "5872058783fe5f96bb7b64a26f332c61a71faf186e037275f3a471617c452ad1",
+    "width": 640,
+    "height": 480,
+    "r_frame_rate": "25/1",
+    "duration": "12.040000",
+    "nb_read_frames": "301"
+  }
+]

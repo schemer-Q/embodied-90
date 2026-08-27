@@ -1,0 +1,75 @@
+{
+  "condition": "true",
+  "input_color_order": "rgb",
+  "temporal_agg": true,
+  "policy_server_requests": 300,
+  "network_action_queries": 300,
+  "policy_steps": 300,
+  "internal_records": 3000,
+  "missing_policy_steps": [],
+  "invalid_values": 0,
+  "videos_complete": true,
+  "final_success": false,
+  "final_score": 0.0,
+  "initial_coin_position_m": [
+    -0.30055955052375793,
+    -0.13075149059295654,
+    0.7805473804473877
+  ],
+  "action_smoothness": {
+    "mean_adjacent_l2": 0.06499609017191646,
+    "max_adjacent_l2": 0.26320296571586205,
+    "max_single_dimension_jump": 0.16410412865427249,
+    "mean_acceleration_l2": 0.008873991969105263,
+    "max_acceleration_l2": 0.08138033077251318,
+    "mean_jerk_l2": 0.008620041092231365,
+    "max_jerk_l2": 0.08454616887367986
+  },
+  "left_ee_smoothness": {
+    "mean_adjacent_l2": 0.0039790516206601265,
+    "max_adjacent_l2": 0.02574251146045007,
+    "max_single_dimension_jump": 0.02556954324245453,
+    "mean_acceleration_l2": 0.0006753335934660776,
+    "max_acceleration_l2": 0.005335348778009898,
+    "mean_jerk_l2": 0.0005969996878103478,
+    "max_jerk_l2": 0.004863961083771232
+  },
+  "chunk_boundaries": {
+    "51": {
+      "action_jump_l2": 0.06758643843581906,
+      "max_single_dimension_jump": 0.04603260923161656,
+      "tracking_error": 0.010113239288330078
+    },
+    "101": {
+      "action_jump_l2": 0.06946413058520028,
+      "max_single_dimension_jump": 0.04604289985663268,
+      "tracking_error": 0.01081991195678711
+    },
+    "151": {
+      "action_jump_l2": 0.009573871126017191,
+      "max_single_dimension_jump": 0.004583624612083836,
+      "tracking_error": 0.001132965087890625
+    },
+    "201": {
+      "action_jump_l2": 0.07343927582520009,
+      "max_single_dimension_jump": 0.05081962025135556,
+      "tracking_error": 0.011525511741638184
+    },
+    "251": {
+      "action_jump_l2": 0.047096293184562855,
+      "max_single_dimension_jump": 0.032205900181960484,
+      "tracking_error": 0.009999999776482582
+    }
+  },
+  "max_tracking_error": 0.03819715976715088,
+  "max_tracking_error_step": 11,
+  "left_gripper_closing_start": 19,
+  "left_gripper_noticeably_closed": 30,
+  "closure_surface_distance_m": 0.015870310965816977,
+  "closure_alignment_error_m": 0.034938654294297364,
+  "minimum_surface_distance_m": 0.01580130091374508,
+  "minimum_alignment_error_m": 0.028260531927889986,
+  "max_coin_displacement_m": 9.772480983775613e-07,
+  "max_coin_lift_m": 1.7881393432617188e-07,
+  "all_actions_finite": true
+}

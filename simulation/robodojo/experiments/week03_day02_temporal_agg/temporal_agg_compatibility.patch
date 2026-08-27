@@ -1,0 +1,41 @@
+--- /tmp/act_policy_before_week03_day02.py	2026-08-27 08:35:02.593305261 +0800
++++ /home/nvidia/RoboDojo/XPolicyLab/policy/ACT/detr/act_policy.py	2026-08-27 08:38:43.446683591 +0800
+@@ -127,7 +127,7 @@
+             self.temporal_agg = True
+         self.num_queries = args_override["chunk_size"]
+         self.state_dim = model_cfg.action_dim  # Standard joint dimension for bimanual robot
+-        self.max_timesteps = 5000  # Large enough for deployment
++        self.max_timesteps = int(os.environ.get("ACT_MAX_TIMESTEPS", "5000"))
+ 
+         # Set query frequency based on temporal_agg - matching imitate_episodes.py logic
+         self.query_frequency = self.num_queries
+@@ -135,7 +135,8 @@
+             self.query_frequency = 1
+         if os.environ.get("ACT_QUERY_FREQ"):
+             self.query_frequency = int(os.environ.get("ACT_QUERY_FREQ"))
+-            # Initialize with zeros matching imitate_episodes.py format
++        if self.temporal_agg:
++            # Initialize with zeros matching imitate_episodes.py format.
+             self.all_time_actions = torch.zeros([
+                 self.max_timesteps,
+                 self.max_timesteps + self.num_queries,
+--- /tmp/model_before_week03_day02.py	2026-08-27 08:38:43.445430430 +0800
++++ /home/nvidia/RoboDojo/XPolicyLab/policy/ACT/model.py	2026-08-27 08:38:43.448016826 +0800
+@@ -126,11 +126,15 @@
+             return
+         # Reset temporal aggregation state if enabled
+         if self.model.temporal_agg:
+-            self.model.all_time_actions = torch.zeros([
++            expected_shape = (
+                 self.model.max_timesteps,
+                 self.model.max_timesteps + self.model.num_queries,
+                 self.model.state_dim,
+-            ]).to(self.model.device)
++            )
++            if hasattr(self.model, "all_time_actions") and tuple(self.model.all_time_actions.shape) == expected_shape:
++                self.model.all_time_actions.zero_()
++            else:
++                self.model.all_time_actions = torch.zeros(expected_shape).to(self.model.device)
+             self.model.t = 0
+         else:
+             self.model.t = 0
