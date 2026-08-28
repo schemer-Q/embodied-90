@@ -1,0 +1,215 @@
+{
+  "condition": "triangle_mesh",
+  "mesh_categories": "vertical_coin_stand,piggy_bank",
+  "assets": {
+    "coin0": {
+      "instance_name": "coin_0_1",
+      "prim_path": "/World/envs/env_0/rigid/coin/coin_0_1",
+      "pose": {
+        "instance_name": "coin_0_1",
+        "position_m": [
+          -0.30055955052375793,
+          -0.13075149059295654,
+          0.7805473804473877
+        ],
+        "orientation_wxyz": [
+          0.03478893265128136,
+          0.14891184866428375,
+          0.6945669054985046,
+          0.702987790107727
+        ]
+      },
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "physics_config": {
+        "size": [
+          0.0209,
+          0.0209,
+          0.001
+        ],
+        "mass": 0.005,
+        "friction": 0.0,
+        "type": "rigid"
+      },
+      "colliders": [
+        {
+          "prim_path": "/World/envs/env_0/rigid/coin/coin_0_1/collision/model",
+          "prim_type": "Mesh",
+          "collision_enabled": true,
+          "mesh_approximation": "convexDecomposition"
+        },
+        {
+          "prim_path": "/World/envs/env_0/rigid/coin/coin_0_1/collision/Cylinder",
+          "prim_type": "Mesh",
+          "collision_enabled": true,
+          "mesh_approximation": "convexHull"
+        }
+      ]
+    },
+    "vertical_coin_stand": {
+      "instance_name": "vertical_coin_stand_0_2",
+      "prim_path": "/World/envs/env_0/geometry/vertical_coin_stand/vertical_coin_stand_0_2",
+      "pose": {
+        "instance_name": "vertical_coin_stand_0_2",
+        "position_m": [
+          -0.3003823459148407,
+          -0.12972088158130646,
+          0.7735999822616577
+        ],
+        "orientation_wxyz": [
+          0.9916999936103821,
+          0.0,
+          0.0,
+          -0.12857341766357422
+        ]
+      },
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "physics_config": {
+        "mass": 0.85,
+        "friction": 0.45,
+        "size": [
+          0.0324,
+          0.0251,
+          0.023
+        ],
+        "type": "geometry"
+      },
+      "colliders": [
+        {
+          "prim_path": "/World/envs/env_0/geometry/vertical_coin_stand/vertical_coin_stand_0_2",
+          "prim_type": "Xform",
+          "collision_enabled": true,
+          "mesh_approximation": "none"
+        },
+        {
+          "prim_path": "/World/envs/env_0/geometry/vertical_coin_stand/vertical_coin_stand_0_2/collision/model",
+          "prim_type": "Mesh",
+          "collision_enabled": true,
+          "mesh_approximation": "meshSimplification"
+        },
+        {
+          "prim_path": "/World/envs/env_0/geometry/vertical_coin_stand/vertical_coin_stand_0_2/collision/cube_0",
+          "prim_type": "Mesh",
+          "collision_enabled": true,
+          "mesh_approximation": "convexHull"
+        },
+        {
+          "prim_path": "/World/envs/env_0/geometry/vertical_coin_stand/vertical_coin_stand_0_2/collision/cube_1",
+          "prim_type": "Mesh",
+          "collision_enabled": true,
+          "mesh_approximation": "convexHull"
+        }
+      ]
+    },
+    "piggy_bank": {
+      "instance_name": "piggy_bank_0_3",
+      "prim_path": "/World/envs/env_0/geometry/piggy_bank/piggy_bank_0_3",
+      "pose": {
+        "instance_name": "piggy_bank_0_3",
+        "position_m": [
+          0.30018219351768494,
+          -0.15280431509017944,
+          0.7654184699058533
+        ],
+        "orientation_wxyz": [
+          0.748953104019165,
+          0.0029865095857530832,
+          -0.002258691005408764,
+          0.6626124382019043
+        ]
+      },
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "physics_config": {
+        "size": [
+          0.159,
+          0.2041,
+          0.146
+        ],
+        "mass": 0.0,
+        "friction": 0.0,
+        "type": "geometry"
+      },
+      "colliders": [
+        {
+          "prim_path": "/World/envs/env_0/geometry/piggy_bank/piggy_bank_0_3",
+          "prim_type": "Xform",
+          "collision_enabled": true,
+          "mesh_approximation": "none"
+        },
+        {
+          "prim_path": "/World/envs/env_0/geometry/piggy_bank/piggy_bank_0_3/collision",
+          "prim_type": "Mesh",
+          "collision_enabled": true,
+          "mesh_approximation": "convexDecomposition"
+        }
+      ]
+    }
+  },
+  "robot": {
+    "actual_joint_positions_14d": [
+      5.115576473709027e-13,
+      -1.1561168578941706e-15,
+      1.7672687317415835e-17,
+      7.853411024860463e-16,
+      -9.987140238074121e-13,
+      2.5006567996865847e-12,
+      0.043999698013067245,
+      5.115578100012286e-13,
+      -1.1561144226744473e-15,
+      1.7668519981489792e-17,
+      7.853378731729349e-16,
+      -9.987125059243707e-13,
+      2.5006539807609363e-12,
+      0.043999698013067245
+    ],
+    "actual_joint_positions_physical_16d": [
+      5.115576473709027e-13,
+      -1.1561168578941706e-15,
+      1.7672687317415835e-17,
+      7.853411024860463e-16,
+      -9.987140238074121e-13,
+      2.5006567996865847e-12,
+      0.043999698013067245,
+      0.043999701738357544,
+      5.115578100012286e-13,
+      -1.1561144226744473e-15,
+      1.7668519981489792e-17,
+      7.853378731729349e-16,
+      -9.987125059243707e-13,
+      2.5006539807609363e-12,
+      0.043999698013067245,
+      0.043999701738357544
+    ],
+    "end_effector_pose": {
+      "left": [
+        -0.2995290756225586,
+        -0.35229986906051636,
+        0.921500027179718,
+        0.7069999575614929,
+        -2.8373033700290762e-08,
+        -4.5104908252824316e-08,
+        0.7072135210037231
+      ],
+      "right": [
+        0.3004709482192993,
+        -0.35229986906051636,
+        0.921500027179718,
+        0.7069999575614929,
+        -2.8373033700290762e-08,
+        -4.5104908252824316e-08,
+        0.7072135210037231
+      ]
+    }
+  }
+}

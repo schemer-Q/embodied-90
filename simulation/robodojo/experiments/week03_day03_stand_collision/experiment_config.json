@@ -1,0 +1,28 @@
+{
+  "task": "deposit_coin",
+  "env_cfg": "arx_x5",
+  "action_type": "joint",
+  "seed": 0,
+  "layout": 0,
+  "policy_steps": 300,
+  "internal_controls_per_policy_step": 10,
+  "replay_sha256": "b8f9fcf8653279b36dad0b5c04fcc83c9af790809caf9106d35268bca1192b13",
+  "act_network_queried": false,
+  "conditions": {
+    "triangle_mesh": {
+      "ACT_GEOMETRY_MESH_CATEGORIES": "vertical_coin_stand,piggy_bank"
+    },
+    "official": {
+      "ACT_GEOMETRY_MESH_CATEGORIES": "piggy_bank"
+    }
+  },
+  "fixed": {
+    "piggy_bank_collision": "triangle mesh",
+    "initial_coin_pose": true,
+    "initial_robot_state": true,
+    "action_interpolation": true,
+    "gripper_scale": true,
+    "physics_dt": true,
+    "coin_physics": true
+  }
+}

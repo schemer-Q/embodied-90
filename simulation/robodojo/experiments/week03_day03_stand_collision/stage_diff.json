@@ -1,0 +1,54 @@
+{
+  "only_intended_variable": true,
+  "initial_coin_equal_atol_1e-6": true,
+  "initial_robot_equal_atol_1e-6": true,
+  "coin_asset_snapshot_equal": true,
+  "piggy_bank_snapshot_equal": true,
+  "stand_collider_snapshot_changed": true,
+  "triangle_mesh_stand_colliders": [
+    {
+      "prim_path": "/World/envs/env_0/geometry/vertical_coin_stand/vertical_coin_stand_0_2",
+      "prim_type": "Xform",
+      "collision_enabled": true,
+      "mesh_approximation": "none"
+    },
+    {
+      "prim_path": "/World/envs/env_0/geometry/vertical_coin_stand/vertical_coin_stand_0_2/collision/model",
+      "prim_type": "Mesh",
+      "collision_enabled": true,
+      "mesh_approximation": "meshSimplification"
+    },
+    {
+      "prim_path": "/World/envs/env_0/geometry/vertical_coin_stand/vertical_coin_stand_0_2/collision/cube_0",
+      "prim_type": "Mesh",
+      "collision_enabled": true,
+      "mesh_approximation": "convexHull"
+    },
+    {
+      "prim_path": "/World/envs/env_0/geometry/vertical_coin_stand/vertical_coin_stand_0_2/collision/cube_1",
+      "prim_type": "Mesh",
+      "collision_enabled": true,
+      "mesh_approximation": "convexHull"
+    }
+  ],
+  "official_stand_colliders": [
+    {
+      "prim_path": "/World/envs/env_0/geometry/vertical_coin_stand/vertical_coin_stand_0_2/collision/model",
+      "prim_type": "Mesh",
+      "collision_enabled": true,
+      "mesh_approximation": "meshSimplification"
+    },
+    {
+      "prim_path": "/World/envs/env_0/geometry/vertical_coin_stand/vertical_coin_stand_0_2/collision/cube_0",
+      "prim_type": "Mesh",
+      "collision_enabled": true,
+      "mesh_approximation": "convexHull"
+    },
+    {
+      "prim_path": "/World/envs/env_0/geometry/vertical_coin_stand/vertical_coin_stand_0_2/collision/cube_1",
+      "prim_type": "Mesh",
+      "collision_enabled": true,
+      "mesh_approximation": "convexHull"
+    }
+  ]
+}

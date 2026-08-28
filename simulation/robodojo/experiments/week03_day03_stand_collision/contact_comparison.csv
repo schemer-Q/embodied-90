@@ -1,0 +1,3 @@
+condition,minimum_fingertip_surface_distance_m,contact_event_count,coin_fingertip_events,coin_stand_events,max_contact_impulse_ns,max_coin_displacement_m,max_coin_lift_m,max_tracking_error_rad,final_success,final_score
+triangle_mesh,3.448764309490328e-05,0,0,0,0.0,0.08390370631381328,0.013335943222045898,0.5916035175323486,False,0.0
+official,1.1977225509002384e-05,0,0,0,0.0,0.1498681440185462,0.013280034065246582,0.5916035175323486,False,0.0

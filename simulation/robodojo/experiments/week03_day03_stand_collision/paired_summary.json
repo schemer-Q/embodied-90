@@ -1,0 +1,97 @@
+{
+  "replay_sha256": "b8f9fcf8653279b36dad0b5c04fcc83c9af790809caf9106d35268bca1192b13",
+  "stage_single_variable_pass": true,
+  "conditions": [
+    {
+      "condition": "triangle_mesh",
+      "policy_steps": 300,
+      "internal_records": 3000,
+      "replay_actions": 300,
+      "invalid_values": 0,
+      "final_success": false,
+      "final_score": 0.0,
+      "initial_coin_position_m": [
+        -0.30055955052375793,
+        -0.13075149059295654,
+        0.7805473804473877
+      ],
+      "initial_robot_qpos_14d": [
+        5.115576473709027e-13,
+        -1.1561168578941706e-15,
+        1.7672687317415835e-17,
+        7.853411024860463e-16,
+        -9.987140238074121e-13,
+        2.5006567996865847e-12,
+        0.043999698013067245,
+        5.115578100012286e-13,
+        -1.1561144226744473e-15,
+        1.7668519981489792e-17,
+        7.853378731729349e-16,
+        -9.987125059243707e-13,
+        2.5006539807609363e-12,
+        0.043999698013067245
+      ],
+      "minimum_fingertip_surface_distance_m": 3.448764309490328e-05,
+      "minimum_surface_distance_policy_step": 36,
+      "max_coin_displacement_m": 0.08390370631381328,
+      "max_coin_lift_m": 0.013335943222045898,
+      "max_coin_drop_m": -0.01555103063583374,
+      "max_tracking_error_rad": 0.5916035175323486,
+      "contact_event_count": 0,
+      "contact_pair_counts": {},
+      "first_contacts": {},
+      "max_contact_impulse_ns": 0.0,
+      "minimum_reported_separation_m": null
+    },
+    {
+      "condition": "official",
+      "policy_steps": 300,
+      "internal_records": 3000,
+      "replay_actions": 300,
+      "invalid_values": 0,
+      "final_success": false,
+      "final_score": 0.0,
+      "initial_coin_position_m": [
+        -0.30055955052375793,
+        -0.13075149059295654,
+        0.7805473804473877
+      ],
+      "initial_robot_qpos_14d": [
+        5.115576473709027e-13,
+        -1.1561168578941706e-15,
+        1.7672687317415835e-17,
+        7.853411024860463e-16,
+        -9.987140238074121e-13,
+        2.5006567996865847e-12,
+        0.043999698013067245,
+        5.115578100012286e-13,
+        -1.1561144226744473e-15,
+        1.7668519981489792e-17,
+        7.853378731729349e-16,
+        -9.987125059243707e-13,
+        2.5006539807609363e-12,
+        0.043999698013067245
+      ],
+      "minimum_fingertip_surface_distance_m": 1.1977225509002384e-05,
+      "minimum_surface_distance_policy_step": 38,
+      "max_coin_displacement_m": 0.1498681440185462,
+      "max_coin_lift_m": 0.013280034065246582,
+      "max_coin_drop_m": -0.015843451023101807,
+      "max_tracking_error_rad": 0.5916035175323486,
+      "contact_event_count": 0,
+      "contact_pair_counts": {},
+      "first_contacts": {},
+      "max_contact_impulse_ns": 0.0,
+      "minimum_reported_separation_m": null
+    }
+  ],
+  "official_minus_triangle_mesh": {
+    "max_coin_displacement_m": 0.06596443770473293,
+    "max_coin_lift_m": -5.5909156799316406e-05
+  },
+  "interaction_reached": {
+    "triangle_mesh": true,
+    "official": true
+  },
+  "h3_assessment": "supported"
+}
