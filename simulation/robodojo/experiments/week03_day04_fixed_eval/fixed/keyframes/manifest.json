@@ -1,0 +1,530 @@
+[
+  {
+    "camera": "cam_head",
+    "policy_step": 0,
+    "video_frame": 0,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_head_step_000.jpg",
+    "sha256": "929e89111ae7e710ce6479260c1df7675ca084485576b845f06a4bb00f95f5d9",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      80.92482096354166,
+      92.74877604166667,
+      123.581171875
+    ],
+    "std_bgr": [
+      50.768426994472456,
+      49.626900530998874,
+      55.43805136122589
+    ]
+  },
+  {
+    "camera": "cam_head",
+    "policy_step": 4,
+    "video_frame": 4,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_head_step_004.jpg",
+    "sha256": "acb031b9d765d622596b20d3a19f55856ceb18968f02d9a64baa4d8374562b79",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      80.77375,
+      92.70367838541667,
+      123.39632486979167
+    ],
+    "std_bgr": [
+      50.52802068890256,
+      49.35094145674383,
+      55.35215474868525
+    ]
+  },
+  {
+    "camera": "cam_head",
+    "policy_step": 19,
+    "video_frame": 19,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_head_step_019.jpg",
+    "sha256": "59ca8a2be08a05df355950692cf8be986a221171ed5eddf7314aac7f3af82b01",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      80.8028515625,
+      92.93341145833334,
+      124.69285481770834
+    ],
+    "std_bgr": [
+      50.18149948245677,
+      49.060306873247214,
+      54.94824051000955
+    ]
+  },
+  {
+    "camera": "cam_head",
+    "policy_step": 25,
+    "video_frame": 25,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_head_step_025.jpg",
+    "sha256": "5a7f6d3a5ce13c058010eda6dc10e27177e12ce2bf6c6746e837ac060d31d9d6",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      80.95989583333333,
+      93.08861002604166,
+      124.82405598958333
+    ],
+    "std_bgr": [
+      50.5318190778048,
+      49.292338471484015,
+      55.02754678963707
+    ]
+  },
+  {
+    "camera": "cam_head",
+    "policy_step": 34,
+    "video_frame": 34,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_head_step_034.jpg",
+    "sha256": "6f0f7b2dfb40a0793f9159483910a69103f9e74c0ea05bb8d1de5f60082c17d0",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      81.070029296875,
+      93.30439453125,
+      125.24565104166666
+    ],
+    "std_bgr": [
+      50.45117374734952,
+      49.18592748398422,
+      54.85837655711446
+    ]
+  },
+  {
+    "camera": "cam_head",
+    "policy_step": 50,
+    "video_frame": 50,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_head_step_050.jpg",
+    "sha256": "6ecddaf26604040e0f133518c89395abda9c7bded3af7d12bcf9508ad9afa326",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      81.25157877604167,
+      93.67501302083333,
+      125.87408528645834
+    ],
+    "std_bgr": [
+      50.58492033999035,
+      49.36976444420686,
+      55.03814161884676
+    ]
+  },
+  {
+    "camera": "cam_head",
+    "policy_step": 51,
+    "video_frame": 51,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_head_step_051.jpg",
+    "sha256": "ab752c165ba55d454ff59879c9118cfedb7984916d5ca8f50d66c4650dba723f",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      81.28233072916667,
+      93.70827799479167,
+      125.97892578125
+    ],
+    "std_bgr": [
+      50.568171257298665,
+      49.35445503959404,
+      54.9899382831854
+    ]
+  },
+  {
+    "camera": "cam_head",
+    "policy_step": 300,
+    "video_frame": 300,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_head_step_300.jpg",
+    "sha256": "2fbeb9c4823909f99edb2ab7db2ad71ff10ecebea38799b5f3f8418373e1a3ad",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      83.420908203125,
+      94.43204427083333,
+      122.768056640625
+    ],
+    "std_bgr": [
+      53.144883237057236,
+      52.2310335316911,
+      57.310307242338865
+    ]
+  },
+  {
+    "camera": "cam_left_wrist",
+    "policy_step": 0,
+    "video_frame": 0,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_left_wrist_step_000.jpg",
+    "sha256": "5c2a416992709e5bea8d1b05f705cc2ac6bc1456b7433e207c6f99347d2ed9a6",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      70.1044140625,
+      85.31873372395833,
+      118.73976236979166
+    ],
+    "std_bgr": [
+      37.99897608675245,
+      37.196946462469185,
+      44.267479271322586
+    ]
+  },
+  {
+    "camera": "cam_left_wrist",
+    "policy_step": 4,
+    "video_frame": 4,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_left_wrist_step_004.jpg",
+    "sha256": "fa446c78395fb211ad5aad2009d5bbf9393173a775bd0235dfcf5a26e0c81125",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      69.64792643229167,
+      85.97236653645834,
+      124.8681640625
+    ],
+    "std_bgr": [
+      37.61083169432722,
+      37.25590218287137,
+      45.01479121221527
+    ]
+  },
+  {
+    "camera": "cam_left_wrist",
+    "policy_step": 19,
+    "video_frame": 19,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_left_wrist_step_019.jpg",
+    "sha256": "deb210deef07670bbc1a7a7803d2812ad5d9fc06d9aa8ad304fdee2fa479b2e3",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      68.6280859375,
+      83.12837890625,
+      122.5356640625
+    ],
+    "std_bgr": [
+      32.1258064746842,
+      35.685134599109375,
+      46.43556499951699
+    ]
+  },
+  {
+    "camera": "cam_left_wrist",
+    "policy_step": 25,
+    "video_frame": 25,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_left_wrist_step_025.jpg",
+    "sha256": "93bdf7c47e268f8ce0ff17af56b167366899853e07d36e2aea01ec6d46b7d780",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      58.27497721354167,
+      70.90142578125,
+      106.24979817708333
+    ],
+    "std_bgr": [
+      36.385289336628816,
+      41.00449944250295,
+      53.690272683387015
+    ]
+  },
+  {
+    "camera": "cam_left_wrist",
+    "policy_step": 34,
+    "video_frame": 34,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_left_wrist_step_034.jpg",
+    "sha256": "602bac59c0368adc0ed72d2523513622703ec2255dd50c4ab197e110f682a110",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      65.29569010416667,
+      78.57981119791667,
+      114.74758138020833
+    ],
+    "std_bgr": [
+      35.97635248961735,
+      40.28329033773238,
+      52.552241917369685
+    ]
+  },
+  {
+    "camera": "cam_left_wrist",
+    "policy_step": 50,
+    "video_frame": 50,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_left_wrist_step_050.jpg",
+    "sha256": "634de898f3a88fae1ae54cbc7f3f5ef76f90ea8506618fff2fc66941bedc756a",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      73.41481119791666,
+      89.32629231770834,
+      127.91847330729166
+    ],
+    "std_bgr": [
+      36.693230254542996,
+      41.67777897797514,
+      52.040284224577164
+    ]
+  },
+  {
+    "camera": "cam_left_wrist",
+    "policy_step": 51,
+    "video_frame": 51,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_left_wrist_step_051.jpg",
+    "sha256": "d0a9a8bc7c2e5f7c4cc105e4eb0b906731161dc92aa862733774d31168b20441",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      73.42060546875,
+      89.63983723958333,
+      128.04945963541667
+    ],
+    "std_bgr": [
+      36.71553210932769,
+      41.948239934087745,
+      52.19937291683507
+    ]
+  },
+  {
+    "camera": "cam_left_wrist",
+    "policy_step": 300,
+    "video_frame": 300,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_left_wrist_step_300.jpg",
+    "sha256": "977c3cd12a1b87abda1973aa4513d544fd8833e7ff901520dcf1aa017fa53d8d",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      75.73786783854166,
+      88.23900716145833,
+      120.934072265625
+    ],
+    "std_bgr": [
+      67.64466226503752,
+      65.36263915711218,
+      68.08750233706282
+    ]
+  },
+  {
+    "camera": "cam_right_wrist",
+    "policy_step": 0,
+    "video_frame": 0,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_right_wrist_step_000.jpg",
+    "sha256": "59ad647ad7cfa4b0e8c50963caece6e435b40bd8541b524af33bb4bdc86104e0",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      108.70114908854167,
+      120.6188671875,
+      158.10700846354166
+    ],
+    "std_bgr": [
+      60.005637820897405,
+      58.89972265575985,
+      62.40877616820238
+    ]
+  },
+  {
+    "camera": "cam_right_wrist",
+    "policy_step": 4,
+    "video_frame": 4,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_right_wrist_step_004.jpg",
+    "sha256": "49784a3fd9ef2f36ffdeebdeb7b7ae5b7d752eefbd762de9fd691730f394b213",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      109.66650065104167,
+      121.63989583333333,
+      159.71228190104168
+    ],
+    "std_bgr": [
+      59.79109230429262,
+      58.85139089610085,
+      62.74788562124891
+    ]
+  },
+  {
+    "camera": "cam_right_wrist",
+    "policy_step": 19,
+    "video_frame": 19,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_right_wrist_step_019.jpg",
+    "sha256": "cca6d071820e1a1d69711600610db4b703df7d1e7e0a9ac91c751c5b13df5573",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      110.32659505208333,
+      122.61208984375,
+      161.81585611979168
+    ],
+    "std_bgr": [
+      60.68426711906227,
+      59.448472477247776,
+      62.798170529815465
+    ]
+  },
+  {
+    "camera": "cam_right_wrist",
+    "policy_step": 25,
+    "video_frame": 25,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_right_wrist_step_025.jpg",
+    "sha256": "f495789b1f7807573e11b9dc7d65107b4b49a2dd757c714adda449892f23c649",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      110.78853515625,
+      122.76501953125,
+      161.18206705729168
+    ],
+    "std_bgr": [
+      60.737289340845905,
+      59.3882720829853,
+      62.6276555649414
+    ]
+  },
+  {
+    "camera": "cam_right_wrist",
+    "policy_step": 34,
+    "video_frame": 34,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_right_wrist_step_034.jpg",
+    "sha256": "a6097fb241c9bc0baeacca4181273b1fafa748536d48401b40b49f4d32a5a8d1",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      110.825751953125,
+      122.73248697916667,
+      160.87874348958334
+    ],
+    "std_bgr": [
+      60.71164619182309,
+      59.388210530928745,
+      62.52567861016048
+    ]
+  },
+  {
+    "camera": "cam_right_wrist",
+    "policy_step": 50,
+    "video_frame": 50,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_right_wrist_step_050.jpg",
+    "sha256": "3759c539e092c0a19cfa28936ac78b7af04f873adc5b5a6b07aa43de5d5839ec",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      113.41495768229167,
+      125.83893229166667,
+      168.73291341145833
+    ],
+    "std_bgr": [
+      61.12071762724677,
+      59.962134600435135,
+      63.88709520424477
+    ]
+  },
+  {
+    "camera": "cam_right_wrist",
+    "policy_step": 51,
+    "video_frame": 51,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_right_wrist_step_051.jpg",
+    "sha256": "61640b5cd37409a0fc40fed21824b07912cd4dea0f08c22433f3655c921ae60d",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      113.425400390625,
+      126.26619466145833,
+      170.814990234375
+    ],
+    "std_bgr": [
+      60.96524321455706,
+      59.797520572107445,
+      64.0226233606789
+    ]
+  },
+  {
+    "camera": "cam_right_wrist",
+    "policy_step": 300,
+    "video_frame": 300,
+    "path": "/home/nvidia/embodied-90/simulation/robodojo/experiments/week03_day04_fixed_eval/fixed/keyframes/cam_right_wrist_step_300.jpg",
+    "sha256": "cdd76daf48886738969ac47a6d8e2649b4e5f32da6889eed709b281ed9b87ef5",
+    "shape": [
+      480,
+      640,
+      3
+    ],
+    "mean_bgr": [
+      90.84889322916666,
+      99.0069140625,
+      118.095029296875
+    ],
+    "std_bgr": [
+      63.04702061692775,
+      63.26468912193942,
+      65.78082340543897
+    ]
+  }
+]

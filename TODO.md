@@ -129,7 +129,7 @@
 - [x] Day 1：验证根因假设 1（RGB/BGR 三 seed 配对完成，几何支持但非单独根因）。
 - [x] Day 2：验证根因假设 2（平滑性改善，但抓取退化，H2 显著削弱）。
 - [x] Day 3：验证根因假设 3（stand collision 显著改变硬币轨迹，支持其为物理交互因素，但未单独解释 lift 失败）。
-- [ ] Day 4：实施修复并重新运行 Coin-X5。
+- [x] Day 4：实施 RGB + official stand 修复并完成 300-step 复评（链路完整，但 Coin-X5 仍为 success=false）。
 - [ ] Day 5：若仍失败，切换至更稳定的官方替代任务。
 - [ ] Day 6：录制成功视频，或完成 Coin-X5 失败分析。
 - [ ] Day 7：撰写复现文档和成功/失败边界。

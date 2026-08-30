@@ -1,0 +1,9 @@
+Effective source defaults:
+13:    order = (color_order or os.environ.get("ACT_INPUT_COLOR_ORDER", "rgb")).lower()
+        mesh_collision_categories = os.environ.get(
+            "ACT_GEOMETRY_MESH_CATEGORIES",
+            "piggy_bank",
+        )
+        if self.category_name in mesh_collision_categories.split(","):
+Effective runtime collision override:
+402:[GeometryObject] piggy_bank_0_3 (piggy_bank): enabled triangle-mesh collision

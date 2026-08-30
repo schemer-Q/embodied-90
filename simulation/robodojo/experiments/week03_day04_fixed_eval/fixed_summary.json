@@ -1,0 +1,30 @@
+{
+  "run_id": "week03_day04_seed0_layout0_rgb_official_stand",
+  "fix": {
+    "input_color_order": "rgb",
+    "geometry_mesh_categories": "piggy_bank",
+    "temporal_agg": false
+  },
+  "policy_steps": 300,
+  "internal_records": 3000,
+  "invalid_values": 0,
+  "videos_complete": true,
+  "final_success": false,
+  "final_score": 0.0,
+  "left_gripper_closing_start": 19,
+  "left_gripper_noticeably_closed": 34,
+  "closure_surface_distance_m": 0.00019476899064749457,
+  "closure_alignment_error_m": 0.011649295386769008,
+  "minimum_surface_distance_m": 3.121312534289323e-05,
+  "minimum_surface_distance_step": 37,
+  "minimum_alignment_error_m": 0.004703153743192877,
+  "max_coin_displacement_m": 0.05091518470383862,
+  "max_coin_displacement_step": 50,
+  "max_coin_lift_m": 0.0036107301712036133,
+  "max_coin_lift_step": 41,
+  "max_tracking_error_rad": 0.5340341925621033,
+  "max_tracking_error_step": 201,
+  "actions_finite": true,
+  "lift_threshold_m": 0.08,
+  "lift_threshold_reached": false
+}

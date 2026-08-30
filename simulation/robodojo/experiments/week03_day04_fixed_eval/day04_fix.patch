@@ -1,0 +1,22 @@
+--- a/XPolicyLab/policy/ACT/model.py
++++ b/XPolicyLab/policy/ACT/model.py
+@@ -10,7 +10,7 @@
+ 
+ def prepare_act_input_color(color, color_order=None):
+     """Apply the explicit runtime color contract before ACT tensor packing."""
+-    order = (color_order or os.environ.get("ACT_INPUT_COLOR_ORDER", "bgr")).lower()
++    order = (color_order or os.environ.get("ACT_INPUT_COLOR_ORDER", "rgb")).lower()
+     if order == "bgr":
+         return cv2.cvtColor(color, cv2.COLOR_RGB2BGR)
+     if order == "rgb":
+--- a/env/scene_manager/objects/geometry.py
++++ b/env/scene_manager/objects/geometry.py
+@@ -111,7 +111,7 @@
+         # collision shape instead.
+         mesh_collision_categories = os.environ.get(
+             "ACT_GEOMETRY_MESH_CATEGORIES",
+-            "vertical_coin_stand,piggy_bank",
++            "piggy_bank",
+         )
+         if self.category_name in mesh_collision_categories.split(","):
+             try:
