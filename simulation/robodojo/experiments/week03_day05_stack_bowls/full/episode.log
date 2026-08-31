@@ -1,0 +1,415 @@
+[robodojo eval] policy_dir=/home/nvidia/RoboDojo/XPolicyLab/policy/ACT
+[robodojo eval] task=stack_bowls env_cfg=arx_x5 eval_num=1
+[33m[INFO] Using socket port: 50903[0m
+[MAIN] start server, policy_server_port=50903
+[34m[1m[CONNECTING][0m Policy server -> localhost:50903 (PID=16129, timeout=600s)
+[SERVER] policy=ACT, task=stack_bowls, policy_server_port=50903, action_dim=14
+[SERVER] ckpt_dir=/home/nvidia/RoboDojo/XPolicyLab/policy/ACT/checkpoints/RoboDojo-stack_bowls-arx_x5-joint-0
+[32m[1m[CONNECTED][0m Policy server ready on localhost:50903 (PID=16129)
+[MAIN] start client, server=localhost:50903
+[CLIENT] policy=ACT, task=stack_bowls, server=localhost:50903
+[CLIENT] EVAL_ENV_TYPE=(default sim) -> sim
+[34m[CLIENT] Activating Conda environment: RoboDojo[0m
+[34m[CLIENT] Connecting to server localhost:50903...[0m
+[34m[CLIENT] Watch for green [CONNECTED]; yellow [RECONNECT] means the client is retrying.[0m
+[INFO] PYTHONPATH=/home/nvidia/RoboDojo:/home/nvidia/RoboDojo/XPolicyLab:
+[INFO] policy transport = WebSocket (protocol: ws)
+[INFO] policy_server_url = ws://localhost:50903
+[INFO] device_id = 0 → CUDA_VISIBLE_DEVICES=0
+[INFO] eval_batch     = false
+[INFO] render_interval = 10
+[INFO] num_envs        = 10
+[eval_policy] ROBODOJO_RUN_ID=week03_day05_stack_bowls_official_seed0_layout0
+[main] PhysX monitor enabled=False (task=stack_bowls)
+[INFO][AppLauncher]: Using device: cuda:0
+[INFO][AppLauncher]: Loading experience file: /home/nvidia/RoboDojo/third_party/IsaacLab/apps/isaaclab.python.kit
+Loading user config located at: '/home/nvidia/miniconda3/envs/RoboDojo/lib/python3.11/site-packages/isaacsim/kit/data/Kit/Isaac-Sim/5.1/user.config.json'
+[Info] [carb] Logging to file: /home/nvidia/miniconda3/envs/RoboDojo/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260831_111308.log
+[0.037s] [ext: omni.kit.async_engine-0.0.3] startup
+[0.102s] [ext: omni.metrics.core-0.0.3] startup
+[0.102s] [ext: omni.client.lib-1.1.0] startup
+[0.109s] [ext: omni.blobkey-1.1.2] startup
+[0.109s] [ext: omni.stats-1.0.1] startup
+[0.110s] [ext: omni.datastore-0.0.0] startup
+[0.113s] [ext: omni.client-1.3.0] startup
+[0.115s] [ext: omni.ujitso.default-1.0.0] startup
+[0.116s] [ext: omni.hsscclient-1.1.2] startup
+[0.119s] [ext: omni.gpu_foundation.shadercache.vulkan-1.0.0] startup
+[0.119s] [ext: omni.assets.plugins-0.0.0] startup
+[0.120s] [ext: omni.gpu_foundation-0.0.0] startup
+[0.124s] [ext: carb.windowing.plugins-1.0.0] startup
+[0.131s] [ext: omni.kit.renderer.init-0.0.0] startup
+2026-08-31T03:13:08Z [129ms] [Warning] [carb.cudainterop.plugin] CUDA_VISIBLE_DEVICES environment variable is set.
+2026-08-31T03:13:08Z [129ms] [Warning] [carb.cudainterop.plugin] Note CUDA device enumeration and Omniverse device enumeration are different.
+2026-08-31T03:13:08Z [129ms] [Warning] [carb.cudainterop.plugin] Setting CUDA_VISIBLE_DEVICES can lead to undesired behavior or crashes.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 570.211.01    | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA GeForce RTX 5070          | Yes: 0 |     | 12227   MB | 10de      | 0          |
+|     |                                  |        |     |            | 2f04      | 7d44c142.. |
+|     |                                  |        |     |            | 1         |            |
+|=============================================================================================|
+| OS: 24.04.4 LTS (Noble Numbat) ubuntu, Version: 24.04.4, Kernel: 6.17.0-40-generic
+| XServer Vendor: The X.Org Foundation, XServer Version: 12101011 (1.21.1.11)
+| Processor: Intel(R) Core(TM) i9-14900KF
+| Bare Metal Cores: 24 | Bare Metal Logical Cores: 48
+| Available Cores:  32
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 31874 | Free Memory: 25607
+| Total Page/Swap (MB): 8191 | Free Page/Swap: 8191
+|---------------------------------------------------------------------------------------------|
+2026-08-31T03:13:08Z [526ms] [Warning] [gpu.foundation.plugin] CPU performance profile is set to powersave. This profile sets the CPU to the lowest frequency reducing performance.
+2026-08-31T03:13:08Z [537ms] [Warning] [gpu.foundation.plugin] IOMMU is enabled.
+[0.656s] [ext: omni.materialx.libs-1.0.7] startup
+[0.660s] [ext: omni.kit.loop-isaac-1.3.7] startup
+[0.661s] [ext: omni.kit.test-2.0.1] startup
+[0.688s] [ext: omni.kit.pipapi-0.0.0] startup
+[0.688s] [ext: omni.usd.config-1.0.6] startup
+[0.690s] [ext: omni.gpucompute.plugins-0.0.0] startup
+[0.690s] [ext: omni.usd.libs-1.0.1] startup
+[0.740s] [ext: omni.kit.pip_archive-0.0.0] startup
+[0.740s] [ext: omni.mdl-56.0.3] startup
+[0.793s] [ext: omni.iray.libs-0.0.0] startup
+[0.797s] [ext: omni.mdl.neuraylib-0.2.12] startup
+[0.799s] [ext: omni.kit.usd.mdl-1.1.5] startup
+[0.863s] [ext: omni.kit.telemetry-0.5.2] startup
+[0.874s] [ext: omni.appwindow-1.1.10] startup
+[0.875s] [ext: omni.kit.renderer.core-1.1.0] startup
+[1.005s] [ext: omni.kit.renderer.capture-0.0.0] startup
+[1.007s] [ext: omni.kit.renderer.imgui-2.0.5] startup
+[1.062s] [ext: omni.ui-2.27.1] startup
+[1.068s] [ext: omni.kit.mainwindow-1.0.3] startup
+[1.068s] [ext: carb.audio-0.1.0] startup
+[1.070s] [ext: omni.uiaudio-1.0.0] startup
+[1.071s] [ext: omni.kit.uiapp-0.0.0] startup
+[1.071s] [ext: omni.usd.schema.metrics.assembler-107.3.1] startup
+[1.072s] [ext: omni.usd.schema.omnigraph-1.0.0] startup
+[1.075s] [ext: omni.usd.schema.semantics-0.0.0] startup
+[1.077s] [ext: omni.usd.schema.audio-0.0.0] startup
+[1.079s] [ext: omni.usd.schema.geospatial-0.0.0] startup
+[1.080s] [ext: omni.usd.schema.anim-0.0.0] startup
+[1.092s] [ext: omni.usd_resolver-1.0.0] startup
+[1.094s] [ext: omni.usd.core-1.5.3] startup
+[1.095s] [ext: omni.usd.schema.omni_lens_distortion-0.0.0] startup
+[1.108s] [ext: isaacsim.robot.schema-3.6.0] startup
+[1.113s] [ext: omni.usd.schema.physx-107.3.26] startup
+[1.130s] [ext: omni.usd.schema.render_settings.rtx-0.0.0] startup
+[1.131s] [ext: omni.usd.schema.omni_sensors-0.0.0] startup
+[1.131s] [ext: omni.usd.schema.omniscripting-1.0.0] startup
+[1.134s] [ext: omni.graph.exec-0.9.6] startup
+[1.134s] [ext: omni.kit.actions.core-1.0.0] startup
+[1.135s] [ext: omni.kit.usd_undo-0.1.8] startup
+[1.135s] [ext: omni.kit.exec.core-0.13.4] startup
+[1.136s] [ext: omni.kit.commands-1.4.10] startup
+[1.138s] [ext: omni.kit.window.popup_dialog-2.0.24] startup
+[1.140s] [ext: omni.activity.core-1.0.3] startup
+[1.141s] [ext: omni.resourcemonitor-107.0.1] startup
+[1.142s] [ext: omni.timeline-1.0.14] startup
+[1.143s] [ext: omni.kit.widget.nucleus_connector-2.0.1] startup
+[1.144s] [ext: usdrt.scenegraph-7.6.1] startup
+[1.165s] [ext: omni.kit.audiodeviceenum-1.0.2] startup
+[1.166s] [ext: omni.hydra.usdrt_delegate-7.5.1] startup
+[1.170s] [ext: omni.hydra.scene_delegate-0.3.4] startup
+[1.173s] [ext: omni.usd-1.13.10] startup
+[1.187s] [ext: omni.kit.asset_converter-5.0.17] startup
+[1.194s] [ext: omni.index.libs-380600.8087.0] startup
+[1.194s] [ext: omni.volume-0.5.2] startup
+[1.195s] [ext: omni.ujitso.client-0.0.0] startup
+[1.195s] [ext: omni.index-1.0.1] startup
+[1.196s] [ext: omni.hydra.rtx.shadercache.vulkan-1.0.0] startup
+[1.196s] [ext: omni.hydra.rtx-1.0.0] startup
+2026-08-31T03:13:09Z [1,189ms] [Warning] [omni.log] Source: omni.hydra was already registered.
+[1.216s] [ext: omni.kit.notification_manager-1.0.10] startup
+[1.217s] [ext: omni.kit.clipboard-1.0.5] startup
+[1.217s] [ext: omni.kit.viewport.legacy_gizmos-1.0.19] startup
+[1.219s] [ext: omni.kit.raycast.query-1.1.0] startup
+[1.222s] [ext: omni.kit.menu.core-1.1.2] startup
+[1.222s] [ext: omni.kit.widget.options_menu-1.1.6] startup
+[1.224s] [ext: omni.kit.helper.file_utils-0.1.9] startup
+[1.225s] [ext: omni.kit.widget.path_field-2.0.11] startup
+[1.225s] [ext: omni.kit.widget.context_menu-1.2.5] startup
+[1.226s] [ext: omni.kit.widget.options_button-1.0.3] startup
+[1.226s] [ext: omni.kit.widget.filebrowser-2.12.3] startup
+[1.229s] [ext: omni.kit.widget.browser_bar-2.0.10] startup
+[1.229s] [ext: omni.kit.usd.layers-2.2.11] startup
+[1.233s] [ext: omni.ui.scene-1.11.5] startup
+[1.236s] [ext: omni.kit.viewport.registry-104.0.6] startup
+[1.236s] [ext: omni.kit.window.filepicker-2.13.4] startup
+[1.244s] [ext: omni.kit.menu.utils-2.0.5] startup
+[1.248s] [ext: omni.kit.context_menu-1.8.6] startup
+[1.249s] [ext: omni.kit.viewport.scene_camera_model-1.0.6] startup
+[1.251s] [ext: omni.kit.hydra_texture-1.4.6] startup
+[1.253s] [ext: omni.kit.window.file_importer-1.1.18] startup
+[1.254s] [ext: omni.kit.widget.searchable_combobox-1.0.6] startup
+[1.255s] [ext: omni.kit.window.drop_support-1.0.5] startup
+[1.255s] [ext: omni.kit.widget.viewport-107.1.3] startup
+[1.257s] [ext: omni.kit.material.library-2.0.7] startup
+[1.260s] [ext: omni.hydra.engine.stats-1.0.3] startup
+[1.261s] [ext: omni.kit.widget.settings-1.2.6] startup
+[1.262s] [ext: omni.kit.viewport.window-107.2.0] startup
+[1.270s] [ext: omni.kit.window.preferences-1.8.0] startup
+[1.273s] [ext: omni.kit.widget.toolbar-2.0.1] startup
+[1.275s] [ext: omni.kit.viewport.utility-1.1.2] startup
+[1.276s] [ext: omni.kit.manipulator.transform-107.0.0] startup
+[1.278s] [ext: omni.kit.manipulator.tool.snap-1.5.13] startup
+[1.280s] [ext: omni.kit.manipulator.selector-1.1.3] startup
+[1.280s] [ext: omni.kit.property.adapter.core-1.0.2] startup
+[1.281s] [ext: omni.kit.viewport.manipulator.transform-107.0.4] startup
+[1.282s] [ext: omni.kit.manipulator.viewport-107.0.1] startup
+[1.283s] [ext: omni.kit.property.adapter.fabric-1.0.3] startup
+[1.283s] [ext: omni.kit.manipulator.prim.core-107.0.8] startup
+[1.286s] [ext: omni.kit.primitive.mesh-1.0.17] startup
+[1.288s] [ext: omni.kit.widget.filter-1.1.4] startup
+[1.288s] [ext: omni.kit.hotkeys.core-1.3.10] startup
+[1.289s] [ext: omni.kit.manipulator.prim.usd-107.0.3] startup
+[1.290s] [ext: omni.fabric.commands-1.1.6] startup
+[1.291s] [ext: omni.kit.window.file_exporter-1.0.33] startup
+[1.292s] [ext: omni.kit.widget.searchfield-1.1.8] startup
+[1.292s] [ext: omni.kit.manipulator.prim.fabric-107.0.4] startup
+[1.293s] [ext: omni.debugdraw-0.1.4] startup
+[1.295s] [ext: omni.kit.widget.stage-3.1.4] startup
+[1.301s] [ext: omni.kit.property.adapter.usd-1.0.2] startup
+[1.302s] [ext: omni.kit.manipulator.prim-107.0.0] startup
+[1.302s] [ext: omni.kvdb-107.3.26] startup
+[1.303s] [ext: omni.convexdecomposition-107.3.26] startup
+[1.304s] [ext: omni.physx.foundation-107.3.26] startup
+[1.305s] [ext: omni.localcache-107.3.26] startup
+[1.306s] [ext: omni.kit.window.content_browser_registry-0.0.6] startup
+[1.306s] [ext: omni.kit.widget.highlight_label-1.0.3] startup
+[1.306s] [ext: omni.kit.stage_template.core-1.1.22] startup
+[1.307s] [ext: omni.usdphysics-107.3.26] startup
+[1.308s] [ext: omni.kit.window.file-2.0.5] startup
+[1.309s] [ext: omni.physx.cooking-107.3.26] startup
+[1.311s] [ext: omni.physics-107.3.26] startup
+[1.313s] [ext: omni.kit.window.property-1.12.1] startup
+[1.314s] [ext: omni.kit.window.content_browser-3.1.3] startup
+[1.320s] [ext: omni.physx-107.3.26] startup
+[1.325s] [ext: omni.physics.stageupdate-107.3.26] startup
+[1.326s] [ext: omni.kit.property.usd-4.5.12] startup
+[1.332s] [ext: omni.kit.manipulator.selection-106.0.1] startup
+[1.333s] [ext: omni.physics.physx-107.3.26] startup
+2026-08-31T03:13:09Z [1,316ms] [Warning] [carb] Acquiring non optional plugin interface which is not listed as dependency: [omni::physx::IPhysxBenchmarks v1.0] (plugin: <default plugin>), by client: omni.physics.physx.plugin. Add it to CARB_PLUGIN_IMPL_DEPS() macro of a client.
+[1.334s] [ext: omni.kit.widget.prompt-1.0.7] startup
+[1.334s] [ext: omni.kit.viewport.menubar.core-107.2.1] startup
+[1.342s] [ext: omni.kit.viewport.actions-107.0.2] startup
+[1.344s] [ext: omni.inspect-1.0.2] startup
+[1.345s] [ext: omni.kit.widget.layers-1.8.6] startup
+[1.351s] [ext: omni.kit.viewport.menubar.display-107.0.3] startup
+[1.351s] [ext: omni.usd.metrics.assembler-107.3.1] startup
+[1.356s] [ext: omni.graph.core-2.184.5] startup
+[1.358s] [ext: omni.kit.numpy.common-0.1.3] startup
+[1.358s] [ext: omni.usdphysics.ui-107.3.26] startup
+[1.373s] [ext: omni.physx.commands-107.3.26] startup
+[1.376s] [ext: isaacsim.core.deprecation_manager-0.2.7] startup
+[1.376s] [ext: omni.isaac.dynamic_control-2.0.7] startup
+2026-08-31T03:13:09Z [1,361ms] [Warning] [omni.isaac.dynamic_control] omni.isaac.dynamic_control is deprecated as of Isaac Sim 4.5. No action is needed from end-users.
+[1.380s] [ext: omni.physx.ui-107.3.26] startup
+[1.396s] [ext: isaacsim.core.version-2.0.6] startup
+[1.397s] [ext: omni.physics.tensors-107.3.26] startup
+[1.399s] [ext: omni.warp.core-1.8.2] startup
+[1.506s] [ext: omni.usd.metrics.assembler.physics-107.3.26] startup
+[1.507s] [ext: isaacsim.storage.native-1.5.1] startup
+[1.508s] [ext: omni.physx.tensors-107.3.26] startup
+[1.511s] [ext: isaacsim.core.utils-3.5.1] startup
+[1.513s] [ext: isaacsim.core.simulation_manager-1.4.4] startup
+[2.757s] [ext: omni.kit.widget.stage_icons-1.0.8] startup
+[2.758s] [ext: omni.kit.widget.text_editor-1.1.1] startup
+[2.759s] [ext: omni.kit.window.stage-2.6.1] startup
+[2.761s] [ext: omni.kit.menu.create-2.0.1] startup
+[2.762s] [ext: omni.kit.window.extensions-1.4.27] startup
+[2.765s] [ext: omni.kit.scripting-107.3.2] startup
+[2.767s] [ext: omni.kit.stagerecorder.core-107.0.3] startup
+[2.769s] [ext: isaacsim.replicator.behavior-1.1.16] startup
+[2.769s] [ext: omni.graph.tools-1.79.2] startup
+[2.781s] [ext: omni.ui_query-1.1.8] startup
+[2.781s] [ext: omni.kit.widget.zoombar-1.0.6] startup
+[2.781s] [ext: omni.graph-1.141.2] startup
+[2.804s] [ext: omni.graph.action_core-1.1.7] startup
+[2.805s] [ext: omni.kit.ui_test-1.3.7] startup
+[2.807s] [ext: omni.kit.browser.core-2.3.13] startup
+[2.809s] [ext: omni.kit.usd.collect-2.4.5] startup
+[2.811s] [ext: omni.graph.action_nodes-1.50.4] startup
+[2.813s] [ext: omni.kit.menu.stage-1.2.7] startup
+[2.815s] [ext: omni.kit.browser.folder.core-1.10.9] startup
+[2.820s] [ext: omni.kit.usdz_export-1.0.9] startup
+[2.822s] [ext: omni.graph.visualization.nodes-2.1.3] startup
+[2.829s] [ext: omni.graph.action-1.130.0] startup
+[2.831s] [ext: omni.kit.tool.collect-2.2.18] startup
+[2.833s] [ext: omni.kit.tool.asset_importer-4.3.2] startup
+[2.838s] [ext: isaacsim.gui.components-1.2.1] startup
+[2.842s] [ext: isaacsim.examples.browser-0.2.1] startup
+[2.845s] [ext: isaacsim.asset.importer.urdf-2.4.31] startup
+[2.952s] [ext: isaacsim.core.cloner-1.4.10] startup
+[2.955s] [ext: omni.kit.stagerecorder.ui-107.0.1] startup
+[2.959s] [ext: isaacsim.asset.browser-1.3.23] startup
+/home/nvidia/miniconda3/envs/RoboDojo/lib/python3.11/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (7.4.3)/charset_normalizer (3.3.2) doesn't match a supported version!
+  warnings.warn(
+[2.994s] [ext: semantics.schema.editor-2.0.2] startup
+2026-08-31T03:13:11Z [2,979ms] [Warning] [pxr.Semantics] pxr.Semantics is deprecated - please use Semantics instead
+[2.998s] [ext: omni.kit.stagerecorder.bundle-105.0.2] startup
+[2.998s] [ext: omni.kit.window.status_bar-0.1.9] startup
+[3.000s] [ext: omni.kit.widget.graph-2.0.0] startup
+[3.003s] [ext: omni.kit.stage_templates-2.0.0] startup
+[3.005s] [ext: omni.graph.image.core-0.6.1] startup
+[3.006s] [ext: omni.kit.graph.delegate.default-1.2.3] startup
+[3.006s] [ext: isaacsim.core.experimental.utils-0.3.0] startup
+[3.007s] [ext: omni.graph.image.nodes-1.3.1] startup
+[3.008s] [ext: omni.kit.graph.editor.core-1.5.3] startup
+[3.009s] [ext: omni.kit.graph.usd.commands-1.3.1] startup
+[3.009s] [ext: omni.graph.nodes-1.170.10] startup
+[3.015s] [ext: omni.graph.ui_nodes-1.50.5] startup
+[3.017s] [ext: omni.kit.widget.material_preview-1.0.16] startup
+[3.019s] [ext: omni.syntheticdata-0.6.13] startup
+[3.033s] [ext: omni.videoencoding-0.1.2] startup
+[3.036s] [ext: omni.warp-1.8.2] startup
+[3.040s] [ext: omni.kit.window.material_graph-1.9.1] startup
+[3.050s] [ext: omni.graph.scriptnode-1.50.0] startup
+[3.052s] [ext: isaacsim.core.prims-0.6.1] startup
+[3.099s] [ext: isaacsim.test.docstring-1.1.0] startup
+[3.136s] [ext: omni.replicator.core-1.12.27] startup
+2026-08-31T03:13:11Z [3,201ms] [Warning] [omni.graph.core.plugin] Found duplicate of category 'Replicator' - was 'Annotators', adding 'Fabric Reader'
+2026-08-31T03:13:11Z [3,201ms] [Warning] [omni.graph.core.plugin] Category 'Replicator' not accepted on node type 'omni.replicator.core.FabricReader' in extension 'omni.replicator.core'
+2026-08-31T03:13:11Z [3,201ms] [Warning] [omni.replicator.core.scripts.extension] No material configuration file, adding configuration to material settings directly.
+[3.221s] [ext: isaacsim.core.api-4.8.0] startup
+[3.231s] [ext: isaacsim.core.experimental.prims-0.8.1] startup
+[3.257s] [ext: isaacsim.core.nodes-3.4.3] startup
+[3.262s] [ext: isaacsim.robot.surface_gripper-3.3.1] startup
+[3.266s] [ext: isaacsim.util.debug_draw-3.1.0] startup
+[3.269s] [ext: omni.sensors.nv.common-3.0.0] startup
+[3.276s] [ext: isaacsim.robot.manipulators-3.3.6] startup
+[3.281s] [ext: isaacsim.sensors.physx-2.3.2] startup
+[3.285s] [ext: omni.sensors.nv.materials-2.0.0] startup
+[3.288s] [ext: omni.sensors.net-1.0.0] startup
+[3.292s] [ext: isaacsim.app.about-2.0.11] startup
+[3.295s] [ext: isaacsim.simulation_app-2.12.2] startup
+[3.297s] [ext: omni.sensors.nv.ids-2.0.0] startup
+[3.301s] [ext: omni.sensors.nv.lidar-3.0.0] startup
+[3.309s] [ext: omni.kit.property.audio-1.0.16] startup
+[3.312s] [ext: omni.kit.property.camera-1.0.10] startup
+[3.315s] [ext: omni.kit.property.geometry-2.0.4] startup
+[3.327s] [ext: omni.hydra.scene_api-0.1.2] startup
+[3.349s] [ext: omni.kit.property.light-1.0.12] startup
+[3.371s] [ext: omni.sensors.nv.wpm-3.0.0] startup
+[3.372s] [ext: omni.kit.selection-0.1.6] startup
+[3.374s] [ext: omni.kit.property.material-1.11.9] startup
+[3.386s] [ext: omni.kit.property.transform-1.5.13] startup
+[3.389s] [ext: omni.kit.property.render-1.2.1] startup
+[3.391s] [ext: omni.sensors.nv.radar-3.0.0] startup
+[3.394s] [ext: isaacsim.gui.menu-2.4.4] startup
+[3.404s] [ext: omni.kit.manipulator.camera-106.0.4] startup
+[3.412s] [ext: isaacsim.gui.property-1.1.3] startup
+[3.414s] [ext: omni.kit.property.bundle-1.4.1] startup
+[3.438s] [ext: isaacsim.sensors.rtx-15.8.4] startup
+[3.494s] [ext: isaacsim.sensors.physics-0.4.3] startup
+[3.509s] [ext: omni.kit.viewport.menubar.camera-107.0.6] startup
+[3.682s] [ext: omni.kit.viewport.menubar.lighting-107.3.1] startup
+[3.690s] [ext: omni.kit.viewport.menubar.settings-107.0.3] startup
+[3.696s] [ext: omni.kit.viewport.menubar.render-107.0.10] startup
+[3.699s] [ext: isaacsim.robot.policy.examples-4.1.11] startup
+[3.703s] [ext: isaacsim.asset.importer.mjcf-2.5.13] startup
+[3.708s] [ext: omni.kit.window.console-1.1.4] startup
+[3.712s] [ext: omni.rtx.window.settings-0.6.19] startup
+[3.720s] [ext: omni.ocio-0.1.1] startup
+[3.724s] [ext: omni.physx.demos-107.3.26] startup
+[3.742s] [ext: omni.kit.property.physx-107.3.26] startup
+[3.755s] [ext: omni.replicator.replicator_yaml-2.0.11] startup
+[3.758s] [ext: omni.asset_validator.core-1.1.6] startup
+[3.788s] [ext: omni.rtx.settings.core-0.6.5] startup
+[3.791s] [ext: omni.physx.vehicle-107.3.26] startup
+[3.801s] [ext: omni.usd.metrics.assembler.ui-107.3.1] startup
+[3.807s] [ext: omni.kit.window.script_editor-2.0.1] startup
+[3.808s] [ext: isaacsim.robot.wheeled_robots-4.0.24] startup
+[3.812s] [ext: omni.physx.asset_validator-107.3.26] startup
+[3.816s] [ext: omni.kit.window.toolbar-2.0.0] startup
+[3.819s] [ext: omni.physx.camera-107.3.26] startup
+[3.828s] [ext: omni.anim.curve.core-1.3.1] startup
+[3.838s] [ext: omni.physx.cct-107.3.26] startup
+[3.845s] [ext: omni.physx.graph-107.3.26] startup
+[3.854s] [ext: omni.physx.supportui-107.3.26] startup
+[3.863s] [ext: omni.physx.telemetry-107.3.26] startup
+[3.865s] [ext: isaaclab-0.54.3] startup
+[3.993s] [ext: isaaclab_contrib-0.0.2] startup
+[3.994s] [ext: isaacsim.core.throttling-2.2.2] startup
+[3.995s] [ext: omni.kit.ui.actions-1.0.5] startup
+[3.996s] [ext: semantics.schema.property-2.0.1] startup
+[3.997s] [ext: omni.physx.bundle-107.3.26] startup
+[3.998s] [ext: isaacsim.sensors.camera-1.3.6] startup
+[4.001s] [ext: isaaclab_assets-0.2.4] startup
+[4.167s] [ext: isaaclab_tasks-0.11.14] startup
+[4.274s] [ext: omni.kit.menu.common-2.0.1] startup
+[4.275s] [ext: isaaclab_rl-0.5.0] startup
+[4.275s] [ext: isaaclab_mimic-1.0.16] startup
+[4.276s] [ext: isaaclab.python-2.3.2] startup
+[4.278s] Simulation App Starting
+2026-08-31T03:13:12Z [4,333ms] [Warning] [omni.fabric.plugin] Warning: attribute viewportHandle not found for bucket id 9
+
+[4.378s] app ready
+[6.148s] Simulation App Startup Complete
+[main] eval_batch=false in XPolicyLab/policy/ACT/deploy.yml; forcing num_envs 10 -> 1
+[EvalEnv] GT replay restricted to layout_id=0
+[34m[1m[CONNECTING][0m websocket policy server ws://localhost:50903 (attempt 1/10, timeout=30s)
+[32m[1m[CONNECTED][0m websocket policy server connected: ws://localhost:50903
+[INFO]: Parsing configuration from: env.environment.isaac.isaac_rl_env:IsaacRLEnvCfg
+
+[36m======================================================================================[0m
+[36m[1m[INFO][IsaacLab]: Logging to file: /tmp/isaaclab/logs/isaaclab_2026-08-31_11-13-27.log[0m
+[36m======================================================================================[0m
+
+[33m11:13:27 [simulation_context.py] WARNING: The `enable_external_forces_every_iteration` parameter in the PhysxCfg is set to False. If you are experiencing noisy velocities, consider enabling this flag. You may need to slightly increase the number of velocity iterations (setting it to 1 or 2 rather than 0), together with this flag, to improve the accuracy of velocity updates.[0m
+[INFO]: Base environment:
+	Environment device    : cpu
+	Environment seed      : 0
+	Physics step-size     : 0.004
+	Rendering step-size   : 0.04
+	Environment step-size : 0.004
+2026-08-31T03:13:28Z [19,920ms] [Warning] [env.scene_manager.objects.background] `/omni/replicator/RTSubframes` must be > 3 to avoid blank textures while randomizing dome light texture. RTSubframes has been automatically increased from None to 3
+2026-08-31T03:13:28Z [19,959ms] [Warning] [isaacsim.sensors.camera.camera] 'verticalAperture' (1.5290800094604493) and 'horizontalAperture' (2.0954999923706055) are inconsistent with the pixel resolution aspect ratio (1.3333333333333333). Setting 'verticalAperture' to 1.571624994277954 to ensure square pixels.
+2026-08-31T03:13:28Z [19,968ms] [Warning] [isaacsim.sensors.camera.camera] 'verticalAperture' (1.5290800094604493) and 'horizontalAperture' (2.0954999923706055) are inconsistent with the pixel resolution aspect ratio (1.3333333333333333). Setting 'verticalAperture' to 1.571624994277954 to ensure square pixels.
+2026-08-31T03:13:28Z [19,974ms] [Warning] [isaacsim.sensors.camera.camera] 'verticalAperture' (1.5290800094604493) and 'horizontalAperture' (2.0954999923706055) are inconsistent with the pixel resolution aspect ratio (1.3333333333333333). Setting 'verticalAperture' to 1.571624994277954 to ensure square pixels.
+[INFO]: Time taken for scene creation : 0.303378 seconds
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 1
+	Environment spacing   : 7
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : []
+	Replicate physics     : False
+[INFO]: Starting the simulation. This may take a few seconds. Please wait...
+2026-08-31T03:13:28Z [19,981ms] [Warning] [omni.usd] Warning: in _ReportErrors at line 3172 of /builds/omniverse/usd-ci/USD/pxr/usd/usd/stage.cpp -- In </World/envs/env_0/robot0/camera/visuals/camera/World/mesh.material:binding>: The relationship target </OmniKit_Viewport_LightRig/Looks/Ground_Material> from </X5A/camera/visuals/camera/World/mesh.material:binding> in layer @/home/nvidia/RoboDojo/Assets/Robots/x5/ARX.usd@ refers to a path outside the scope of the reference from </World/envs/env_0/robot0>.  Ignoring. (getting targets for relationship </World/envs/env_0/robot0/camera/visuals/camera/World/mesh.material:binding> on stage @anon:0x5f7929dca9e0:World0.usd@ <0x5f7929dcb9e0>)
+
+2026-08-31T03:13:28Z [19,985ms] [Warning] [omni.usd] Warning: in _ReportErrors at line 3172 of /builds/omniverse/usd-ci/USD/pxr/usd/usd/stage.cpp -- In </World/envs/env_0/robot1/camera/visuals/camera/World/mesh.material:binding>: The relationship target </OmniKit_Viewport_LightRig/Looks/Ground_Material> from </X5A/camera/visuals/camera/World/mesh.material:binding> in layer @/home/nvidia/RoboDojo/Assets/Robots/x5/ARX.usd@ refers to a path outside the scope of the reference from </World/envs/env_0/robot1>.  Ignoring. (getting targets for relationship </World/envs/env_0/robot1/camera/visuals/camera/World/mesh.material:binding> on stage @anon:0x5f7929dca9e0:World0.usd@ <0x5f7929dcb9e0>)
+
+2026-08-31T03:13:28Z [20,231ms] [Warning] [omni.usd] Warning: in _ReportErrors at line 3172 of /builds/omniverse/usd-ci/USD/pxr/usd/usd/stage.cpp -- In </World/envs/env_0/robot0/camera/visuals/camera/World/mesh.material:binding>: The relationship target </OmniKit_Viewport_LightRig/Looks/Ground_Material> from </X5A/camera/visuals/camera/World/mesh.material:binding> in layer @/home/nvidia/RoboDojo/Assets/Robots/x5/ARX.usd@ refers to a path outside the scope of the reference from </World/envs/env_0/robot0>.  Ignoring. (getting targets for relationship </World/envs/env_0/robot0/camera/visuals/camera/World/mesh.material:binding> on stage @anon:0x5f7929dca9e0:World0.usd@ <0x5f7929dcb9e0>)
+
+2026-08-31T03:13:28Z [20,231ms] [Warning] [omni.usd] Warning: in _ReportErrors at line 3172 of /builds/omniverse/usd-ci/USD/pxr/usd/usd/stage.cpp -- In </World/envs/env_0/robot1/camera/visuals/camera/World/mesh.material:binding>: The relationship target </OmniKit_Viewport_LightRig/Looks/Ground_Material> from </X5A/camera/visuals/camera/World/mesh.material:binding> in layer @/home/nvidia/RoboDojo/Assets/Robots/x5/ARX.usd@ refers to a path outside the scope of the reference from </World/envs/env_0/robot1>.  Ignoring. (getting targets for relationship </World/envs/env_0/robot1/camera/visuals/camera/World/mesh.material:binding> on stage @anon:0x5f7929dca9e0:World0.usd@ <0x5f7929dcb9e0>)
+
+2026-08-31T03:13:28Z [20,232ms] [Warning] [omni.usd] Warning (secondary thread): in _ReportErrors at line 3172 of /builds/omniverse/usd-ci/USD/pxr/usd/usd/stage.cpp -- In </World/envs/env_0/robot0/camera/visuals/camera/World/mesh.material:binding>: The relationship target </OmniKit_Viewport_LightRig/Looks/Ground_Material> from </X5A/camera/visuals/camera/World/mesh.material:binding> in layer @/home/nvidia/RoboDojo/Assets/Robots/x5/ARX.usd@ refers to a path outside the scope of the reference from </World/envs/env_0/robot0>.  Ignoring. (getting targets for relationship </World/envs/env_0/robot0/camera/visuals/camera/World/mesh.material:binding> on stage @anon:0x5f7929dca9e0:World0.usd@ <0x5f7929dcb9e0>)
+
+2026-08-31T03:13:28Z [20,232ms] [Warning] [omni.usd] Warning (secondary thread): in _ReportErrors at line 3172 of /builds/omniverse/usd-ci/USD/pxr/usd/usd/stage.cpp -- In </World/envs/env_0/robot0/link3/visuals/link3/node_STL_BINARY_/mesh.material:binding>: The relationship target </Flattened_Prototype_9/camera/World/Looks/ID10> from </X5A/link3/visuals/link3/node_STL_BINARY_/mesh.material:binding> in layer @/home/nvidia/RoboDojo/Assets/Robots/x5/ARX.usd@ refers to a path outside the scope of the reference from </World/envs/env_0/robot0>.  Ignoring. (getting targets for relationship </World/envs/env_0/robot0/link3/visuals/link3/node_STL_BINARY_/mesh.material:binding> on stage @anon:0x5f7929dca9e0:World0.usd@ <0x5f7929dcb9e0>)
+
+2026-08-31T03:13:28Z [20,233ms] [Warning] [omni.usd] Warning (secondary thread): in _ReportErrors at line 3172 of /builds/omniverse/usd-ci/USD/pxr/usd/usd/stage.cpp -- In </World/envs/env_0/robot1/link3/visuals/link3/node_STL_BINARY_/mesh.material:binding>: The relationship target </Flattened_Prototype_9/camera/World/Looks/ID10> from </X5A/link3/visuals/link3/node_STL_BINARY_/mesh.material:binding> in layer @/home/nvidia/RoboDojo/Assets/Robots/x5/ARX.usd@ refers to a path outside the scope of the reference from </World/envs/env_0/robot1>.  Ignoring. (getting targets for relationship </World/envs/env_0/robot1/link3/visuals/link3/node_STL_BINARY_/mesh.material:binding> on stage @anon:0x5f7929dca9e0:World0.usd@ <0x5f7929dcb9e0>)
+
+2026-08-31T03:13:28Z [20,233ms] [Warning] [omni.usd] Warning (secondary thread): in _ReportErrors at line 3172 of /builds/omniverse/usd-ci/USD/pxr/usd/usd/stage.cpp -- In </World/envs/env_0/robot1/camera/visuals/camera/World/mesh.material:binding>: The relationship target </OmniKit_Viewport_LightRig/Looks/Ground_Material> from </X5A/camera/visuals/camera/World/mesh.material:binding> in layer @/home/nvidia/RoboDojo/Assets/Robots/x5/ARX.usd@ refers to a path outside the scope of the reference from </World/envs/env_0/robot1>.  Ignoring. (getting targets for relationship </World/envs/env_0/robot1/camera/visuals/camera/World/mesh.material:binding> on stage @anon:0x5f7929dca9e0:World0.usd@ <0x5f7929dcb9e0>)
+
+[INFO]: Time taken for simulation start : 0.412423 seconds
+[INFO]: Completed setting up the environment...
+[INFO] Resetting all environments
+2026-08-31T03:13:33Z [24,885ms] [Warning] [omni.fabric.plugin] USD->Fabric: Unhandled array type string[]
+2026-08-31T03:13:33Z [24,981ms] [Warning] [rtx.neuraylib.plugin] [MDLC:COMPILER]   1.0   MDLC   comp warn : file:/home/nvidia/RoboDojo/.cache/robodojo_assets_repo/Assets/Material/material_0122/Mahogany_Planks.mdl(49,24): C302 conversion from 'float' to 'float2' must be explicit
+2026-08-31T03:13:33Z [24,981ms] [Warning] [rtx.neuraylib.plugin] [MDLC:COMPILER]   1.0   MDLC   comp warn : file:/home/nvidia/RoboDojo/.cache/robodojo_assets_repo/Assets/Material/material_0122/Mahogany_Planks.mdl(51,20): C302 conversion from 'float' to 'float2' must be explicit
+2026-08-31T03:13:33Z [24,981ms] [Warning] [rtx.neuraylib.plugin] [MDLC:COMPILER]   1.0   MDLC   comp warn : file:/home/nvidia/RoboDojo/.cache/robodojo_assets_repo/Assets/Material/material_0122/Mahogany_Planks.mdl(52,31): C302 conversion from 'float' to 'float2' must be explicit
+2026-08-31T03:13:33Z [24,981ms] [Warning] [rtx.neuraylib.plugin] [MDLC:COMPILER]   1.0   MDLC   comp warn : file:/home/nvidia/RoboDojo/.cache/robodojo_assets_repo/Assets/Material/material_0122/Mahogany_Planks.mdl(54,27): C302 conversion from 'float' to 'float2' must be explicit
+2026-08-31T03:13:39Z [31,470ms] [Warning] [carb] Client gpu.foundation.plugin has acquired [gpu::unstable::IMemoryBudgetManagerFactory v0.1] 100 times. Consider accessing this interface with carb::getCachedInterface() (Performance warning)
+env0 step: [92m1 / 800[0menv0 step: [92m2 / 800[0menv0 step: [92m3 / 800[0menv0 step: [92m4 / 800[0menv0 step: [92m5 / 800[0menv0 step: [92m6 / 800[0menv0 step: [92m7 / 800[0menv0 step: [92m8 / 800[0menv0 step: [92m9 / 800[0menv0 step: [92m10 / 800[0menv0 step: [92m11 / 800[0menv0 step: [92m12 / 800[0menv0 step: [92m13 / 800[0menv0 step: [92m14 / 800[0menv0 step: [92m15 / 800[0menv0 step: [92m16 / 800[0menv0 step: [92m17 / 800[0menv0 step: [92m18 / 800[0menv0 step: [92m19 / 800[0menv0 step: [92m20 / 800[0menv0 step: [92m21 / 800[0menv0 step: [92m22 / 800[0menv0 step: [92m23 / 800[0menv0 step: [92m24 / 800[0menv0 step: [92m25 / 800[0menv0 step: [92m26 / 800[0menv0 step: [92m27 / 800[0menv0 step: [92m28 / 800[0menv0 step: [92m29 / 800[0menv0 step: [92m30 / 800[0menv0 step: [92m31 / 800[0menv0 step: [92m32 / 800[0menv0 step: [92m33 / 800[0menv0 step: [92m34 / 800[0menv0 step: [92m35 / 800[0menv0 step: [92m36 / 800[0menv0 step: [92m37 / 800[0menv0 step: [92m38 / 800[0menv0 step: [92m39 / 800[0menv0 step: [92m40 / 800[0menv0 step: [92m41 / 800[0menv0 step: [92m42 / 800[0menv0 step: [92m43 / 800[0menv0 step: [92m44 / 800[0menv0 step: [92m45 / 800[0menv0 step: [92m46 / 800[0menv0 step: [92m47 / 800[0menv0 step: [92m48 / 800[0menv0 step: [92m49 / 800[0menv0 step: [92m50 / 800[0menv0 step: [92m51 / 800[0menv0 step: [92m52 / 800[0menv0 step: [92m53 / 800[0menv0 step: [92m54 / 800[0menv0 step: [92m55 / 800[0menv0 step: [92m56 / 800[0menv0 step: [92m57 / 800[0menv0 step: [92m58 / 800[0menv0 step: [92m59 / 800[0menv0 step: [92m60 / 800[0menv0 step: [92m61 / 800[0menv0 step: [92m62 / 800[0menv0 step: [92m63 / 800[0menv0 step: [92m64 / 800[0menv0 step: [92m65 / 800[0menv0 step: [92m66 / 800[0menv0 step: [92m67 / 800[0menv0 step: [92m68 / 800[0menv0 step: [92m69 / 800[0menv0 step: [92m70 / 800[0menv0 step: [92m71 / 800[0menv0 step: [92m72 / 800[0menv0 step: [92m73 / 800[0menv0 step: [92m74 / 800[0menv0 step: [92m75 / 800[0menv0 step: [92m76 / 800[0menv0 step: [92m77 / 800[0menv0 step: [92m78 / 800[0menv0 step: [92m79 / 800[0menv0 step: [92m80 / 800[0menv0 step: [92m81 / 800[0menv0 step: [92m82 / 800[0menv0 step: [92m83 / 800[0menv0 step: [92m84 / 800[0menv0 step: [92m85 / 800[0menv0 step: [92m86 / 800[0menv0 step: [92m87 / 800[0menv0 step: [92m88 / 800[0menv0 step: [92m89 / 800[0menv0 step: [92m90 / 800[0menv0 step: [92m91 / 800[0menv0 step: [92m92 / 800[0menv0 step: [92m93 / 800[0menv0 step: [92m94 / 800[0menv0 step: [92m95 / 800[0menv0 step: [92m96 / 800[0menv0 step: [92m97 / 800[0menv0 step: [92m98 / 800[0menv0 step: [92m99 / 800[0menv0 step: [92m100 / 800[0menv0 step: [92m101 / 800[0menv0 step: [92m102 / 800[0menv0 step: [92m103 / 800[0menv0 step: [92m104 / 800[0menv0 step: [92m105 / 800[0menv0 step: [92m106 / 800[0menv0 step: [92m107 / 800[0menv0 step: [92m108 / 800[0menv0 step: [92m109 / 800[0menv0 step: [92m110 / 800[0menv0 step: [92m111 / 800[0menv0 step: [92m112 / 800[0menv0 step: [92m113 / 800[0menv0 step: [92m114 / 800[0menv0 step: [92m115 / 800[0menv0 step: [92m116 / 800[0menv0 step: [92m117 / 800[0menv0 step: [92m118 / 800[0menv0 step: [92m119 / 800[0menv0 step: [92m120 / 800[0menv0 step: [92m121 / 800[0menv0 step: [92m122 / 800[0menv0 step: [92m123 / 800[0menv0 step: [92m124 / 800[0menv0 step: [92m125 / 800[0menv0 step: [92m126 / 800[0menv0 step: [92m127 / 800[0menv0 step: [92m128 / 800[0menv0 step: [92m129 / 800[0menv0 step: [92m130 / 800[0menv0 step: [92m131 / 800[0menv0 step: [92m132 / 800[0menv0 step: [92m133 / 800[0menv0 step: [92m134 / 800[0menv0 step: [92m135 / 800[0menv0 step: [92m136 / 800[0menv0 step: [92m137 / 800[0menv0 step: [92m138 / 800[0menv0 step: [92m139 / 800[0menv0 step: [92m140 / 800[0menv0 step: [92m141 / 800[0menv0 step: [92m142 / 800[0menv0 step: [92m143 / 800[0menv0 step: [92m144 / 800[0menv0 step: [92m145 / 800[0menv0 step: [92m146 / 800[0menv0 step: [92m147 / 800[0menv0 step: [92m148 / 800[0menv0 step: [92m149 / 800[0menv0 step: [92m150 / 800[0menv0 step: [92m151 / 800[0menv0 step: [92m152 / 800[0menv0 step: [92m153 / 800[0menv0 step: [92m154 / 800[0menv0 step: [92m155 / 800[0menv0 step: [92m156 / 800[0menv0 step: [92m157 / 800[0menv0 step: [92m158 / 800[0menv0 step: [92m159 / 800[0menv0 step: [92m160 / 800[0menv0 step: [92m161 / 800[0menv0 step: [92m162 / 800[0menv0 step: [92m163 / 800[0menv0 step: [92m164 / 800[0menv0 step: [92m165 / 800[0menv0 step: [92m166 / 800[0menv0 step: [92m167 / 800[0menv0 step: [92m168 / 800[0menv0 step: [92m169 / 800[0menv0 step: [92m170 / 800[0menv0 step: [92m171 / 800[0menv0 step: [92m172 / 800[0menv0 step: [92m173 / 800[0menv0 step: [92m174 / 800[0menv0 step: [92m175 / 800[0menv0 step: [92m176 / 800[0menv0 step: [92m177 / 800[0menv0 step: [92m178 / 800[0menv0 step: [92m179 / 800[0menv0 step: [92m180 / 800[0menv0 step: [92m181 / 800[0menv0 step: [92m182 / 800[0menv0 step: [92m183 / 800[0menv0 step: [92m184 / 800[0menv0 step: [92m185 / 800[0menv0 step: [92m186 / 800[0menv0 step: [92m187 / 800[0menv0 step: [92m188 / 800[0menv0 step: [92m189 / 800[0menv0 step: [92m190 / 800[0menv0 step: [92m191 / 800[0menv0 step: [92m192 / 800[0menv0 step: [92m193 / 800[0menv0 step: [92m194 / 800[0menv0 step: [92m195 / 800[0menv0 step: [92m196 / 800[0menv0 step: [92m197 / 800[0menv0 step: [92m198 / 800[0menv0 step: [92m199 / 800[0menv0 step: [92m200 / 800[0menv0 step: [92m201 / 800[0menv0 step: [92m202 / 800[0menv0 step: [92m203 / 800[0menv0 step: [92m204 / 800[0menv0 step: [92m205 / 800[0menv0 step: [92m206 / 800[0menv0 step: [92m207 / 800[0menv0 step: [92m208 / 800[0menv0 step: [92m209 / 800[0menv0 step: [92m210 / 800[0menv0 step: [92m211 / 800[0menv0 step: [92m212 / 800[0menv0 step: [92m213 / 800[0menv0 step: [92m214 / 800[0menv0 step: [92m215 / 800[0menv0 step: [92m216 / 800[0menv0 step: [92m217 / 800[0menv0 step: [92m218 / 800[0menv0 step: [92m219 / 800[0menv0 step: [92m220 / 800[0menv0 step: [92m221 / 800[0menv0 step: [92m222 / 800[0menv0 step: [92m223 / 800[0menv0 step: [92m224 / 800[0menv0 step: [92m225 / 800[0menv0 step: [92m226 / 800[0menv0 step: [92m227 / 800[0menv0 step: [92m228 / 800[0menv0 step: [92m229 / 800[0menv0 step: [92m230 / 800[0menv0 step: [92m231 / 800[0menv0 step: [92m232 / 800[0menv0 step: [92m233 / 800[0menv0 step: [92m234 / 800[0menv0 step: [92m235 / 800[0menv0 step: [92m236 / 800[0menv0 step: [92m237 / 800[0menv0 step: [92m238 / 800[0menv0 step: [92m239 / 800[0menv0 step: [92m240 / 800[0menv0 step: [92m241 / 800[0menv0 step: [92m242 / 800[0menv0 step: [92m243 / 800[0menv0 step: [92m244 / 800[0menv0 step: [92m245 / 800[0menv0 step: [92m246 / 800[0menv0 step: [92m247 / 800[0menv0 step: [92m248 / 800[0menv0 step: [92m249 / 800[0menv0 step: [92m250 / 800[0menv0 step: [92m251 / 800[0menv0 step: [92m252 / 800[0menv0 step: [92m253 / 800[0menv0 step: [92m254 / 800[0menv0 step: [92m255 / 800[0menv0 step: [92m256 / 800[0menv0 step: [92m257 / 800[0menv0 step: [92m258 / 800[0menv0 step: [92m259 / 800[0menv0 step: [92m260 / 800[0menv0 step: [92m261 / 800[0menv0 step: [92m262 / 800[0menv0 step: [92m263 / 800[0menv0 step: [92m264 / 800[0menv0 step: [92m265 / 800[0menv0 step: [92m266 / 800[0menv0 step: [92m267 / 800[0menv0 step: [92m268 / 800[0menv0 step: [92m269 / 800[0menv0 step: [92m270 / 800[0menv0 step: [92m271 / 800[0menv0 step: [92m272 / 800[0menv0 step: [92m273 / 800[0menv0 step: [92m274 / 800[0menv0 step: [92m275 / 800[0menv0 step: [92m276 / 800[0menv0 step: [92m277 / 800[0menv0 step: [92m278 / 800[0menv0 step: [92m279 / 800[0menv0 step: [92m280 / 800[0menv0 step: [92m281 / 800[0menv0 step: [92m282 / 800[0menv0 step: [92m283 / 800[0menv0 step: [92m284 / 800[0menv0 step: [92m285 / 800[0menv0 step: [92m286 / 800[0menv0 step: [92m287 / 800[0menv0 step: [92m288 / 800[0menv0 step: [92m289 / 800[0menv0 step: [92m290 / 800[0menv0 step: [92m291 / 800[0menv0 step: [92m292 / 800[0menv0 step: [92m293 / 800[0menv0 step: [92m294 / 800[0menv0 step: [92m295 / 800[0menv0 step: [92m296 / 800[0menv0 step: [92m297 / 800[0menv0 step: [92m298 / 800[0menv0 step: [92m299 / 800[0menv0 step: [92m300 / 800[0menv0 step: [92m301 / 800[0menv0 step: [92m302 / 800[0menv0 step: [92m303 / 800[0menv0 step: [92m304 / 800[0menv0 step: [92m305 / 800[0menv0 step: [92m306 / 800[0menv0 step: [92m307 / 800[0menv0 step: [92m308 / 800[0menv0 step: [92m309 / 800[0menv0 step: [92m310 / 800[0menv0 step: [92m311 / 800[0menv0 step: [92m312 / 800[0menv0 step: [92m313 / 800[0menv0 step: [92m314 / 800[0menv0 step: [92m315 / 800[0menv0 step: [92m316 / 800[0menv0 step: [92m317 / 800[0menv0 step: [92m318 / 800[0menv0 step: [92m319 / 800[0menv0 step: [92m320 / 800[0menv0 step: [92m321 / 800[0menv0 step: [92m322 / 800[0menv0 step: [92m323 / 800[0menv0 step: [92m324 / 800[0menv0 step: [92m325 / 800[0menv0 step: [92m326 / 800[0menv0 step: [92m327 / 800[0menv0 step: [92m328 / 800[0menv0 step: [92m329 / 800[0menv0 step: [92m330 / 800[0menv0 step: [92m331 / 800[0menv0 step: [92m332 / 800[0menv0 step: [92m333 / 800[0menv0 step: [92m334 / 800[0menv0 step: [92m335 / 800[0menv0 step: [92m336 / 800[0menv0 step: [92m337 / 800[0menv0 step: [92m338 / 800[0menv0 step: [92m339 / 800[0menv0 step: [92m340 / 800[0menv0 step: [92m341 / 800[0menv0 step: [92m342 / 800[0menv0 step: [92m343 / 800[0menv0 step: [92m344 / 800[0menv0 step: [92m345 / 800[0menv0 step: [92m346 / 800[0menv0 step: [92m347 / 800[0menv0 step: [92m348 / 800[0menv0 step: [92m349 / 800[0menv0 step: [92m350 / 800[0menv0 step: [92m351 / 800[0menv0 step: [92m352 / 800[0menv0 step: [92m353 / 800[0menv0 step: [92m354 / 800[0menv0 step: [92m355 / 800[0menv0 step: [92m356 / 800[0menv0 step: [92m357 / 800[0menv0 step: [92m358 / 800[0menv0 step: [92m359 / 800[0menv0 step: [92m360 / 800[0menv0 step: [92m361 / 800[0menv0 step: [92m362 / 800[0menv0 step: [92m363 / 800[0menv0 step: [92m364 / 800[0menv0 step: [92m365 / 800[0menv0 step: [92m366 / 800[0menv0 step: [92m367 / 800[0menv0 step: [92m368 / 800[0menv0 step: [92m369 / 800[0menv0 step: [92m370 / 800[0menv0 step: [92m371 / 800[0menv0 step: [92m372 / 800[0menv0 step: [92m373 / 800[0menv0 step: [92m374 / 800[0menv0 step: [92m375 / 800[0menv0 step: [92m376 / 800[0menv0 step: [92m377 / 800[0menv0 step: [92m378 / 800[0menv0 step: [92m379 / 800[0menv0 step: [92m380 / 800[0menv0 step: [92m381 / 800[0menv0 step: [92m382 / 800[0menv0 step: [92m383 / 800[0menv0 step: [92m384 / 800[0menv0 step: [92m385 / 800[0menv0 step: [92m386 / 800[0menv0 step: [92m387 / 800[0menv0 step: [92m388 / 800[0menv0 step: [92m389 / 800[0menv0 step: [92m390 / 800[0menv0 step: [92m391 / 800[0menv0 step: [92m392 / 800[0menv0 step: [92m393 / 800[0menv0 step: [92m394 / 800[0menv0 step: [92m395 / 800[0menv0 step: [92m396 / 800[0menv0 step: [92m397 / 800[0menv0 step: [92m398 / 800[0menv0 step: [92m399 / 800[0menv0 step: [92m400 / 800[0menv0 step: [92m401 / 800[0menv0 step: [92m402 / 800[0menv0 step: [92m403 / 800[0menv0 step: [92m404 / 800[0menv0 step: [92m405 / 800[0menv0 step: [92m406 / 800[0menv0 step: [92m407 / 800[0menv0 step: [92m408 / 800[0menv0 step: [92m409 / 800[0menv0 step: [92m410 / 800[0menv0 step: [92m411 / 800[0menv0 step: [92m412 / 800[0menv0 step: [92m413 / 800[0menv0 step: [92m414 / 800[0menv0 step: [92m415 / 800[0menv0 step: [92m416 / 800[0menv0 step: [92m417 / 800[0menv0 step: [92m418 / 800[0menv0 step: [92m419 / 800[0menv0 step: [92m420 / 800[0menv0 step: [92m421 / 800[0menv0 step: [92m422 / 800[0menv0 step: [92m423 / 800[0menv0 step: [92m424 / 800[0menv0 step: [92m425 / 800[0menv0 step: [92m426 / 800[0menv0 step: [92m427 / 800[0menv0 step: [92m428 / 800[0menv0 step: [92m429 / 800[0menv0 step: [92m430 / 800[0menv0 step: [92m431 / 800[0menv0 step: [92m432 / 800[0menv0 step: [92m433 / 800[0menv0 step: [92m434 / 800[0menv0 step: [92m435 / 800[0menv0 step: [92m436 / 800[0menv0 step: [92m437 / 800[0menv0 step: [92m438 / 800[0menv0 step: [92m439 / 800[0menv0 step: [92m440 / 800[0menv0 step: [92m441 / 800[0menv0 step: [92m442 / 800[0menv0 step: [92m443 / 800[0menv0 step: [92m444 / 800[0menv0 step: [92m445 / 800[0menv0 step: [92m446 / 800[0menv0 step: [92m447 / 800[0menv0 step: [92m448 / 800[0menv0 step: [92m449 / 800[0menv0 step: [92m450 / 800[0menv0 step: [92m451 / 800[0menv0 step: [92m452 / 800[0menv0 step: [92m453 / 800[0menv0 step: [92m454 / 800[0menv0 step: [92m455 / 800[0menv0 step: [92m456 / 800[0menv0 step: [92m457 / 800[0menv0 step: [92m458 / 800[0menv0 step: [92m459 / 800[0menv0 step: [92m460 / 800[0menv0 step: [92m461 / 800[0menv0 step: [92m462 / 800[0menv0 step: [92m463 / 800[0menv0 step: [92m464 / 800[0menv0 step: [92m465 / 800[0menv0 step: [92m466 / 800[0menv0 step: [92m467 / 800[0menv0 step: [92m468 / 800[0menv0 step: [92m469 / 800[0menv0 step: [92m470 / 800[0menv0 step: [92m471 / 800[0menv0 step: [92m472 / 800[0menv0 step: [92m473 / 800[0menv0 step: [92m474 / 800[0menv0 step: [92m475 / 800[0menv0 step: [92m476 / 800[0menv0 step: [92m477 / 800[0menv0 step: [92m478 / 800[0menv0 step: [92m479 / 800[0menv0 step: [92m480 / 800[0menv0 step: [92m481 / 800[0menv0 step: [92m482 / 800[0menv0 step: [92m483 / 800[0menv0 step: [92m484 / 800[0menv0 step: [92m485 / 800[0menv0 step: [92m486 / 800[0menv0 step: [92m487 / 800[0menv0 step: [92m488 / 800[0menv0 step: [92m489 / 800[0menv0 step: [92m490 / 800[0menv0 step: [92m491 / 800[0menv0 step: [92m492 / 800[0menv0 step: [92m493 / 800[0menv0 step: [92m494 / 800[0menv0 step: [92m495 / 800[0menv0 step: [92m496 / 800[0menv0 step: [92m497 / 800[0menv0 step: [92m498 / 800[0menv0 step: [92m499 / 800[0menv0 step: [92m500 / 800[0menv0 step: [92m501 / 800[0menv0 step: [92m502 / 800[0menv0 step: [92m503 / 800[0menv0 step: [92m504 / 800[0menv0 step: [92m505 / 800[0menv0 step: [92m506 / 800[0menv0 step: [92m507 / 800[0menv0 step: [92m508 / 800[0menv0 step: [92m509 / 800[0menv0 step: [92m510 / 800[0menv0 step: [92m511 / 800[0menv0 step: [92m512 / 800[0menv0 step: [92m513 / 800[0menv0 step: [92m514 / 800[0menv0 step: [92m515 / 800[0menv0 step: [92m516 / 800[0menv0 step: [92m517 / 800[0menv0 step: [92m518 / 800[0menv0 step: [92m519 / 800[0menv0 step: [92m520 / 800[0menv0 step: [92m521 / 800[0menv0 step: [92m522 / 800[0menv0 step: [92m523 / 800[0menv0 step: [92m524 / 800[0menv0 step: [92m525 / 800[0menv0 step: [92m526 / 800[0menv0 step: [92m527 / 800[0menv0 step: [92m528 / 800[0menv0 step: [92m529 / 800[0menv0 step: [92m530 / 800[0menv0 step: [92m531 / 800[0menv0 step: [92m532 / 800[0menv0 step: [92m533 / 800[0menv0 step: [92m534 / 800[0menv0 step: [92m535 / 800[0menv0 step: [92m536 / 800[0menv0 step: [92m537 / 800[0menv0 step: [92m538 / 800[0menv0 step: [92m539 / 800[0menv0 step: [92m540 / 800[0menv0 step: [92m541 / 800[0menv0 step: [92m542 / 800[0menv0 step: [92m543 / 800[0menv0 step: [92m544 / 800[0menv0 step: [92m545 / 800[0menv0 step: [92m546 / 800[0menv0 step: [92m547 / 800[0menv0 step: [92m548 / 800[0menv0 step: [92m549 / 800[0menv0 step: [92m550 / 800[0menv0 step: [92m551 / 800[0menv0 step: [92m552 / 800[0menv0 step: [92m553 / 800[0menv0 step: [92m554 / 800[0menv0 step: [92m555 / 800[0menv0 step: [92m556 / 800[0menv0 step: [92m557 / 800[0menv0 step: [92m558 / 800[0menv0 step: [92m559 / 800[0menv0 step: [92m560 / 800[0menv0 step: [92m561 / 800[0menv0 step: [92m562 / 800[0menv0 step: [92m563 / 800[0menv0 step: [92m564 / 800[0menv0 step: [92m565 / 800[0menv0 step: [92m566 / 800[0menv0 step: [92m567 / 800[0menv0 step: [92m568 / 800[0menv0 step: [92m569 / 800[0menv0 step: [92m570 / 800[0menv0 step: [92m571 / 800[0menv0 step: [92m572 / 800[0menv0 step: [92m573 / 800[0menv0 step: [92m574 / 800[0menv0 step: [92m575 / 800[0menv0 step: [92m576 / 800[0menv0 step: [92m577 / 800[0menv0 step: [92m578 / 800[0menv0 step: [92m579 / 800[0menv0 step: [92m580 / 800[0menv0 step: [92m581 / 800[0menv0 step: [92m582 / 800[0menv0 step: [92m583 / 800[0menv0 step: [92m584 / 800[0menv0 step: [92m585 / 800[0menv0 step: [92m586 / 800[0menv0 step: [92m587 / 800[0menv0 step: [92m588 / 800[0menv0 step: [92m589 / 800[0menv0 step: [92m590 / 800[0menv0 step: [92m591 / 800[0menv0 step: [92m592 / 800[0menv0 step: [92m593 / 800[0menv0 step: [92m594 / 800[0menv0 step: [92m595 / 800[0menv0 step: [92m596 / 800[0menv0 step: [92m597 / 800[0menv0 step: [92m598 / 800[0menv0 step: [92m599 / 800[0menv0 step: [92m600 / 800[0menv0 step: [92m601 / 800[0menv0 step: [92m602 / 800[0menv0 step: [92m603 / 800[0menv0 step: [92m604 / 800[0menv0 step: [92m605 / 800[0menv0 step: [92m606 / 800[0menv0 step: [92m607 / 800[0menv0 step: [92m608 / 800[0menv0 step: [92m609 / 800[0menv0 step: [92m610 / 800[0menv0 step: [92m611 / 800[0menv0 step: [92m612 / 800[0menv0 step: [92m613 / 800[0menv0 step: [92m614 / 800[0menv0 step: [92m615 / 800[0menv0 step: [92m616 / 800[0menv0 step: [92m617 / 800[0menv0 step: [92m618 / 800[0menv0 step: [92m619 / 800[0menv0 step: [92m620 / 800[0menv0 step: [92m621 / 800[0menv0 step: [92m622 / 800[0menv0 step: [92m623 / 800[0menv0 step: [92m624 / 800[0menv0 step: [92m625 / 800[0menv0 step: [92m626 / 800[0menv0 step: [92m627 / 800[0menv0 step: [92m628 / 800[0menv0 step: [92m629 / 800[0menv0 step: [92m630 / 800[0menv0 step: [92m631 / 800[0menv0 step: [92m632 / 800[0menv0 step: [92m633 / 800[0menv0 step: [92m634 / 800[0menv0 step: [92m635 / 800[0menv0 step: [92m636 / 800[0menv0 step: [92m637 / 800[0menv0 step: [92m638 / 800[0menv0 step: [92m639 / 800[0menv0 step: [92m640 / 800[0menv0 step: [92m641 / 800[0menv0 step: [92m642 / 800[0menv0 step: [92m643 / 800[0menv0 step: [92m644 / 800[0menv0 step: [92m645 / 800[0menv0 step: [92m646 / 800[0menv0 step: [92m647 / 800[0menv0 step: [92m648 / 800[0menv0 step: [92m649 / 800[0menv0 step: [92m650 / 800[0menv0 step: [92m651 / 800[0menv0 step: [92m652 / 800[0menv0 step: [92m653 / 800[0menv0 step: [92m654 / 800[0menv0 step: [92m655 / 800[0menv0 step: [92m656 / 800[0menv0 step: [92m657 / 800[0menv0 step: [92m658 / 800[0menv0 step: [92m659 / 800[0menv0 step: [92m660 / 800[0menv0 step: [92m661 / 800[0menv0 step: [92m662 / 800[0menv0 step: [92m663 / 800[0menv0 step: [92m664 / 800[0menv0 step: [92m665 / 800[0menv0 step: [92m666 / 800[0menv0 step: [92m667 / 800[0menv0 step: [92m668 / 800[0menv0 step: [92m669 / 800[0menv0 step: [92m670 / 800[0menv0 step: [92m671 / 800[0menv0 step: [92m672 / 800[0menv0 step: [92m673 / 800[0menv0 step: [92m674 / 800[0menv0 step: [92m675 / 800[0menv0 step: [92m676 / 800[0menv0 step: [92m677 / 800[0menv0 step: [92m678 / 800[0menv0 step: [92m679 / 800[0menv0 step: [92m680 / 800[0menv0 step: [92m681 / 800[0menv0 step: [92m682 / 800[0menv0 step: [92m683 / 800[0menv0 step: [92m684 / 800[0menv0 step: [92m685 / 800[0menv0 step: [92m686 / 800[0menv0 step: [92m687 / 800[0menv0 step: [92m688 / 800[0menv0 step: [92m689 / 800[0menv0 step: [92m690 / 800[0menv0 step: [92m691 / 800[0menv0 step: [92m692 / 800[0menv0 step: [92m693 / 800[0menv0 step: [92m694 / 800[0menv0 step: [92m695 / 800[0menv0 step: [92m696 / 800[0menv0 step: [92m697 / 800[0menv0 step: [92m698 / 800[0menv0 step: [92m699 / 800[0menv0 step: [92m700 / 800[0menv0 step: [92m701 / 800[0menv0 step: [92m702 / 800[0menv0 step: [92m703 / 800[0menv0 step: [92m704 / 800[0menv0 step: [92m705 / 800[0menv0 step: [92m706 / 800[0menv0 step: [92m707 / 800[0menv0 step: [92m708 / 800[0menv0 step: [92m709 / 800[0menv0 step: [92m710 / 800[0menv0 step: [92m711 / 800[0menv0 step: [92m712 / 800[0menv0 step: [92m713 / 800[0menv0 step: [92m714 / 800[0menv0 step: [92m715 / 800[0menv0 step: [92m716 / 800[0menv0 step: [92m717 / 800[0menv0 step: [92m718 / 800[0menv0 step: [92m719 / 800[0menv0 step: [92m720 / 800[0menv0 step: [92m721 / 800[0menv0 step: [92m722 / 800[0menv0 step: [92m723 / 800[0menv0 step: [92m724 / 800[0menv0 step: [92m725 / 800[0menv0 step: [92m726 / 800[0menv0 step: [92m727 / 800[0menv0 step: [92m728 / 800[0menv0 step: [92m729 / 800[0menv0 step: [92m730 / 800[0menv0 step: [92m731 / 800[0menv0 step: [92m732 / 800[0menv0 step: [92m733 / 800[0menv0 step: [92m734 / 800[0menv0 step: [92m735 / 800[0menv0 step: [92m736 / 800[0menv0 step: [92m737 / 800[0menv0 step: [92m738 / 800[0menv0 step: [92m739 / 800[0menv0 step: [92m740 / 800[0menv0 step: [92m741 / 800[0menv0 step: [92m742 / 800[0menv0 step: [92m743 / 800[0menv0 step: [92m744 / 800[0menv0 step: [92m745 / 800[0menv0 step: [92m746 / 800[0menv0 step: [92m747 / 800[0menv0 step: [92m748 / 800[0menv0 step: [92m749 / 800[0menv0 step: [92m750 / 800[0menv0 step: [92m751 / 800[0menv0 step: [92m752 / 800[0menv0 step: [92m753 / 800[0menv0 step: [92m754 / 800[0menv0 step: [92m755 / 800[0menv0 step: [92m756 / 800[0menv0 step: [92m757 / 800[0menv0 step: [92m758 / 800[0menv0 step: [92m759 / 800[0menv0 step: [92m760 / 800[0menv0 step: [92m761 / 800[0menv0 step: [92m762 / 800[0menv0 step: [92m763 / 800[0menv0 step: [92m764 / 800[0menv0 step: [92m765 / 800[0menv0 step: [92m766 / 800[0menv0 step: [92m767 / 800[0menv0 step: [92m768 / 800[0menv0 step: [92m769 / 800[0menv0 step: [92m770 / 800[0menv0 step: [92m771 / 800[0menv0 step: [92m772 / 800[0menv0 step: [92m773 / 800[0menv0 step: [92m774 / 800[0menv0 step: [92m775 / 800[0menv0 step: [92m776 / 800[0menv0 step: [92m777 / 800[0menv0 step: [92m778 / 800[0menv0 step: [92m779 / 800[0menv0 step: [92m780 / 800[0menv0 step: [92m781 / 800[0menv0 step: [92m782 / 800[0menv0 step: [92m783 / 800[0menv0 step: [92m784 / 800[0menv0 step: [92m785 / 800[0menv0 step: [92m786 / 800[0menv0 step: [92m787 / 800[0menv0 step: [92m788 / 800[0menv0 step: [92m789 / 800[0menv0 step: [92m790 / 800[0menv0 step: [92m791 / 800[0menv0 step: [92m792 / 800[0menv0 step: [92m793 / 800[0menv0 step: [92m794 / 800[0menv0 step: [92m795 / 800[0menv0 step: [92m796 / 800[0menv0 step: [92m797 / 800[0menv0 step: [92m798 / 800[0menv0 step: [92m799 / 800[0menv0 step: [92m800 / 800[0m🎬 Video is saved to `eval_result/RoboDojo/stack_bowls/ACT/arx_x5/0_ckpt_name=RoboDojo-stack_bowls-arx_x5-joint-0,action_type=joint/week03_day05_stack_bowls_official_seed0_layout0/episode_0000000_cam_head_fail.mp4`, containing [94m801[0m frames at 640×480 resolution and 25 FPS.
+🎬 Video is saved to `eval_result/RoboDojo/stack_bowls/ACT/arx_x5/0_ckpt_name=RoboDojo-stack_bowls-arx_x5-joint-0,action_type=joint/week03_day05_stack_bowls_official_seed0_layout0/episode_0000000_cam_left_wrist_fail.mp4`, containing [94m801[0m frames at 640×480 resolution and 25 FPS.
+🎬 Video is saved to `eval_result/RoboDojo/stack_bowls/ACT/arx_x5/0_ckpt_name=RoboDojo-stack_bowls-arx_x5-joint-0,action_type=joint/week03_day05_stack_bowls_official_seed0_layout0/episode_0000000_cam_right_wrist_fail.mp4`, containing [94m801[0m frames at 640×480 resolution and 25 FPS.
+Success nums: 0, Fail nums: 1, Unstable nums: 0
+[main] removed resume manifest eval_result/RoboDojo/stack_bowls/ACT/arx_x5/0_ckpt_name=RoboDojo-stack_bowls-arx_x5-joint-0,action_type=joint/_resume_week03_day05_stack_bowls_official_seed0_layout0.json (eval completed)
+[192.593s] Simulation App Shutting Down
+[MAIN] eval finished
+[MAIN] kill server tree 16129
+[robodojo eval] wall_clock=199s

@@ -1,0 +1,14 @@
+{
+  "selected": "stack_bowls",
+  "checkpoint_inventory": {
+    "deposit_coin": "RoboDojo-deposit_coin-arx_x5-joint-0",
+    "stack_bowls_official": "RoboDojo-stack_bowls-arx_x5-joint-0",
+    "stack_bowls_local_retrain": "RoboDojo-stack_bowls-arx_x5-joint-0-retrain1000"
+  },
+  "historical_local_result": {
+    "official_checkpoint_successes_observed": 0,
+    "local_retrain_successes_observed": 0,
+    "interpretation": "No local evidence supports calling stack_bowls a successful baseline before this experiment."
+  },
+  "scope": "Validate a stable official alternative execution path; do not claim task success unless result.json and video evidence agree."
+}

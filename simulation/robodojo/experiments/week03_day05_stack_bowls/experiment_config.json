@@ -1,0 +1,23 @@
+{
+  "experiment": "Week 3 Day 5 official alternative task evaluation",
+  "selected_task": "stack_bowls",
+  "selection_reason": "Only non-Coin official task with a complete local ACT checkpoint, task configuration, assets, and prior full-run evidence",
+  "project_commit": "7caf648b203c55bb4581a4aa512c3262a8b27617",
+  "robodojo_commit": "9226f48ea694b3f53db12d4922e8b1199f8d0891",
+  "xpolicylab_commit": "3e6b42cda67ad6c02aaef2fec16815490c328751",
+  "robodojo_worktree": "dirty",
+  "xpolicylab_worktree": "dirty",
+  "checkpoint": "RoboDojo-stack_bowls-arx_x5-joint-0",
+  "checkpoint_sha256": "ce40ed453b801e12454b11a3b081ca48c0aa275e1a1ff17a0708e600835c6886",
+  "dataset_stats_sha256": "60e6ccb2712bb683aafd95ed6458264c482ae4e13ceb370c5d0c985e2ebe82d7",
+  "task": "stack_bowls",
+  "env_cfg": "arx_x5",
+  "action_type": "joint",
+  "seed": 0,
+  "layout": 0,
+  "input_color_order": "rgb",
+  "temporal_aggregation": false,
+  "episode_limit": 800,
+  "smoke_limit": 60,
+  "command": "bash simulation/robodojo/experiments/week03_day05_stack_bowls/run_stack_bowls.sh full"
+}

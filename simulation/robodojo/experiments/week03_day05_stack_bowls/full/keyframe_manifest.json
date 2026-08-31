@@ -1,0 +1,149 @@
+[
+  {
+    "camera": "cam_head",
+    "requested_step": 0,
+    "frame": 0,
+    "path": "full/keyframes/cam_head_step000.jpg",
+    "sha256": "5e29a2081aae8d61eacca7847e95e1efb7d8ae0fcd18fbe01cc9cda144ae629e"
+  },
+  {
+    "camera": "cam_head",
+    "requested_step": 50,
+    "frame": 50,
+    "path": "full/keyframes/cam_head_step050.jpg",
+    "sha256": "9f34b05cfa07aeb1bfe9797d5fdc219d7a3db24a6774ded09416724724a43bc3"
+  },
+  {
+    "camera": "cam_head",
+    "requested_step": 100,
+    "frame": 100,
+    "path": "full/keyframes/cam_head_step100.jpg",
+    "sha256": "3fe9dacfbc039beebafa037f6f491180d46f69bb63dc8072ce3db1a8c56eb98d"
+  },
+  {
+    "camera": "cam_head",
+    "requested_step": 200,
+    "frame": 200,
+    "path": "full/keyframes/cam_head_step200.jpg",
+    "sha256": "8e3fd58e00cd511f6af4f379b34fe823ecbbc7d96b2e11003fa1fdd1d851b446"
+  },
+  {
+    "camera": "cam_head",
+    "requested_step": 400,
+    "frame": 400,
+    "path": "full/keyframes/cam_head_step400.jpg",
+    "sha256": "f9df1c8b30df968c9978a3624b0e599cd2d79e155f624e63f0c349ef7424a6b4"
+  },
+  {
+    "camera": "cam_head",
+    "requested_step": 600,
+    "frame": 600,
+    "path": "full/keyframes/cam_head_step600.jpg",
+    "sha256": "d1a2a79ec4caa5441dcea8614728f9ef7f22f78b81284c2aa3d1c1b267e66eaf"
+  },
+  {
+    "camera": "cam_head",
+    "requested_step": 799,
+    "frame": 799,
+    "path": "full/keyframes/cam_head_step799.jpg",
+    "sha256": "fea62b8996593b3b0e2291c0c59f3de0ff1896a71516e7ce156a8be49a54f35b"
+  },
+  {
+    "camera": "cam_left_wrist",
+    "requested_step": 0,
+    "frame": 0,
+    "path": "full/keyframes/cam_left_wrist_step000.jpg",
+    "sha256": "191d045ea003aff0ab046dcf92f26d5765b8e2ff8b36eda1bf288306bc74412c"
+  },
+  {
+    "camera": "cam_left_wrist",
+    "requested_step": 50,
+    "frame": 50,
+    "path": "full/keyframes/cam_left_wrist_step050.jpg",
+    "sha256": "81e224cc6ed4a65341f3e91a2aa2d7d02eff85ef2284bd20363b76847b79ee8f"
+  },
+  {
+    "camera": "cam_left_wrist",
+    "requested_step": 100,
+    "frame": 100,
+    "path": "full/keyframes/cam_left_wrist_step100.jpg",
+    "sha256": "f02a03d9737c87a49924fe6eba57be80548d64550e9c02d2772e970538ab1631"
+  },
+  {
+    "camera": "cam_left_wrist",
+    "requested_step": 200,
+    "frame": 200,
+    "path": "full/keyframes/cam_left_wrist_step200.jpg",
+    "sha256": "3e7ac96eaf007dd97b5098e663b10a6daaca52c1fc3fe010a6e47f6a4646a550"
+  },
+  {
+    "camera": "cam_left_wrist",
+    "requested_step": 400,
+    "frame": 400,
+    "path": "full/keyframes/cam_left_wrist_step400.jpg",
+    "sha256": "8f840d66b6dcc76418bc84d5db62f9d6f1d4e0a4ad0e8ce27cd34feeac5d5b3a"
+  },
+  {
+    "camera": "cam_left_wrist",
+    "requested_step": 600,
+    "frame": 600,
+    "path": "full/keyframes/cam_left_wrist_step600.jpg",
+    "sha256": "284efc2b8410872e7dfac310daff81fe7d7773d9a33ed60c9beaa161a33cf54a"
+  },
+  {
+    "camera": "cam_left_wrist",
+    "requested_step": 799,
+    "frame": 799,
+    "path": "full/keyframes/cam_left_wrist_step799.jpg",
+    "sha256": "ddd121199bc8abeef648f868a745b3a5ba5216f490c6f5bb555ba5090cd11f03"
+  },
+  {
+    "camera": "cam_right_wrist",
+    "requested_step": 0,
+    "frame": 0,
+    "path": "full/keyframes/cam_right_wrist_step000.jpg",
+    "sha256": "12430dd11a5d2cb5bbdbc75264682d5c0162c3725d57440b725e9b23667930f6"
+  },
+  {
+    "camera": "cam_right_wrist",
+    "requested_step": 50,
+    "frame": 50,
+    "path": "full/keyframes/cam_right_wrist_step050.jpg",
+    "sha256": "f291918be76af5d7c981ae56aaddb2b19b376a20888abee65cd1e7e163e9e7e5"
+  },
+  {
+    "camera": "cam_right_wrist",
+    "requested_step": 100,
+    "frame": 100,
+    "path": "full/keyframes/cam_right_wrist_step100.jpg",
+    "sha256": "91e882e507165f5aecb2c8e0b759969473244dd1860ac5b4c6c6e0222dc1e8e9"
+  },
+  {
+    "camera": "cam_right_wrist",
+    "requested_step": 200,
+    "frame": 200,
+    "path": "full/keyframes/cam_right_wrist_step200.jpg",
+    "sha256": "4bae6e0dd61ca58a653fc6a273cfdd6c92949ac9ab4ff6eb01ea90cd02fff48d"
+  },
+  {
+    "camera": "cam_right_wrist",
+    "requested_step": 400,
+    "frame": 400,
+    "path": "full/keyframes/cam_right_wrist_step400.jpg",
+    "sha256": "d3502ab3f785ee8e3a44f00d0c0af9fa2f774581023b5a995f362e8a1ae116a0"
+  },
+  {
+    "camera": "cam_right_wrist",
+    "requested_step": 600,
+    "frame": 600,
+    "path": "full/keyframes/cam_right_wrist_step600.jpg",
+    "sha256": "98dd7f694b70ea00ec161b18e2b017220720c73d25be92f03897b79dc78d117f"
+  },
+  {
+    "camera": "cam_right_wrist",
+    "requested_step": 799,
+    "frame": 799,
+    "path": "full/keyframes/cam_right_wrist_step799.jpg",
+    "sha256": "b0dc957d6327b2248325da2b11b28f62cf26c09cb086e81426cc89a2433f846f"
+  }
+]

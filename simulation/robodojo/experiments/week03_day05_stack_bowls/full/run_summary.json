@@ -1,0 +1,58 @@
+{
+  "task": "stack_bowls",
+  "checkpoint": "RoboDojo-stack_bowls-arx_x5-joint-0",
+  "checkpoint_sha256": "ce40ed453b801e12454b11a3b081ca48c0aa275e1a1ff17a0708e600835c6886",
+  "dataset_stats_sha256": "60e6ccb2712bb683aafd95ed6458264c482ae4e13ceb370c5d0c985e2ebe82d7",
+  "seed": 0,
+  "layout": 0,
+  "input_color_order": "rgb",
+  "temporal_aggregation": false,
+  "expected_policy_steps": 800,
+  "action_records": 800,
+  "execution_records": 800,
+  "action_dimension": 14,
+  "actions_finite": true,
+  "nonzero_actions": true,
+  "continuous_steps": true,
+  "final_success": false,
+  "final_score": 0.0,
+  "exit_code": 0,
+  "videos": {
+    "cam_head": {
+      "path": "/home/nvidia/RoboDojo/eval_result/RoboDojo/stack_bowls/ACT/arx_x5/0_ckpt_name=RoboDojo-stack_bowls-arx_x5-joint-0,action_type=joint/week03_day05_stack_bowls_official_seed0_layout0/episode_0000000_cam_head_fail.mp4",
+      "frames": 801,
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "fps": 25.0,
+      "sha256": "ee894e67968135024722d8eb036dd3f1932d5040eb8a7eea477b6f7b08797bf1"
+    },
+    "cam_left_wrist": {
+      "path": "/home/nvidia/RoboDojo/eval_result/RoboDojo/stack_bowls/ACT/arx_x5/0_ckpt_name=RoboDojo-stack_bowls-arx_x5-joint-0,action_type=joint/week03_day05_stack_bowls_official_seed0_layout0/episode_0000000_cam_left_wrist_fail.mp4",
+      "frames": 801,
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "fps": 25.0,
+      "sha256": "01cdc7bc8b246cee4007e6227a71d39ffeb7173702fd951766eb85f775cb5e0e"
+    },
+    "cam_right_wrist": {
+      "path": "/home/nvidia/RoboDojo/eval_result/RoboDojo/stack_bowls/ACT/arx_x5/0_ckpt_name=RoboDojo-stack_bowls-arx_x5-joint-0,action_type=joint/week03_day05_stack_bowls_official_seed0_layout0/episode_0000000_cam_right_wrist_fail.mp4",
+      "frames": 801,
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "fps": 25.0,
+      "sha256": "ca48963a28e7caa6b47c236aa86e218fab7efaed5f50c45e838e187d5c0a5fc3"
+    }
+  },
+  "videos_complete": true,
+  "action_l2_mean": 3.054175982003926,
+  "max_adjacent_action_jump": 0.49734380769327763
+}
