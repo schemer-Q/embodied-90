@@ -1,5 +1,7 @@
 # Coin-X5 Troubleshooting
 
+> 状态：本文档保留为初始假设记录。Week 3 实验已经验证了其中多项假设；当前结论以[最终失败分析](coin_x5_final_analysis.md)为准。
+
 ## 1. 问题摘要
 
 ACT 策略能够完成推理并持续输出非零 14 维动作，dual-X5 的关节和夹爪也实际响应，但左夹爪闭合后，硬币未抬升超过 episode 初始高度 0.08 m。单次正式复评执行完整 300 个 policy step，最终为 `success=false`、`score=0.0`。
