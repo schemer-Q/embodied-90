@@ -132,11 +132,13 @@
 - [x] Day 4：实施 RGB + official stand 修复并完成 300-step 复评（链路完整，但 Coin-X5 仍为 success=false）。
 - [x] Day 5：切换至官方替代任务 stack_bowls，完成 60-step smoke 与 800-step 正式评测（链路通过，任务仍失败）。
 - [x] Day 6：完成 Coin-X5 结论性失败分析，明确已排除层级、影响因素、剩余根因范围和止损边界。
-- [ ] Day 7：撰写复现文档和成功/失败边界。
+- [x] Day 7：完成 Week 3 复现文档、周报和成功/失败边界，正式执行 Coin-X5 止损。
 
 验收：至少一个可运行的 RoboDojo 任务，以及 Coin-X5 结论性记录。
 
 止损：本周结束后不再把主线时间持续投入 Coin-X5。
+
+周状态：**Green**
 
 ### Week 4：理解训练链路
 

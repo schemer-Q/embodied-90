@@ -148,3 +148,4 @@ If Coin-X5 is reopened later, the minimum useful experiment is a repeated script
 - [Final trajectory plot](../experiments/week03_day04_fixed_eval/fixed_trajectory.png)
 - [Final three-camera keyframes](../experiments/week03_day04_fixed_eval/fixed/keyframes/)
 - [Machine-readable final evidence](coin_x5_final_evidence.json)
+- [Week 3 reproduction guide](../docs/week03_reproduction.md)
