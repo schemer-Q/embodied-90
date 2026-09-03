@@ -144,7 +144,7 @@
 
 目标：本地打通 LeRobot 数据—训练—推理流程。
 
-- [ ] Day 1：阅读 LeRobot 数据集字段和 episode 结构。
+- [x] Day 1：阅读 LeRobot 数据集字段和 episode 结构（[审计记录](training/lerobot/week04_day01_dataset_schema.md)）。
 - [ ] Day 2：下载小型公开数据集并完成可视化。
 - [ ] Day 3：在 RTX 5070 上执行极小规模 ACT 训练。
 - [ ] Day 4：加载 checkpoint 完成离线推理。
