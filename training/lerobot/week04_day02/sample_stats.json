@@ -1,0 +1,406 @@
+{
+  "episode": 0,
+  "length": 161,
+  "fps": 10,
+  "camera_keys": [
+    "observation.image"
+  ],
+  "sample_indices": [
+    0,
+    80,
+    160
+  ],
+  "samples": {
+    "0": {
+      "observation.image": {
+        "shape": [
+          3,
+          96,
+          96
+        ],
+        "dtype": "torch.float32",
+        "finite": true,
+        "min": 0.23529411852359772,
+        "max": 1.0,
+        "mean": 0.9756981335716167,
+        "std": 0.08680538551622141
+      },
+      "observation.state": {
+        "shape": [
+          2
+        ],
+        "dtype": "torch.float32",
+        "finite": true,
+        "min": 97.0,
+        "max": 222.0,
+        "mean": 159.5,
+        "std": 62.5
+      },
+      "action": {
+        "shape": [
+          2
+        ],
+        "dtype": "torch.float32",
+        "finite": true,
+        "min": 71.0,
+        "max": 233.0,
+        "mean": 152.0,
+        "std": 81.0
+      },
+      "episode_index": {
+        "shape": [],
+        "dtype": "torch.int64",
+        "finite": true,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "frame_index": {
+        "shape": [],
+        "dtype": "torch.int64",
+        "finite": true,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "timestamp": {
+        "shape": [],
+        "dtype": "torch.float32",
+        "finite": true,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "next.reward": {
+        "shape": [],
+        "dtype": "torch.float32",
+        "finite": true,
+        "min": 0.19029748439788818,
+        "max": 0.19029748439788818,
+        "mean": 0.19029748439788818,
+        "std": 0.0
+      },
+      "next.done": {
+        "shape": [],
+        "dtype": "torch.bool",
+        "values": [
+          false
+        ]
+      },
+      "next.success": {
+        "shape": [],
+        "dtype": "torch.bool",
+        "values": [
+          false
+        ]
+      },
+      "index": {
+        "shape": [],
+        "dtype": "torch.int64",
+        "finite": true,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "task_index": {
+        "shape": [],
+        "dtype": "torch.int64",
+        "finite": true,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "task": "Push the T-shaped block onto the T-shaped target."
+    },
+    "80": {
+      "observation.image": {
+        "shape": [
+          3,
+          96,
+          96
+        ],
+        "dtype": "torch.float32",
+        "finite": true,
+        "min": 0.24313725531101227,
+        "max": 1.0,
+        "mean": 0.9776382092558952,
+        "std": 0.08335260708152777
+      },
+      "observation.state": {
+        "shape": [
+          2
+        ],
+        "dtype": "torch.float32",
+        "finite": true,
+        "min": 216.7681884765625,
+        "max": 254.119140625,
+        "mean": 235.44366455078125,
+        "std": 18.67547607421875
+      },
+      "action": {
+        "shape": [
+          2
+        ],
+        "dtype": "torch.float32",
+        "finite": true,
+        "min": 191.0,
+        "max": 260.0,
+        "mean": 225.5,
+        "std": 34.5
+      },
+      "episode_index": {
+        "shape": [],
+        "dtype": "torch.int64",
+        "finite": true,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "frame_index": {
+        "shape": [],
+        "dtype": "torch.int64",
+        "finite": true,
+        "min": 80.0,
+        "max": 80.0,
+        "mean": 80.0,
+        "std": 0.0
+      },
+      "timestamp": {
+        "shape": [],
+        "dtype": "torch.float32",
+        "finite": true,
+        "min": 8.0,
+        "max": 8.0,
+        "mean": 8.0,
+        "std": 0.0
+      },
+      "next.reward": {
+        "shape": [],
+        "dtype": "torch.float32",
+        "finite": true,
+        "min": 0.3602464199066162,
+        "max": 0.3602464199066162,
+        "mean": 0.3602464199066162,
+        "std": 0.0
+      },
+      "next.done": {
+        "shape": [],
+        "dtype": "torch.bool",
+        "values": [
+          false
+        ]
+      },
+      "next.success": {
+        "shape": [],
+        "dtype": "torch.bool",
+        "values": [
+          false
+        ]
+      },
+      "index": {
+        "shape": [],
+        "dtype": "torch.int64",
+        "finite": true,
+        "min": 80.0,
+        "max": 80.0,
+        "mean": 80.0,
+        "std": 0.0
+      },
+      "task_index": {
+        "shape": [],
+        "dtype": "torch.int64",
+        "finite": true,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "task": "Push the T-shaped block onto the T-shaped target."
+    },
+    "160": {
+      "observation.image": {
+        "shape": [
+          3,
+          96,
+          96
+        ],
+        "dtype": "torch.float32",
+        "finite": true,
+        "min": 0.2235294133424759,
+        "max": 1.0,
+        "mean": 0.9821519560710941,
+        "std": 0.07277852207631819
+      },
+      "observation.state": {
+        "shape": [
+          2
+        ],
+        "dtype": "torch.float32",
+        "finite": true,
+        "min": 158.33016967773438,
+        "max": 360.7481994628906,
+        "mean": 259.5391845703125,
+        "std": 101.20901489257812
+      },
+      "action": {
+        "shape": [
+          2
+        ],
+        "dtype": "torch.float32",
+        "finite": true,
+        "min": 164.0,
+        "max": 355.0,
+        "mean": 259.5,
+        "std": 95.5
+      },
+      "episode_index": {
+        "shape": [],
+        "dtype": "torch.int64",
+        "finite": true,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "frame_index": {
+        "shape": [],
+        "dtype": "torch.int64",
+        "finite": true,
+        "min": 160.0,
+        "max": 160.0,
+        "mean": 160.0,
+        "std": 0.0
+      },
+      "timestamp": {
+        "shape": [],
+        "dtype": "torch.float32",
+        "finite": true,
+        "min": 16.0,
+        "max": 16.0,
+        "mean": 16.0,
+        "std": 0.0
+      },
+      "next.reward": {
+        "shape": [],
+        "dtype": "torch.float32",
+        "finite": true,
+        "min": 0.8732566833496094,
+        "max": 0.8732566833496094,
+        "mean": 0.8732566833496094,
+        "std": 0.0
+      },
+      "next.done": {
+        "shape": [],
+        "dtype": "torch.bool",
+        "values": [
+          true
+        ]
+      },
+      "next.success": {
+        "shape": [],
+        "dtype": "torch.bool",
+        "values": [
+          false
+        ]
+      },
+      "index": {
+        "shape": [],
+        "dtype": "torch.int64",
+        "finite": true,
+        "min": 160.0,
+        "max": 160.0,
+        "mean": 160.0,
+        "std": 0.0
+      },
+      "task_index": {
+        "shape": [],
+        "dtype": "torch.int64",
+        "finite": true,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "task": "Push the T-shaped block onto the T-shaped target."
+    }
+  },
+  "sequence": {
+    "frame_index_first": 0,
+    "frame_index_last": 160,
+    "timestamp_first": 0.0,
+    "timestamp_last": 16.0,
+    "timestamp_step_mean": 0.10000000149011612,
+    "timestamp_step_max_error": 5.736947059631348e-07,
+    "state_min": [
+      93.70186614990234,
+      84.27986145019531
+    ],
+    "state_max": [
+      373.7308044433594,
+      448.178466796875
+    ],
+    "action_min": [
+      93.0,
+      71.0
+    ],
+    "action_max": [
+      375.0,
+      449.0
+    ]
+  },
+  "image_contract": {
+    "metadata_layout": [
+      "height",
+      "width",
+      "channel"
+    ],
+    "metadata_shape": [
+      96,
+      96,
+      3
+    ],
+    "api_layout": "CHW",
+    "api_shape": [
+      3,
+      96,
+      96
+    ],
+    "api_dtype": "torch.float32",
+    "api_range": [
+      0.23529411852359772,
+      1.0
+    ],
+    "raw_decoder_layout": "HWC",
+    "raw_decoder_dtype": "uint8",
+    "raw_rgb_vs_api_mae": 0.0,
+    "raw_bgr_vs_api_mae": 1.1456886574074074,
+    "inferred_api_color_order": "RGB",
+    "video": {
+      "codec": "libdav1d",
+      "pixel_format": "yuv420p",
+      "width": 96,
+      "height": 96,
+      "average_rate": 10.0,
+      "frames_reported": 25650
+    }
+  },
+  "checks": {
+    "episode_rows_match_api_length": true,
+    "frame_index_contiguous_from_zero": true,
+    "global_index_contiguous": true,
+    "timestamp_monotonic": true,
+    "timestamp_matches_fps": true,
+    "single_episode_index": true,
+    "single_task_index": true,
+    "state_finite": true,
+    "action_finite": true,
+    "api_image_matches_raw_rgb_better_than_bgr": true,
+    "all_checks_pass": true
+  }
+}

@@ -1,0 +1,484 @@
+{
+  "info": {
+    "codebase_version": "v3.0",
+    "robot_type": "unknown",
+    "total_episodes": 206,
+    "total_frames": 25650,
+    "total_tasks": 1,
+    "chunks_size": 1000,
+    "fps": 10,
+    "splits": {
+      "train": "0:206"
+    },
+    "data_path": "data/chunk-{chunk_index:03d}/file-{file_index:03d}.parquet",
+    "video_path": "videos/{video_key}/chunk-{chunk_index:03d}/file-{file_index:03d}.mp4",
+    "features": {
+      "observation.image": {
+        "dtype": "video",
+        "shape": [
+          96,
+          96,
+          3
+        ],
+        "names": [
+          "height",
+          "width",
+          "channel"
+        ],
+        "video_info": {
+          "video.fps": 10.0,
+          "video.codec": "av1",
+          "video.pix_fmt": "yuv420p",
+          "video.is_depth_map": false,
+          "has_audio": false
+        }
+      },
+      "observation.state": {
+        "dtype": "float32",
+        "shape": [
+          2
+        ],
+        "names": {
+          "motors": [
+            "motor_0",
+            "motor_1"
+          ]
+        },
+        "fps": 10.0
+      },
+      "action": {
+        "dtype": "float32",
+        "shape": [
+          2
+        ],
+        "names": {
+          "motors": [
+            "motor_0",
+            "motor_1"
+          ]
+        },
+        "fps": 10.0
+      },
+      "episode_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null,
+        "fps": 10.0
+      },
+      "frame_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null,
+        "fps": 10.0
+      },
+      "timestamp": {
+        "dtype": "float32",
+        "shape": [
+          1
+        ],
+        "names": null,
+        "fps": 10.0
+      },
+      "next.reward": {
+        "dtype": "float32",
+        "shape": [
+          1
+        ],
+        "names": null,
+        "fps": 10.0
+      },
+      "next.done": {
+        "dtype": "bool",
+        "shape": [
+          1
+        ],
+        "names": null,
+        "fps": 10.0
+      },
+      "next.success": {
+        "dtype": "bool",
+        "shape": [
+          1
+        ],
+        "names": null,
+        "fps": 10.0
+      },
+      "index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null,
+        "fps": 10.0
+      },
+      "task_index": {
+        "dtype": "int64",
+        "shape": [
+          1
+        ],
+        "names": null,
+        "fps": 10.0
+      }
+    },
+    "data_files_size_in_mb": 100,
+    "video_files_size_in_mb": 500
+  },
+  "parquet": {
+    "data": {
+      "path": "/home/nvidia/embodied-90/training/lerobot/week04_day02/dataset/lerobot_pusht/data/chunk-000/file-000.parquet",
+      "fields": [
+        {
+          "name": "observation.state",
+          "type": "fixed_size_list<element: float>[2]"
+        },
+        {
+          "name": "action",
+          "type": "fixed_size_list<element: float>[2]"
+        },
+        {
+          "name": "episode_index",
+          "type": "int64"
+        },
+        {
+          "name": "frame_index",
+          "type": "int64"
+        },
+        {
+          "name": "timestamp",
+          "type": "float"
+        },
+        {
+          "name": "next.reward",
+          "type": "float"
+        },
+        {
+          "name": "next.done",
+          "type": "bool"
+        },
+        {
+          "name": "next.success",
+          "type": "bool"
+        },
+        {
+          "name": "index",
+          "type": "int64"
+        },
+        {
+          "name": "task_index",
+          "type": "int64"
+        }
+      ]
+    },
+    "episodes": {
+      "path": "/home/nvidia/embodied-90/training/lerobot/week04_day02/dataset/lerobot_pusht/meta/episodes/chunk-000/file-000.parquet",
+      "fields": [
+        {
+          "name": "episode_index",
+          "type": "int64"
+        },
+        {
+          "name": "data/chunk_index",
+          "type": "int64"
+        },
+        {
+          "name": "data/file_index",
+          "type": "int64"
+        },
+        {
+          "name": "dataset_from_index",
+          "type": "int64"
+        },
+        {
+          "name": "dataset_to_index",
+          "type": "int64"
+        },
+        {
+          "name": "videos/observation.image/chunk_index",
+          "type": "int64"
+        },
+        {
+          "name": "videos/observation.image/file_index",
+          "type": "int64"
+        },
+        {
+          "name": "videos/observation.image/from_timestamp",
+          "type": "double"
+        },
+        {
+          "name": "videos/observation.image/to_timestamp",
+          "type": "double"
+        },
+        {
+          "name": "tasks",
+          "type": "list<element: string>"
+        },
+        {
+          "name": "length",
+          "type": "int64"
+        },
+        {
+          "name": "stats/observation.image/min",
+          "type": "list<element: list<element: list<element: double>>>"
+        },
+        {
+          "name": "stats/observation.image/max",
+          "type": "list<element: list<element: list<element: double>>>"
+        },
+        {
+          "name": "stats/observation.image/mean",
+          "type": "list<element: list<element: list<element: double>>>"
+        },
+        {
+          "name": "stats/observation.image/std",
+          "type": "list<element: list<element: list<element: double>>>"
+        },
+        {
+          "name": "stats/observation.image/count",
+          "type": "list<element: int64>"
+        },
+        {
+          "name": "stats/observation.state/min",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/observation.state/max",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/observation.state/mean",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/observation.state/std",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/observation.state/count",
+          "type": "list<element: int64>"
+        },
+        {
+          "name": "stats/action/min",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/action/max",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/action/mean",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/action/std",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/action/count",
+          "type": "list<element: int64>"
+        },
+        {
+          "name": "stats/episode_index/min",
+          "type": "list<element: int64>"
+        },
+        {
+          "name": "stats/episode_index/max",
+          "type": "list<element: int64>"
+        },
+        {
+          "name": "stats/episode_index/mean",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/episode_index/std",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/episode_index/count",
+          "type": "list<element: int64>"
+        },
+        {
+          "name": "stats/frame_index/min",
+          "type": "list<element: int64>"
+        },
+        {
+          "name": "stats/frame_index/max",
+          "type": "list<element: int64>"
+        },
+        {
+          "name": "stats/frame_index/mean",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/frame_index/std",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/frame_index/count",
+          "type": "list<element: int64>"
+        },
+        {
+          "name": "stats/timestamp/min",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/timestamp/max",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/timestamp/mean",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/timestamp/std",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/timestamp/count",
+          "type": "list<element: int64>"
+        },
+        {
+          "name": "stats/next.reward/min",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/next.reward/max",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/next.reward/mean",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/next.reward/std",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/next.reward/count",
+          "type": "list<element: int64>"
+        },
+        {
+          "name": "stats/next.done/min",
+          "type": "list<element: bool>"
+        },
+        {
+          "name": "stats/next.done/max",
+          "type": "list<element: bool>"
+        },
+        {
+          "name": "stats/next.done/mean",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/next.done/std",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/next.done/count",
+          "type": "list<element: int64>"
+        },
+        {
+          "name": "stats/next.success/min",
+          "type": "list<element: bool>"
+        },
+        {
+          "name": "stats/next.success/max",
+          "type": "list<element: bool>"
+        },
+        {
+          "name": "stats/next.success/mean",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/next.success/std",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/next.success/count",
+          "type": "list<element: int64>"
+        },
+        {
+          "name": "stats/index/min",
+          "type": "list<element: int64>"
+        },
+        {
+          "name": "stats/index/max",
+          "type": "list<element: int64>"
+        },
+        {
+          "name": "stats/index/mean",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/index/std",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/index/count",
+          "type": "list<element: int64>"
+        },
+        {
+          "name": "stats/task_index/min",
+          "type": "list<element: int64>"
+        },
+        {
+          "name": "stats/task_index/max",
+          "type": "list<element: int64>"
+        },
+        {
+          "name": "stats/task_index/mean",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/task_index/std",
+          "type": "list<element: double>"
+        },
+        {
+          "name": "stats/task_index/count",
+          "type": "list<element: int64>"
+        },
+        {
+          "name": "meta/episodes/chunk_index",
+          "type": "int64"
+        },
+        {
+          "name": "meta/episodes/file_index",
+          "type": "int64"
+        }
+      ]
+    },
+    "tasks": {
+      "path": "/home/nvidia/embodied-90/training/lerobot/week04_day02/dataset/lerobot_pusht/meta/tasks.parquet",
+      "fields": [
+        {
+          "name": "task_index",
+          "type": "int64"
+        },
+        {
+          "name": "__index_level_0__",
+          "type": "string"
+        }
+      ]
+    }
+  },
+  "tasks": [
+    {
+      "task_index": 0,
+      "__index_level_0__": "Push the T-shaped block onto the T-shaped target."
+    }
+  ],
+  "episode_metadata": {
+    "episode_index": 0,
+    "dataset_from_index": 0,
+    "dataset_to_index": 161,
+    "videos/observation.image/from_timestamp": 0.0,
+    "videos/observation.image/to_timestamp": 16.1,
+    "tasks": [
+      "Push the T-shaped block onto the T-shaped target."
+    ],
+    "length": 161
+  }
+}

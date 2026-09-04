@@ -1,0 +1,16 @@
+{
+  "python": "3.11.15",
+  "platform": "Linux-6.17.0-40-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "lerobot": "0.4.4",
+    "datasets": "4.8.5",
+    "huggingface-hub": "0.35.3",
+    "pyarrow": "25.0.1",
+    "av": "15.1.0",
+    "torch": "2.7.0+cu128",
+    "torchvision": "0.22.0+cu128",
+    "numpy": "1.26.0"
+  },
+  "cuda_available": true,
+  "video_backend": "pyav"
+}

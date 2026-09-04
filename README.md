@@ -4,13 +4,13 @@
 
 ## 当前状态
 
-- 周期：Week 4 进行中（Day 1 完成）
+- 周期：Week 4 进行中（Day 2 完成）
 - 状态：Green
 - Coin-X5：完成结论性失败分析，停止无边界调参
 - 已确认断点：夹爪闭合并扰动硬币后，未在抬升中稳定保持硬币
 - 任务结果：Coin-X5 和 `stack_bowls` 均完整运行，但任务级 success 均为 false
 - 当前重点：理解 LeRobot 数据、训练和推理链路
-- 下一步：下载小型公开数据集并验证字段、episode 边界和图像语义
+- 下一步：在 RTX 5070 上执行极小规模 ACT 训练
 
 ## 项目导航
 
@@ -26,6 +26,7 @@
 | Coin-X5 最终失败分析 | [simulation/robodojo/troubleshooting/coin_x5_final_analysis.md](simulation/robodojo/troubleshooting/coin_x5_final_analysis.md) |
 | Week 3 复现说明 | [simulation/robodojo/docs/week03_reproduction.md](simulation/robodojo/docs/week03_reproduction.md) |
 | LeRobot 数据结构审计 | [training/lerobot/week04_day01_dataset_schema.md](training/lerobot/week04_day01_dataset_schema.md) |
+| LeRobot 数据集可视化 | [training/lerobot/week04_day02_dataset_visualization.md](training/lerobot/week04_day02_dataset_visualization.md) |
 | Coin-X5 执行流程 | [simulation/robodojo/docs/coin_x5_execution_flow.md](simulation/robodojo/docs/coin_x5_execution_flow.md) |
 | 最小运行命令 | [simulation/robodojo/commands/coin_x5_minimal.sh](simulation/robodojo/commands/coin_x5_minimal.sh) |
 

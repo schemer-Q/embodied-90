@@ -1,0 +1,39 @@
+{
+  "repo_id": "lerobot/pusht",
+  "revision": "b1c3ecbae7f244acc039a3dbc255a00dad1372b9",
+  "episode": 0,
+  "root": "/home/nvidia/embodied-90/training/lerobot/week04_day02/dataset/lerobot_pusht",
+  "files": [
+    {
+      "path": "data/chunk-000/file-000.parquet",
+      "bytes": 674393,
+      "sha256": "9abc0431f12d10c33b5b37b1bf1e6e557c8ae1c8c29fb86658969e48fcbbbf01"
+    },
+    {
+      "path": "meta/episodes/chunk-000/file-000.parquet",
+      "bytes": 106584,
+      "sha256": "bc1226f33d3d1635ec1954f9942073709be8e106fde5f4f16b9d52edc4e0ebc4"
+    },
+    {
+      "path": "meta/info.json",
+      "bytes": 2261,
+      "sha256": "0b46becc21ad92b117da1e95daf44110bb21d0bde75638b4ad167c8ccd959d38"
+    },
+    {
+      "path": "meta/stats.json",
+      "bytes": 4371,
+      "sha256": "2a58f97df48893274c587fdf09f5cecb31fe385b1e188a82197a8972ccfb9d6d"
+    },
+    {
+      "path": "meta/tasks.parquet",
+      "bytes": 2265,
+      "sha256": "95535f5152771bc0a6ab0fd93d23d7c1fecd9b7a13dc117852dfdd94f5b2c711"
+    },
+    {
+      "path": "videos/observation.image/chunk-000/file-000.mp4",
+      "bytes": 6890970,
+      "sha256": "f58d11857651dad5983c021b56a50a68a6ce19068834c1fb5cac099219fb3a78"
+    }
+  ],
+  "total_bytes": 7680844
+}
