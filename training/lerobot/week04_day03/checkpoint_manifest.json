@@ -1,0 +1,62 @@
+{
+  "checkpoint_link": "/home/nvidia/embodied-90/training/lerobot/week04_day03/run/checkpoints/last",
+  "resolved_checkpoint": "/home/nvidia/embodied-90/training/lerobot/week04_day03/run/checkpoints/000050",
+  "files": [
+    {
+      "path": "pretrained_model/config.json",
+      "bytes": 1453,
+      "sha256": "22d038ad91f64b6d8f9fb090a0275a753f1ec6792e005ecbf399f2d9e6d9ff05"
+    },
+    {
+      "path": "pretrained_model/model.safetensors",
+      "bytes": 46923864,
+      "sha256": "d5a0afde02ee7185bf2b6a83417031c66905e09cd39a6e2714fd3082421fb6f8"
+    },
+    {
+      "path": "pretrained_model/policy_postprocessor.json",
+      "bytes": 660,
+      "sha256": "9ca3b5a1986e8b6d4f41238446eb7b3637776853102ae7f9e8ba29700e6a2e66"
+    },
+    {
+      "path": "pretrained_model/policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+      "bytes": 4204,
+      "sha256": "bc174a7436ff5075efebe7be7cece5e5d8430658cc9b5314fb8a652eab912d96"
+    },
+    {
+      "path": "pretrained_model/policy_preprocessor.json",
+      "bytes": 1145,
+      "sha256": "39af97ab0d52b54f441fce4925a27b97fd2c20c67f17099d0c63c4746d5169f5"
+    },
+    {
+      "path": "pretrained_model/policy_preprocessor_step_3_normalizer_processor.safetensors",
+      "bytes": 4204,
+      "sha256": "bc174a7436ff5075efebe7be7cece5e5d8430658cc9b5314fb8a652eab912d96"
+    },
+    {
+      "path": "pretrained_model/train_config.json",
+      "bytes": 5431,
+      "sha256": "8642b8b67f3c2c3f3d64b8cf77c511ca2ab7788a7331b464230b488db36a603f"
+    },
+    {
+      "path": "training_state/optimizer_param_groups.json",
+      "bytes": 2058,
+      "sha256": "23133ba6eb8c999695f05ae5f5d4e1e9c77e7b4c171215f1932e363a9925350a"
+    },
+    {
+      "path": "training_state/optimizer_state.safetensors",
+      "bytes": 93668060,
+      "sha256": "2dba7b5bf47fada2e7c31911378e8596ac9ff00ecc3ab6408590cc5103a0cca1"
+    },
+    {
+      "path": "training_state/rng_state.safetensors",
+      "bytes": 15708,
+      "sha256": "a49f23e9ec8abf61e277cad69d8f49ec78b0c1b74eba9dc435819649b5c097cc"
+    },
+    {
+      "path": "training_state/training_step.json",
+      "bytes": 18,
+      "sha256": "2dbb2e07e84f520d5be0ac971ea9a5614f3f407a677f8f2f6dab66e4ffcedb44"
+    }
+  ],
+  "total_bytes": 140626805
+}

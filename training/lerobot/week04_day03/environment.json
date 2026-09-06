@@ -1,0 +1,33 @@
+{
+  "date": "2026-09-06",
+  "embodied_90_commit": "9d4cfa5eff620e5f3aa1a15f92616e25cf9c7b56",
+  "python": "3.11.15",
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 5070",
+    "driver": "570.211.01",
+    "memory_total_mib": 12227,
+    "compute_capability": [12, 0]
+  },
+  "cuda": "12.8",
+  "cuda_available": true,
+  "packages": {
+    "torch": "2.7.0+cu128",
+    "torchvision": "0.22.0+cu128",
+    "lerobot": "0.4.4",
+    "datasets": "4.8.5",
+    "accelerate": "1.14.0",
+    "draccus": "0.10.0",
+    "diffusers": "0.35.2",
+    "wandb": "0.24.2",
+    "av": "15.1.0",
+    "pyarrow": "25.0.1",
+    "numpy": "2.4.6"
+  },
+  "runtime": {
+    "environment": "/tmp/embodied90-week04-day02-lerobot",
+    "base_python": "/home/nvidia/miniconda3/envs/RoboDojo/bin/python",
+    "wandb_mode": "disabled",
+    "hf_hub_offline": true,
+    "video_backend": "pyav"
+  }
+}

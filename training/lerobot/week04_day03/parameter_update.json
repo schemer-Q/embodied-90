@@ -1,0 +1,9 @@
+{
+  "comparison": "same-seed reconstructed initialization vs trained checkpoint",
+  "seed": 20260906,
+  "changed_state_values": 8419857,
+  "total_state_values": 11726690,
+  "l2_difference": 0.2557459326156977,
+  "max_abs_difference": 0.0005209445953369141,
+  "changed": true
+}
