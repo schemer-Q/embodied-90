@@ -1,0 +1,58 @@
+/home/nvidia/miniconda3/envs/RoboDojo/lib/python3.11/site-packages/torchvision/io/_video_deprecation_warning.py:5: UserWarning: The video decoding and encoding capabilities of torchvision are deprecated from version 0.22 and will be removed in version 0.24. We recommend that you migrate to TorchCodec, where we'll consolidate the future decoding/encoding capabilities of PyTorch: https://github.com/pytorch/torchcodec
+  warnings.warn(
+Loading weights from local directory
+{
+  "checks": {
+    "checkpoint_loaded": true,
+    "parameters_finite": true,
+    "three_or_more_frames": true,
+    "all_actions_finite": true,
+    "all_chunk_shapes_match": true,
+    "same_seed_repeats_bitwise_equal": true,
+    "select_action_queue_matches_direct_chunk": true,
+    "all_checks_pass": true
+  },
+  "checkpoint_sha256": "d5a0afde02ee7185bf2b6a83417031c66905e09cd39a6e2714fd3082421fb6f8",
+  "frames": [
+    {
+      "frame_index": 0,
+      "chunk_latency_ms": 182.70174300005237,
+      "first_action": [
+        189.59713745117188,
+        310.48974609375
+      ],
+      "ground_truth_action": [
+        233.0,
+        71.0
+      ],
+      "first_action_l2_to_ground_truth": 243.39093017578125
+    },
+    {
+      "frame_index": 80,
+      "chunk_latency_ms": 1.815815000099974,
+      "first_action": [
+        161.16635131835938,
+        299.2338562011719
+      ],
+      "ground_truth_action": [
+        260.0,
+        191.0
+      ],
+      "first_action_l2_to_ground_truth": 146.56964111328125
+    },
+    {
+      "frame_index": 160,
+      "chunk_latency_ms": 1.8275180000273394,
+      "first_action": [
+        162.35833740234375,
+        317.8790588378906
+      ],
+      "ground_truth_action": [
+        164.0,
+        355.0
+      ],
+      "first_action_l2_to_ground_truth": 37.157222747802734
+    }
+  ],
+  "max_memory_allocated_mib": 66.00830078125
+}
