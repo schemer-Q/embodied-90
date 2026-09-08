@@ -1,0 +1,128 @@
+{
+  "run": {
+    "repo_id": "lerobot/pusht",
+    "revision": "b1c3ecbae7f244acc039a3dbc255a00dad1372b9",
+    "episode": 0,
+    "frames": [
+      0,
+      80,
+      160
+    ],
+    "queue_frame": 80,
+    "seed": 20260908,
+    "checkpoint": "/home/nvidia/embodied-90/training/lerobot/week04_day03/run/checkpoints/000050/pretrained_model"
+  },
+  "config": {
+    "fps": 10,
+    "chunk_size": 10,
+    "n_action_steps": 10,
+    "temporal_ensemble_coeff": null,
+    "observation_delta_indices": null,
+    "action_delta_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "normalization": {
+    "max_normalize_error": 0.0,
+    "max_unnormalize_or_roundtrip_error": 1.52587890625e-05
+  },
+  "queue": {
+    "calls": 21,
+    "forward_calls": 3,
+    "refresh_calls": [
+      1,
+      11,
+      21
+    ],
+    "expected_refresh_calls": [
+      1,
+      11,
+      21
+    ],
+    "queue_capacity": 10,
+    "pass": true
+  },
+  "padding_loss": {
+    "terminal_action_is_pad": [
+      [
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    ],
+    "baseline_total_loss": 40.57865524291992,
+    "padded_targets_plus_123_total_loss": 40.57865524291992,
+    "first_valid_target_plus_1_total_loss": 42.764503479003906,
+    "baseline_l1_loss": 0.04040281102061272,
+    "padded_targets_plus_123_l1_loss": 0.04040281102061272,
+    "first_valid_target_plus_1_l1_loss": 0.12408333271741867,
+    "padded_perturbation_loss_difference": 0.0,
+    "valid_perturbation_loss_difference": 2.1858482360839844,
+    "synthetic_example": {
+      "target": [
+        [
+          [
+            1.0
+          ],
+          [
+            20.0
+          ],
+          [
+            30.0
+          ]
+        ]
+      ],
+      "is_pad": [
+        [
+          false,
+          true,
+          true
+        ]
+      ],
+      "masked_l1_terms": [
+        [
+          [
+            1.0
+          ],
+          [
+            0.0
+          ],
+          [
+            0.0
+          ]
+        ]
+      ],
+      "mean_loss": 0.3333333432674408,
+      "interpretation": "padded terms contribute zero numerator but remain in mean denominator"
+    },
+    "checks": {
+      "padded_target_values_do_not_change_loss": true,
+      "valid_target_value_changes_loss": true,
+      "synthetic_mask_matches_expected_mean": true,
+      "all_checks_pass": true
+    }
+  },
+  "checks": {
+    "normalization_matches_manual_formula": true,
+    "temporal_window_matches_config": true,
+    "queue_refreshes_only_when_empty": true,
+    "padding_is_excluded_from_loss": true,
+    "all_checks_pass": true
+  }
+}

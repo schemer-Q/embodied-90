@@ -1,0 +1,326 @@
+{
+  "formula": {
+    "normalize": "(x - mean) / (std + 1e-8)",
+    "unnormalize": "x_normalized * std + mean",
+    "mode": "MEAN_STD"
+  },
+  "statistics_count": {
+    "observation.image": [
+      19619.0
+    ],
+    "observation.state": [
+      25650.0
+    ],
+    "action": [
+      25650.0
+    ]
+  },
+  "checks": [
+    {
+      "frame_index": 0,
+      "key": "observation.image",
+      "raw_shape": [
+        1,
+        3,
+        96,
+        96
+      ],
+      "processed_shape": [
+        1,
+        3,
+        96,
+        96
+      ],
+      "mean": [
+        [
+          [
+            0.48500001430511475
+          ]
+        ],
+        [
+          [
+            0.4560000002384186
+          ]
+        ],
+        [
+          [
+            0.4059999883174896
+          ]
+        ]
+      ],
+      "std": [
+        [
+          [
+            0.2290000021457672
+          ]
+        ],
+        [
+          [
+            0.2240000069141388
+          ]
+        ],
+        [
+          [
+            0.22499999403953552
+          ]
+        ]
+      ],
+      "max_abs_error": 0.0
+    },
+    {
+      "frame_index": 0,
+      "key": "observation.state",
+      "raw_shape": [
+        1,
+        2
+      ],
+      "processed_shape": [
+        1,
+        2
+      ],
+      "mean": [
+        229.1110382080078,
+        293.3112487792969
+      ],
+      "std": [
+        101.85470581054688,
+        96.48948669433594
+      ],
+      "max_abs_error": 0.0
+    },
+    {
+      "frame_index": 0,
+      "key": "action",
+      "raw_shape": [
+        1,
+        10,
+        2
+      ],
+      "processed_shape": [
+        1,
+        10,
+        2
+      ],
+      "mean": [
+        228.23965454101562,
+        293.98907470703125
+      ],
+      "std": [
+        101.59957122802734,
+        96.03929138183594
+      ],
+      "max_abs_error": 0.0
+    },
+    {
+      "frame_index": 0,
+      "key": "action_roundtrip",
+      "manual_vs_postprocessor_max_abs_error": 0.0,
+      "raw_vs_roundtrip_max_abs_error": 1.52587890625e-05
+    },
+    {
+      "frame_index": 80,
+      "key": "observation.image",
+      "raw_shape": [
+        1,
+        3,
+        96,
+        96
+      ],
+      "processed_shape": [
+        1,
+        3,
+        96,
+        96
+      ],
+      "mean": [
+        [
+          [
+            0.48500001430511475
+          ]
+        ],
+        [
+          [
+            0.4560000002384186
+          ]
+        ],
+        [
+          [
+            0.4059999883174896
+          ]
+        ]
+      ],
+      "std": [
+        [
+          [
+            0.2290000021457672
+          ]
+        ],
+        [
+          [
+            0.2240000069141388
+          ]
+        ],
+        [
+          [
+            0.22499999403953552
+          ]
+        ]
+      ],
+      "max_abs_error": 0.0
+    },
+    {
+      "frame_index": 80,
+      "key": "observation.state",
+      "raw_shape": [
+        1,
+        2
+      ],
+      "processed_shape": [
+        1,
+        2
+      ],
+      "mean": [
+        229.1110382080078,
+        293.3112487792969
+      ],
+      "std": [
+        101.85470581054688,
+        96.48948669433594
+      ],
+      "max_abs_error": 0.0
+    },
+    {
+      "frame_index": 80,
+      "key": "action",
+      "raw_shape": [
+        1,
+        10,
+        2
+      ],
+      "processed_shape": [
+        1,
+        10,
+        2
+      ],
+      "mean": [
+        228.23965454101562,
+        293.98907470703125
+      ],
+      "std": [
+        101.59957122802734,
+        96.03929138183594
+      ],
+      "max_abs_error": 0.0
+    },
+    {
+      "frame_index": 80,
+      "key": "action_roundtrip",
+      "manual_vs_postprocessor_max_abs_error": 0.0,
+      "raw_vs_roundtrip_max_abs_error": 0.0
+    },
+    {
+      "frame_index": 160,
+      "key": "observation.image",
+      "raw_shape": [
+        1,
+        3,
+        96,
+        96
+      ],
+      "processed_shape": [
+        1,
+        3,
+        96,
+        96
+      ],
+      "mean": [
+        [
+          [
+            0.48500001430511475
+          ]
+        ],
+        [
+          [
+            0.4560000002384186
+          ]
+        ],
+        [
+          [
+            0.4059999883174896
+          ]
+        ]
+      ],
+      "std": [
+        [
+          [
+            0.2290000021457672
+          ]
+        ],
+        [
+          [
+            0.2240000069141388
+          ]
+        ],
+        [
+          [
+            0.22499999403953552
+          ]
+        ]
+      ],
+      "max_abs_error": 0.0
+    },
+    {
+      "frame_index": 160,
+      "key": "observation.state",
+      "raw_shape": [
+        1,
+        2
+      ],
+      "processed_shape": [
+        1,
+        2
+      ],
+      "mean": [
+        229.1110382080078,
+        293.3112487792969
+      ],
+      "std": [
+        101.85470581054688,
+        96.48948669433594
+      ],
+      "max_abs_error": 0.0
+    },
+    {
+      "frame_index": 160,
+      "key": "action",
+      "raw_shape": [
+        1,
+        10,
+        2
+      ],
+      "processed_shape": [
+        1,
+        10,
+        2
+      ],
+      "mean": [
+        228.23965454101562,
+        293.98907470703125
+      ],
+      "std": [
+        101.59957122802734,
+        96.03929138183594
+      ],
+      "max_abs_error": 0.0
+    },
+    {
+      "frame_index": 160,
+      "key": "action_roundtrip",
+      "manual_vs_postprocessor_max_abs_error": 0.0,
+      "raw_vs_roundtrip_max_abs_error": 0.0
+    }
+  ],
+  "max_normalize_error": 0.0,
+  "max_unnormalize_or_roundtrip_error": 1.52587890625e-05,
+  "pass": true
+}

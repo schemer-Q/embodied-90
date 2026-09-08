@@ -1,0 +1,290 @@
+{
+  "fps": 10,
+  "chunk_size": 10,
+  "n_action_steps": 10,
+  "observation_delta_indices": null,
+  "action_delta_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "delta_timestamps_seconds": {
+    "action": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ]
+  },
+  "observation_history": "current observation only",
+  "frames": [
+    {
+      "frame_index": 0,
+      "requested_episode_frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "resolved_episode_frame_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "action_is_pad": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "valid_action_count": 10,
+      "padded_action_count": 0,
+      "action_targets": [
+        [
+          233.0,
+          71.0
+        ],
+        [
+          229.0,
+          83.0
+        ],
+        [
+          229.0,
+          86.0
+        ],
+        [
+          230.0,
+          86.0
+        ],
+        [
+          239.0,
+          89.0
+        ],
+        [
+          251.0,
+          95.0
+        ],
+        [
+          263.0,
+          102.0
+        ],
+        [
+          273.0,
+          108.0
+        ],
+        [
+          283.0,
+          116.0
+        ],
+        [
+          294.0,
+          127.0
+        ]
+      ]
+    },
+    {
+      "frame_index": 80,
+      "requested_episode_frame_indices": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "resolved_episode_frame_indices": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "action_is_pad": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "valid_action_count": 10,
+      "padded_action_count": 0,
+      "action_targets": [
+        [
+          260.0,
+          191.0
+        ],
+        [
+          260.0,
+          175.0
+        ],
+        [
+          257.0,
+          167.0
+        ],
+        [
+          250.0,
+          157.0
+        ],
+        [
+          236.0,
+          144.0
+        ],
+        [
+          218.0,
+          138.0
+        ],
+        [
+          196.0,
+          133.0
+        ],
+        [
+          166.0,
+          133.0
+        ],
+        [
+          150.0,
+          142.0
+        ],
+        [
+          140.0,
+          152.0
+        ]
+      ]
+    },
+    {
+      "frame_index": 160,
+      "requested_episode_frame_indices": [
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169
+      ],
+      "resolved_episode_frame_indices": [
+        160,
+        160,
+        160,
+        160,
+        160,
+        160,
+        160,
+        160,
+        160,
+        160
+      ],
+      "action_is_pad": [
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "valid_action_count": 1,
+      "padded_action_count": 9,
+      "action_targets": [
+        [
+          164.0,
+          355.0
+        ],
+        [
+          164.0,
+          355.0
+        ],
+        [
+          164.0,
+          355.0
+        ],
+        [
+          164.0,
+          355.0
+        ],
+        [
+          164.0,
+          355.0
+        ],
+        [
+          164.0,
+          355.0
+        ],
+        [
+          164.0,
+          355.0
+        ],
+        [
+          164.0,
+          355.0
+        ],
+        [
+          164.0,
+          355.0
+        ],
+        [
+          164.0,
+          355.0
+        ]
+      ]
+    }
+  ],
+  "checks": {
+    "action_offsets_are_0_through_9": true,
+    "no_observation_history_window": true,
+    "terminal_frame_has_one_valid_and_nine_padded": true,
+    "all_checks_pass": true
+  }
+}
