@@ -1,0 +1,1299 @@
+{
+  "dataset": {
+    "root": "/home/nvidia/embodied-90/training/lerobot/week04_day02/dataset/lerobot_pusht",
+    "repo_id": "lerobot/pusht",
+    "revision": "b1c3ecbae7f244acc039a3dbc255a00dad1372b9",
+    "read_only": true
+  },
+  "summary": {
+    "overall": "PASS",
+    "pass": 35,
+    "warn": 0,
+    "fail": 0
+  },
+  "checks": [
+    {
+      "category": "structure",
+      "name": "required metadata files",
+      "status": "PASS",
+      "evidence": "missing=[]"
+    },
+    {
+      "category": "structure",
+      "name": "LeRobot v3 codebase version",
+      "status": "PASS",
+      "evidence": "codebase_version=v3.0"
+    },
+    {
+      "category": "statistics",
+      "name": "metadata statistics are finite",
+      "status": "PASS",
+      "evidence": "features=11"
+    },
+    {
+      "category": "structure",
+      "name": "data Parquet exists",
+      "status": "PASS",
+      "evidence": "files=1"
+    },
+    {
+      "category": "structure",
+      "name": "episode metadata Parquet exists",
+      "status": "PASS",
+      "evidence": "files=1"
+    },
+    {
+      "category": "schema",
+      "name": "required frame columns",
+      "status": "PASS",
+      "evidence": "missing=[]"
+    },
+    {
+      "category": "counts",
+      "name": "frame count matches info",
+      "status": "PASS",
+      "evidence": "parquet=25650, info=25650"
+    },
+    {
+      "category": "counts",
+      "name": "episode count matches info",
+      "status": "PASS",
+      "evidence": "metadata=206, info=206"
+    },
+    {
+      "category": "counts",
+      "name": "task count matches info",
+      "status": "PASS",
+      "evidence": "tasks=1, info=1"
+    },
+    {
+      "category": "schema",
+      "name": "state dimension matches info",
+      "status": "PASS",
+      "evidence": "parquet=2, info=[2]"
+    },
+    {
+      "category": "schema",
+      "name": "action dimension matches info",
+      "status": "PASS",
+      "evidence": "parquet=2, info=[2]"
+    },
+    {
+      "category": "schema",
+      "name": "state dimension matches expectation",
+      "status": "PASS",
+      "evidence": "actual=2, expected=2"
+    },
+    {
+      "category": "schema",
+      "name": "action dimension matches expectation",
+      "status": "PASS",
+      "evidence": "actual=2, expected=2"
+    },
+    {
+      "category": "values",
+      "name": "state values finite",
+      "status": "PASS",
+      "evidence": "shape=(25650, 2)"
+    },
+    {
+      "category": "values",
+      "name": "action values finite",
+      "status": "PASS",
+      "evidence": "shape=(25650, 2)"
+    },
+    {
+      "category": "statistics",
+      "name": "observation.state min/max match metadata",
+      "status": "PASS",
+      "evidence": "observed_min=[13.45642375946045, 32.93829345703125], observed_max=[496.14617919921875, 510.9578857421875]"
+    },
+    {
+      "category": "statistics",
+      "name": "action min/max match metadata",
+      "status": "PASS",
+      "evidence": "observed_min=[12.0, 25.0], observed_max=[511.0, 511.0]"
+    },
+    {
+      "category": "episodes",
+      "name": "episode indices contiguous",
+      "status": "PASS",
+      "evidence": "range=0..205"
+    },
+    {
+      "category": "episodes",
+      "name": "episode bounds contiguous",
+      "status": "PASS",
+      "evidence": "final_to=25650, total_frames=25650"
+    },
+    {
+      "category": "episodes",
+      "name": "frame indices reset and remain contiguous",
+      "status": "PASS",
+      "evidence": "episodes=206"
+    },
+    {
+      "category": "time",
+      "name": "timestamps match frame_index / fps",
+      "status": "PASS",
+      "evidence": "fps=10, atol=1e-5"
+    },
+    {
+      "category": "indices",
+      "name": "global index contiguous",
+      "status": "PASS",
+      "evidence": "range=0..25649"
+    },
+    {
+      "category": "tasks",
+      "name": "all task indices resolve",
+      "status": "PASS",
+      "evidence": "unknown=[], valid=[0]"
+    },
+    {
+      "category": "video",
+      "name": "expected camera keys declared",
+      "status": "PASS",
+      "evidence": "declared=['observation.image'], missing=[]"
+    },
+    {
+      "category": "video",
+      "name": "video metadata references resolve",
+      "status": "PASS",
+      "evidence": "declared_cameras=1, referenced_files=1"
+    },
+    {
+      "category": "video",
+      "name": "referenced video files exist",
+      "status": "PASS",
+      "evidence": "referenced=1, missing=[]"
+    },
+    {
+      "category": "video",
+      "name": "observation.image dimensions",
+      "status": "PASS",
+      "evidence": "stream=96x96, schema=[96, 96, 3]"
+    },
+    {
+      "category": "video",
+      "name": "observation.image fps",
+      "status": "PASS",
+      "evidence": "stream=10.0, dataset=10"
+    },
+    {
+      "category": "video",
+      "name": "observation.image decodes",
+      "status": "PASS",
+      "evidence": "frames=25650"
+    },
+    {
+      "category": "video",
+      "name": "observation.image frame count",
+      "status": "PASS",
+      "evidence": "decoded=25650, episode_metadata=25650"
+    },
+    {
+      "category": "video",
+      "name": "observation.image first frame nonconstant",
+      "status": "PASS",
+      "evidence": "stats={'shape': [96, 96, 3], 'min': 60, 'max': 255, 'mean': 248.80302372685185, 'std': 22.135374401280266}"
+    },
+    {
+      "category": "api",
+      "name": "LeRobotDataset length matches info",
+      "status": "PASS",
+      "evidence": "api=25650, info=25650"
+    },
+    {
+      "category": "api",
+      "name": "sample tensors valid",
+      "status": "PASS",
+      "evidence": "indices=[0, 3206, 6412, 9618, 12824, 16030, 19236, 22442, 25649]"
+    },
+    {
+      "category": "window",
+      "name": "first action window valid",
+      "status": "PASS",
+      "evidence": "shape=[10, 2], mask=[False, False, False, False, False, False, False, False, False, False]"
+    },
+    {
+      "category": "window",
+      "name": "terminal action padding valid",
+      "status": "PASS",
+      "evidence": "shape=[10, 2], mask=[False, True, True, True, True, True, True, True, True, True]"
+    }
+  ],
+  "parquet": {
+    "data_files": [
+      {
+        "path": "data/chunk-000/file-000.parquet",
+        "sha256": "9abc0431f12d10c33b5b37b1bf1e6e557c8ae1c8c29fb86658969e48fcbbbf01"
+      }
+    ],
+    "episode_metadata_files": [
+      {
+        "path": "meta/episodes/chunk-000/file-000.parquet",
+        "sha256": "bc1226f33d3d1635ec1954f9942073709be8e106fde5f4f16b9d52edc4e0ebc4"
+      }
+    ],
+    "frames": 25650,
+    "episodes": 206,
+    "tasks": 1,
+    "state_dim": 2,
+    "action_dim": 2,
+    "episode_length": {
+      "min": 49,
+      "max": 246,
+      "mean": 124.51456310679612
+    },
+    "state_min": [
+      13.45642375946045,
+      32.93829345703125
+    ],
+    "state_max": [
+      496.14617919921875,
+      510.9578857421875
+    ],
+    "action_min": [
+      12.0,
+      25.0
+    ],
+    "action_max": [
+      511.0,
+      511.0
+    ]
+  },
+  "video": {
+    "declared_cameras": [
+      "observation.image"
+    ],
+    "files": [
+      {
+        "path": "videos/observation.image/chunk-000/file-000.mp4",
+        "key": "observation.image",
+        "sha256": "f58d11857651dad5983c021b56a50a68a6ce19068834c1fb5cac099219fb3a78",
+        "frames_decoded": 25650,
+        "stream_frames_reported": 25650,
+        "fps": 10.0,
+        "codec": "libdav1d",
+        "pixel_format": "yuv420p",
+        "first_frame": {
+          "shape": [
+            96,
+            96,
+            3
+          ],
+          "min": 60,
+          "max": 255,
+          "mean": 248.80302372685185,
+          "std": 22.135374401280266
+        }
+      }
+    ]
+  },
+  "api_samples": [
+    {
+      "index": 0,
+      "features": {
+        "observation.image": {
+          "shape": [
+            3,
+            96,
+            96
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 0.23529411852359772,
+          "max": 1.0,
+          "std": 0.08680538833141327,
+          "nonconstant": true,
+          "in_unit_range": true,
+          "shape_matches_schema": true
+        },
+        "observation.state": {
+          "shape": [
+            2
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 97.0,
+          "max": 222.0,
+          "std": 62.5,
+          "shape_matches_schema": true
+        },
+        "action": {
+          "shape": [
+            2
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 71.0,
+          "max": 233.0,
+          "std": 81.0,
+          "shape_matches_schema": true
+        },
+        "episode_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "frame_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "timestamp": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 0.0,
+          "max": 0.0,
+          "std": 0.0,
+          "shape_matches_schema": true
+        },
+        "next.reward": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 0.19029748439788818,
+          "max": 0.19029748439788818,
+          "std": 0.0,
+          "shape_matches_schema": true
+        },
+        "next.done": {
+          "shape": [],
+          "dtype": "torch.bool",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "next.success": {
+          "shape": [],
+          "dtype": "torch.bool",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "task_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        }
+      }
+    },
+    {
+      "index": 3206,
+      "features": {
+        "observation.image": {
+          "shape": [
+            3,
+            96,
+            96
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 0.25882354378700256,
+          "max": 1.0,
+          "std": 0.08922739326953888,
+          "nonconstant": true,
+          "in_unit_range": true,
+          "shape_matches_schema": true
+        },
+        "observation.state": {
+          "shape": [
+            2
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 325.6305847167969,
+          "max": 335.99029541015625,
+          "std": 5.1798553466796875,
+          "shape_matches_schema": true
+        },
+        "action": {
+          "shape": [
+            2
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 341.0,
+          "max": 344.0,
+          "std": 1.5,
+          "shape_matches_schema": true
+        },
+        "episode_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "frame_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "timestamp": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 3.4000000953674316,
+          "max": 3.4000000953674316,
+          "std": 0.0,
+          "shape_matches_schema": true
+        },
+        "next.reward": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 0.0,
+          "max": 0.0,
+          "std": 0.0,
+          "shape_matches_schema": true
+        },
+        "next.done": {
+          "shape": [],
+          "dtype": "torch.bool",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "next.success": {
+          "shape": [],
+          "dtype": "torch.bool",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "task_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        }
+      }
+    },
+    {
+      "index": 6412,
+      "features": {
+        "observation.image": {
+          "shape": [
+            3,
+            96,
+            96
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 0.18431372940540314,
+          "max": 1.0,
+          "std": 0.08898564428091049,
+          "nonconstant": true,
+          "in_unit_range": true,
+          "shape_matches_schema": true
+        },
+        "observation.state": {
+          "shape": [
+            2
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 72.42479705810547,
+          "max": 179.5112762451172,
+          "std": 53.54323959350586,
+          "shape_matches_schema": true
+        },
+        "action": {
+          "shape": [
+            2
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 84.0,
+          "max": 159.0,
+          "std": 37.5,
+          "shape_matches_schema": true
+        },
+        "episode_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "frame_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "timestamp": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 3.5,
+          "max": 3.5,
+          "std": 0.0,
+          "shape_matches_schema": true
+        },
+        "next.reward": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 7.341339369304478e-05,
+          "max": 7.341339369304478e-05,
+          "std": 0.0,
+          "shape_matches_schema": true
+        },
+        "next.done": {
+          "shape": [],
+          "dtype": "torch.bool",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "next.success": {
+          "shape": [],
+          "dtype": "torch.bool",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "task_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        }
+      }
+    },
+    {
+      "index": 9618,
+      "features": {
+        "observation.image": {
+          "shape": [
+            3,
+            96,
+            96
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 0.26274511218070984,
+          "max": 1.0,
+          "std": 0.0817422866821289,
+          "nonconstant": true,
+          "in_unit_range": true,
+          "shape_matches_schema": true
+        },
+        "observation.state": {
+          "shape": [
+            2
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 203.72915649414062,
+          "max": 279.4197998046875,
+          "std": 37.84532165527344,
+          "shape_matches_schema": true
+        },
+        "action": {
+          "shape": [
+            2
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 209.0,
+          "max": 269.0,
+          "std": 30.0,
+          "shape_matches_schema": true
+        },
+        "episode_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "frame_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "timestamp": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 8.899999618530273,
+          "max": 8.899999618530273,
+          "std": 0.0,
+          "shape_matches_schema": true
+        },
+        "next.reward": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 0.3884366452693939,
+          "max": 0.3884366452693939,
+          "std": 0.0,
+          "shape_matches_schema": true
+        },
+        "next.done": {
+          "shape": [],
+          "dtype": "torch.bool",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "next.success": {
+          "shape": [],
+          "dtype": "torch.bool",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "task_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        }
+      }
+    },
+    {
+      "index": 12824,
+      "features": {
+        "observation.image": {
+          "shape": [
+            3,
+            96,
+            96
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 0.24705882370471954,
+          "max": 1.0,
+          "std": 0.08145640790462494,
+          "nonconstant": true,
+          "in_unit_range": true,
+          "shape_matches_schema": true
+        },
+        "observation.state": {
+          "shape": [
+            2
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 151.44219970703125,
+          "max": 314.3677978515625,
+          "std": 81.46279907226562,
+          "shape_matches_schema": true
+        },
+        "action": {
+          "shape": [
+            2
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 176.0,
+          "max": 323.0,
+          "std": 73.5,
+          "shape_matches_schema": true
+        },
+        "episode_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "frame_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "timestamp": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 17.799999237060547,
+          "max": 17.799999237060547,
+          "std": 0.0,
+          "shape_matches_schema": true
+        },
+        "next.reward": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 0.3571883738040924,
+          "max": 0.3571883738040924,
+          "std": 0.0,
+          "shape_matches_schema": true
+        },
+        "next.done": {
+          "shape": [],
+          "dtype": "torch.bool",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "next.success": {
+          "shape": [],
+          "dtype": "torch.bool",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "task_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        }
+      }
+    },
+    {
+      "index": 16030,
+      "features": {
+        "observation.image": {
+          "shape": [
+            3,
+            96,
+            96
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 0.26274511218070984,
+          "max": 1.0,
+          "std": 0.08051243424415588,
+          "nonconstant": true,
+          "in_unit_range": true,
+          "shape_matches_schema": true
+        },
+        "observation.state": {
+          "shape": [
+            2
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 145.4765167236328,
+          "max": 374.91558837890625,
+          "std": 114.71953582763672,
+          "shape_matches_schema": true
+        },
+        "action": {
+          "shape": [
+            2
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 158.0,
+          "max": 365.0,
+          "std": 103.5,
+          "shape_matches_schema": true
+        },
+        "episode_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "frame_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "timestamp": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 15.300000190734863,
+          "max": 15.300000190734863,
+          "std": 0.0,
+          "shape_matches_schema": true
+        },
+        "next.reward": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 0.5522797107696533,
+          "max": 0.5522797107696533,
+          "std": 0.0,
+          "shape_matches_schema": true
+        },
+        "next.done": {
+          "shape": [],
+          "dtype": "torch.bool",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "next.success": {
+          "shape": [],
+          "dtype": "torch.bool",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "task_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        }
+      }
+    },
+    {
+      "index": 19236,
+      "features": {
+        "observation.image": {
+          "shape": [
+            3,
+            96,
+            96
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 0.239215686917305,
+          "max": 1.0,
+          "std": 0.08962766826152802,
+          "nonconstant": true,
+          "in_unit_range": true,
+          "shape_matches_schema": true
+        },
+        "observation.state": {
+          "shape": [
+            2
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 91.43755340576172,
+          "max": 362.53643798828125,
+          "std": 135.5494384765625,
+          "shape_matches_schema": true
+        },
+        "action": {
+          "shape": [
+            2
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 102.0,
+          "max": 411.0,
+          "std": 154.5,
+          "shape_matches_schema": true
+        },
+        "episode_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "frame_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "timestamp": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 1.100000023841858,
+          "max": 1.100000023841858,
+          "std": 0.0,
+          "shape_matches_schema": true
+        },
+        "next.reward": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 0.0,
+          "max": 0.0,
+          "std": 0.0,
+          "shape_matches_schema": true
+        },
+        "next.done": {
+          "shape": [],
+          "dtype": "torch.bool",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "next.success": {
+          "shape": [],
+          "dtype": "torch.bool",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "task_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        }
+      }
+    },
+    {
+      "index": 22442,
+      "features": {
+        "observation.image": {
+          "shape": [
+            3,
+            96,
+            96
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 0.23137255012989044,
+          "max": 1.0,
+          "std": 0.08585500717163086,
+          "nonconstant": true,
+          "in_unit_range": true,
+          "shape_matches_schema": true
+        },
+        "observation.state": {
+          "shape": [
+            2
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 282.357421875,
+          "max": 284.15216064453125,
+          "std": 0.897369384765625,
+          "shape_matches_schema": true
+        },
+        "action": {
+          "shape": [
+            2
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 279.0,
+          "max": 281.0,
+          "std": 1.0,
+          "shape_matches_schema": true
+        },
+        "episode_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "frame_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "timestamp": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 6.5,
+          "max": 6.5,
+          "std": 0.0,
+          "shape_matches_schema": true
+        },
+        "next.reward": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 0.08899013698101044,
+          "max": 0.08899013698101044,
+          "std": 0.0,
+          "shape_matches_schema": true
+        },
+        "next.done": {
+          "shape": [],
+          "dtype": "torch.bool",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "next.success": {
+          "shape": [],
+          "dtype": "torch.bool",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "task_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        }
+      }
+    },
+    {
+      "index": 25649,
+      "features": {
+        "observation.image": {
+          "shape": [
+            3,
+            96,
+            96
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 0.24313725531101227,
+          "max": 1.0,
+          "std": 0.07535253465175629,
+          "nonconstant": true,
+          "in_unit_range": true,
+          "shape_matches_schema": true
+        },
+        "observation.state": {
+          "shape": [
+            2
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 144.55123901367188,
+          "max": 305.2630615234375,
+          "std": 80.35591125488281,
+          "shape_matches_schema": true
+        },
+        "action": {
+          "shape": [
+            2
+          ],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 157.0,
+          "max": 325.0,
+          "std": 84.0,
+          "shape_matches_schema": true
+        },
+        "episode_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "frame_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "timestamp": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 4.800000190734863,
+          "max": 4.800000190734863,
+          "std": 0.0,
+          "shape_matches_schema": true
+        },
+        "next.reward": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "min": 0.8254669904708862,
+          "max": 0.8254669904708862,
+          "std": 0.0,
+          "shape_matches_schema": true
+        },
+        "next.done": {
+          "shape": [],
+          "dtype": "torch.bool",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "next.success": {
+          "shape": [],
+          "dtype": "torch.bool",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        },
+        "task_index": {
+          "shape": [],
+          "dtype": "torch.int64",
+          "dtype_matches_schema": true,
+          "finite": true,
+          "shape_matches_schema": true
+        }
+      }
+    }
+  ],
+  "action_window": {
+    "window": 10,
+    "offsets_seconds": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9
+    ],
+    "first_mask": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "terminal_mask": [
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "elapsed_seconds": 1.3091570569959003
+}

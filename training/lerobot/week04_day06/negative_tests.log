@@ -1,0 +1,8 @@
+test_detects_missing_file (training.lerobot.week04_day06.test_health_checks.HealthCheckNegativeTests.test_detects_missing_file) ... ok
+test_detects_nan (training.lerobot.week04_day06.test_health_checks.HealthCheckNegativeTests.test_detects_nan) ... ok
+test_detects_timestamp_gap (training.lerobot.week04_day06.test_health_checks.HealthCheckNegativeTests.test_detects_timestamp_gap) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK

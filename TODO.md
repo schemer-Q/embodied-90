@@ -149,7 +149,7 @@
 - [x] Day 3：在 RTX 5070 上执行极小规模 ACT 训练（[训练报告](training/lerobot/week04_day03_tiny_act_training.md)）。
 - [x] Day 4：加载 checkpoint 完成离线推理（[推理报告](training/lerobot/week04_day04_offline_inference.md)）。
 - [x] Day 5：理解 action chunking、归一化和时序窗口（[分析报告](training/lerobot/week04_day05_act_chunking.md)）。
-- [ ] Day 6：编写数据健康检查脚本。
+- [x] Day 6：编写数据健康检查脚本（[验证报告](training/lerobot/week04_day06_data_health.md)）。
 - [ ] Day 7：画出采集、上传、训练、下载和部署流程图。
 
 验收：本地训练命令、数据检查脚本、完整流程图。
