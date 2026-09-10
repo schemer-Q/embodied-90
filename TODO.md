@@ -150,9 +150,15 @@
 - [x] Day 4：加载 checkpoint 完成离线推理（[推理报告](training/lerobot/week04_day04_offline_inference.md)）。
 - [x] Day 5：理解 action chunking、归一化和时序窗口（[分析报告](training/lerobot/week04_day05_act_chunking.md)）。
 - [x] Day 6：编写数据健康检查脚本（[验证报告](training/lerobot/week04_day06_data_health.md)）。
-- [ ] Day 7：画出采集、上传、训练、下载和部署流程图。
+- [x] Day 7：画出采集、上传、训练、下载和部署流程图（[流程文档](training/lerobot/week04_day07_pipeline.md)）。
 
-验收：本地训练命令、数据检查脚本、完整流程图。
+验收：
+
+- [x] 本地训练命令
+- [x] 数据检查脚本
+- [x] 完整流程图
+
+周状态：**Green**
 
 ### Week 5：SO-101 离线部署彩排
 

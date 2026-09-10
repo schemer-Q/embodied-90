@@ -1,0 +1,53 @@
+flowchart TD
+    subgraph COLLECT[Collection host - Week 5 hardware validation pending]
+        A[Discover serial ports and cameras] --> B[Calibrate follower and leader]
+        B --> C[Low-speed teleoperation check]
+        C --> D[lerobot-record with push_to_hub=false]
+    end
+
+    D --> E[(Local LeRobot v3 dataset)]
+    E --> F[Run read-only health checker]
+    F -->|FAIL| G[Quarantine data and re-record]
+    F -->|PASS| H[Review sampled video and trajectories]
+    H -->|Reject| G
+    H -->|Accept| I[Freeze schema, manifest, and dataset revision]
+
+    subgraph HUB[Hugging Face Hub - optional external boundary]
+        J[(Private dataset repository)]
+        Q[(Private model repository)]
+    end
+
+    I --> J
+    J --> K[Download pinned dataset revision]
+
+    subgraph TRAIN[Training host - validated with PushT]
+        K --> L[Re-run health checker]
+        L -->|FAIL| G
+        L -->|PASS| M[lerobot-train with frozen config and seed]
+        M --> N[(Checkpoint: model, config, preprocessor, postprocessor)]
+        N --> O[Hash files and run offline inference]
+        O -->|FAIL| P[Stop release and inspect data/config]
+        O -->|PASS| Q
+    end
+
+    Q --> R[Download pinned model revision]
+
+    subgraph DEPLOY[Deployment host - Week 5 validation pending]
+        R --> S[Verify hashes and processor files]
+        S --> T[Verify ports, cameras, calibration, and schema]
+        T --> U[Low-speed dry run with stop control]
+        U --> V[Policy rollout]
+        V --> W[Record evaluation episode and telemetry]
+    end
+
+    W --> X[Evaluate success, safety, and data quality]
+    X -->|Collect useful corrections| E
+    X -->|Retrain| M
+
+    classDef verified fill:#e6f4ea,stroke:#26734d,color:#111111;
+    classDef pending fill:#fff4d6,stroke:#9a6700,color:#111111;
+    classDef gate fill:#fde8e8,stroke:#b42318,color:#111111;
+    class E,F,H,I,K,L,M,N,O verified;
+    class A,B,C,D,R,S,T,U,V,W pending;
+    class G,P gate;
+
